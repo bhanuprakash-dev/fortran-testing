@@ -1,0 +1,38 @@
+C*..* PMASS2
+CPMASS2   *******PMASS2 - PRINTOUT OF INPUT DATA MASS02
+       SUBROUTINE PMASS2(BBPRNT,JFC,I,DCORE,HLIMB,RLH,RJH,KWITYP,PLIMB,
+     *                   ACOND,RAACON,NCOND,NWOLI,HPART,BPART,RPRTAR,
+     *                   RPRTRR,
+     *                   TCOV1,TCOV2,ZLOOP,ZWIND,DWIND,WWIND,DUCTI,ISAM,
+     *                   TCLT,RGUID,RNCOOL,PCSNED,HSPOL,HCLAC,ZLAG,
+     *                   ZCOIAR,NGROUP,IPISOL)
+*
+       LOGICAL BBPRNT
+C
+       CHARACTER SP1*7,SP*10
+       DATA SP1/'       '/,SP/'          '/
+*
+
+*-----------------------------------------------------------------------
+       WRITE(JFC,*) '===== INPUT DATA TO MASS02 ====='
+       WRITE(JFC,*)  SP1,'I     ',SP,'DCORE ',SP,'HLIMB ',SP,'RLH   '
+       WRITE(JFC,*)  I,DCORE,HLIMB,RLH
+       WRITE(JFC,*)  SP1,'RJH   ',SP,'KWITYP',SP,'PLIMB ',SP,'ACOND '
+       WRITE(JFC,*)  RJH,KWITYP,PLIMB,ACOND
+       WRITE(JFC,*)  SP1,'RAACON',SP,'NWOLI ',SP,'HPART ',SP,'BPART '
+       WRITE(JFC,*)  RAACON,NCOND,NWOLI,HPART
+       WRITE(JFC,*)  SP1,'BPART '
+       WRITE(JFC,*)  BPART
+       WRITE(JFC,*)  SP1,'RPRTAR',SP,'RPRTRR',SP,'TCOV1 ',SP,'TCOV2 '
+       WRITE(JFC,*)  RPRTAR,RPRTRR,TCOV1,TCOV2
+       WRITE(JFC,*)  SP1,'ZLOOP ',SP,'ZWIND ',SP,'DWIND ',SP,'WWIND '
+       WRITE(JFC,*)  ZLOOP,ZWIND,DWIND,WWIND
+       WRITE(JFC,*)  SP1,'DUCT1 ',SP,'ISAM  ',SP,'TCLT  ',SP,'RGUID '
+       WRITE(JFC,*)  DUCTI,ISAM,TCLT,RGUID
+       WRITE(JFC,*)  SP1,'RNCOOL',SP,'HSPOL ',SP,'HCLAC ',SP,'ZLAG  '
+       WRITE(JFC,*)  RNCOOL,HSPOL,HCLAC,ZLAG
+       WRITE(JFC,*)  SP1,'ZCOIAR',SP,'NGROUP',SP,'IPISOL'
+       WRITE(JFC,*)  ZCOIAR,NGROUP,IPISOL
+C
+       RETURN
+       END

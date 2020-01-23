@@ -1,0 +1,585 @@
+  LUDVIKA MNL 87,TCA-MATERIAL90-02-15                SEK
+ BLOCK   1 CONDUCTOR COPPER AREA  LE  20 SQMM
+   1.0100       0.           25.390     -0.13550       0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK   2 CONDUCTOR COPPER AREA  GT  20 SQMM
+   1.0100       0.           16.920       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK   3 CONDUCTOR ALUMINIUM AREA  LE  30 SQMM
+   1.0200       0.           40.180     -0.24000       0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK   4 CONDUCTOR ALUMINIUM AREA  GT  30 SQMM
+   1.0200       0.           20.500       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK   5 CONDUCTOR TRANSPOSED AREA  LE  300 SQMM
+   1.0300       0.           142.76     -0.29800       0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK   6 CONDUCTOR TRANSPOSED AREA  GT  300 SQMM
+   1.0300       0.           26.080       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK   7 PAPER COVERING  TYPE S, CD, DD  AND  SD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK   8 PAPER COVERING  TYPE  L, SLL  AND  SLS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK   9 AGAINST YOKE FOR WINDING S, CD, SD AND DD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  10 AGAINST YOKE FOR WINDING L, SLL, SLS AND WIDTH LE 26
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  11 AGAINST YOKE FOR WINDING L, SLL, SLS AND WIDTH GT 26
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  12 OIL GUIDING RINGS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  13 SPACER STRIPS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  14 SPACERS NORMAL
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  15 SPACERS TAPERED
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  16 LOCKING CYLINDERS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  17 INSULATION DETAILS IN DUCT, TYPE S, CD, DD  AND  SD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  18 INSULATION DETAILS IN DUCT, TYPE L, SLL  AND  SLS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  19 ASSEMBLY,  CYLINDERS TYPE S, SLS, CD, DD AND SD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  20 ASSEMBLY,  CYLINDERS TYPE L AND SLL
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  21 CONDUCTOR TRANSPOSED, AREA LE 300 MM2, WITH EPOXY
+   1.0300       0.           149.29     -0.29800       0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK  22 TAPPINGS,  TYPE S, CD, DD  AND  SD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  23 TAPPINGS,  TYPE L, SLL  AND  SLS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  24 CONDUCTOR COPPER, AREA LE 20 MM2, VARNISHED
+   1.0100       0.           32.900     -0.13550       0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK  25 ASSEMBLY,  WINDINGS TYPE S, SLS, CD AND SD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  26 ASSEMBLY,  WINDINGS TYPE L AND SLL
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  27 ASSEMBLY,  WINDINGS TYPE D
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  28 OIL GUIDING RINGS (ASSEMBLY,  WINDINGS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  29 OUTER CONNECTIONS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  30 ASSISTING WINDING OPERATOR, WINDING TYPE CD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  31 DETAILS OF STEEL FOR CLAMPS MADE OF STEEL PROFILE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  32 DETAILS OF STEEL FOR CLAMPS MADE OF STEEL PLATE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  33 DETAILS OF STEEL FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  34 CONDUCTOR COPPER, AREA GT 20 MM2, VARNISHED
+   1.0100       0.           21.920       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK  35 DETAILS OF OTHERS FOR CLAMPS MADE OF STEEL PROFILE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  36 DETAILS OF OTHERS FOR CLAMPS MADE OF STEEL PLATE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  37 DETAILS OF OTHERS FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  38 CONDUCTOR TRANSPOSED, AREA GT 300 MM2  WITH EPOXY
+   1.0300       0.           27.280       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.5000       1.1600       1.1600
+ BLOCK  39 CLAMPS MADE OF STEEL PROFILE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  40 CLAMPS MADE OF STEEL PLATE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  41 CLAMPS MADE FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  42 LAMINATION
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  43 EPOXY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  44 LIMB SECTIONS FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  45 CROSS FLUX PLATE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  46 LAMINATION M5 (1384 1124-1)
+   1.0200       0.           9.2000       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1900       1.1600       1.1600
+ BLOCK  47 LAMINATION M5 (1384 1901-1) ADDITIONAL VARNISH
+   1.0200       0.           9.3500       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1900       1.1600       1.1600
+ BLOCK  48 LAMINATION HI-B (1384 1127-1)
+   1.0500       0.           9.8000       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.2000       1.1600       1.1600
+ BLOCK  49 LAMINATION HI-B (1384 1902-1) ADDITIONAL VARNISH
+   1.0500       0.           0.           0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.2000       1.1600       1.1600
+ BLOCK  50 MANUFACTURING OF CORE TYPE D
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  51 MANUFACTURING OF CORE TYPE T
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  52 MANUFACTURING OF CORE TYPE EY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  53 MANUFACTURING OF CORE TYPE DY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  54 MANUFACTURING OF CORE TYPE TY-1
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  55 MANUFACTURING OF CORE TYPE TY-3
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  56 MANUFACTURING OF CORE TYPE LTS-1
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  57 MANUFACTURING OF CORE TYPE LTS-3
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  58 MANUFACTURING OF CORE TYPE 1 FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  59 MANUFACTURING OF CORE TYPE 2 FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  60 MANUFACTURING OF CORE TYPE 3 FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  61 MANUFACTURING OF CORE TYPE 4 AND 6 FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  62 MANUFACTURING OF CORE TYPE 5 AND 7 FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  63 ASECONDTAPE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  64 SUPPORT INS. DETAILS , WOOD    , TERMINAL 2
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  65 SUPPORT INS. DETAILS ,PRESSPAHN, TERMINAL 2
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  66 SUPPORT INS. DETAILS , WOOD    , TERMINAL 3
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  67 SUPPORT INS. DETAILS ,PRESSPAHN, TERMINAL 3
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  68 SUPPORT INS. DETAILS , WOOD    , TERMINAL 4
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  69 SUPPORT INS. DETAILS ,PRESSPAHN, TERMINAL 4
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  70 CONDUCTORS (BAR OF COPPER) FOR CLEATS AND LEADS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  71 CONDUCTORS (BAR OF ALUMINIUM) FOR CLEATS AND LEADS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  72 CONDUCTORS (CABLE OF COPPER) FOR CLEATS AND LEADS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  73 SUPPORT INS. DETAILS , WOOD    , TERMINAL 1
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  74 SUPPORT INS. DETAILS ,PRESSPAHN, TERMINAL 1
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  75 PRE-ASSEMBLING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  76 PLASMAJET CORE LAMINATION
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  77 INSULATION DETAILS IN DUCTS BETWEEN WINDINGS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  78 INSULATION DETAILS OUTSIDE OUTER WINDING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  79 ASSEMBLY,  WINDINGS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  80 SPARE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  81 INSULATING DETAILS OUTER CORELIMB
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  82 INSULATING DETAILS AGAINST YOKE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  83 WINDING SUPPORTS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  84 ELECTROSTATIC SHIELD
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  85 ASSEMBLY,  ACT. PART FOR TRANSFORMERS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  86 ASSEMBLY,  ACT. PART FOR REACTORS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  87 CONNECTING TERMINAL
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  88 TANK SINGLE WELDED (TANK TYPE 1: TMY3,4  GT 10 TONS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  89 TANK SINGLE WELDED (TANK TYPE 2: TMY3,4  LT 10 TONS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  90 TANK SINGLE WELDED (TANK TYPE 3: TMY2    GT 10 TONS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  91 TANK SINGLE WELDED (TANK TYPE 4: TMY2    LT 10 TONS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  92 TANK SINGLE WELDED (TANK TYPE 5: TAA VACUUM-PROOF)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  93 TANK SINGLE WELDED (TANK TYPE 6: TAA NOT VACUUM-PROOF)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  94 TANK SINGLE WELDED (TANK TYPE 7: TBA)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  95 TANK SINGLE WELDED (TANK TYPE 8: TMY1,5,6,7,8,9)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  96 TANK OTHERS MANUFACTURING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  97 SURFACE TREATMENT
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK  98 RADIATORS 1200
+   0.           0.           0.           0.           32.830
+ -0.19400       0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK  99 RADIATORS 1500
+   0.           0.           0.           0.           25.480
+ -0.19910       0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 100 RADIATORS 1800
+   0.           0.           0.           0.           23.140
+ -0.19400       0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 101 RADIATORS 2300
+   0.           0.           0.           0.           22.920
+ -0.19500       0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 102 RADIATORS 2800
+   0.           0.           0.           0.           22.440
+ -0.19360       0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 103 TANK ASSEMBLED
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 104 CORE LAMINATION (1384.1910-1) ZDKH, 0.23 MM
+   1.0500       0.           11.990       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.2200       1.1600       1.1600
+ BLOCK 105 COOLING EQUIPMENT, MANUFACTURING 3
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 106 CORE LAM. ZDKH, 0.23 MM , ADDITIONAL VARNISHED
+   1.0500       0.           12.170       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.2200       1.1600       1.1600
+ BLOCK 107 COOLING EQUIPMENT, MANUFACTURING 5
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 108 COOLING EQUIPMENT, SURFACE TREATMENT
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 109 COOLING EQUIPMENT, ASSEMBLY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 110 COVER SINGLE MANUFACTURING (TANK TYPE 3,4,5 AND 6)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 111 COVER SINGLE MANUFACTURING (TANK TYPE 1,2 AND 7)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 112 COVER SINGLE MANUFACTURING (TANK TYPE 8)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 113 COVER OTHERS MANUFACTURING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 114 SURFACE TREATMENT
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 115 COVER ASSEMBLED
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 116 CONSERVATOR, MANUFACTURING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 117 SURFACE TREATMENT
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 118 CONSERVATOR ASSEMBLED
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 119 TANK ASSEMBLED  (BUILT-ON COOLERS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 120 PIPE TO CONSERVATOR
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 121 PIPE TO COOLERS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 122 SURFACE TREATMENT
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 123 PIPE CONNECTIONS, ASSEMBLY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 124 HIGH CONDUCTIVE FIELD SCREENS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 125 FANS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 126 SPARE
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 127 CONTROL CABLING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 128 MYLAR-PRESSPAHN BETWEEN CONDUCTOR STRANDS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 129 GLUED STRIP BETWEEN CONDUCTOR STRANDS
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 130 SOUND SCREEN, DETAILS STEEL
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 131 SOUND SCREEN, ABSORBER
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 132 SOUND SCREEN  ASSEMBLY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 133 DETAILS FINAL ASSEMBLY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 134 FINAL ASSEMBLY
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 135 DISMANTLING
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 136 OIL ABSORBED
+   1.0500       0.           3.1900       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 137 OIL FREE
+   1.0200       0.           3.1900       0.           0.
+   0.           0.           1.0000       0.           0.
+   0.           0.           1.1600       1.1600       1.1600
+ BLOCK 138 WINDING CONTINOUS TURNS (WINDING TYPE S)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 139 WINDING CONTINOUS TURNS (WINDING TYPE L)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 140 WINDING CONTINOUS TURNS (WINDING TYPE CD,SD)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 141 WINDING CONTINOUS TURNS (WINDING TYPE DD)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 142 WINDING CONTINOUS TURNS (WINDING TYPE SLS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 143 WINDING CONTINOUS TURNS (WINDING TYPE SLL)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 144 OIL GUIDING RINGS (WINDING CONTINOUS TURNS)
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 145 SEP. COOLERS OFAF
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+ BLOCK 146 SEP. COOLERS OFWF
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.
+   0.           0.           0.           0.           0.

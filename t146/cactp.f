@@ -1,0 +1,72 @@
+C*..* CACTP
+CCACTP
+C
+C     *******************    NYTT    *************************
+C     ALL PARAMETERS PREVIOUSLY STARTING WITH THE PREFIX 'GSN'
+C     HAVE BEEN CHANGED TO 'GS' TO ACCOMODATE THE FORTRAN 77
+C     NAMING REQUIREMENT OF NOT MORE THAN 6 CHARACTERS.
+C     ********************************************************
+C
+      SUBROUTINE CACTP(BBPRNT,JFC,GS41,GS42,GS45,GS46,GS47,GS48,
+     *     NLIMB,DCORE,GS24,GG49,RCONN ,ACONDA ,EFKV , NG, BBREAC)
+C
+      DIMENSION RCONN(4), ACONDA(4), EFKV(4)
+      LOGICAL BBREAC,BBPRNT
+C
+      CHARACTER SP1*7,SP*10
+       DATA SP1/'       '/,SP/'          '/
+
+***************
+       IF(.NOT.BBPRNT) GO TO 101
+       WRITE(JFC,*) '===== INPUT DATA TO CAPTP                    ====='
+       WRITE(JFC,*) SP1,'GS41 ',SP,'GS42 ',SP,'GS45 ',SP,'GS46 '
+       WRITE(JFC,*) GS41 ,GS42 ,GS45 ,GS46
+       WRITE(JFC,*) SP1,'GS47 ',SP,'GS48 ',SP,'NLIMB ',SP,'DCORE '
+       WRITE(JFC,*) GS47 ,GS48 ,NLIMB ,DCORE
+       WRITE(JFC,*) SP1,'GS24 ',SP,'GG49  ',SP,'RCONN ',SP,'ACONDA'
+       WRITE(JFC,*) GS24 ,GG49  ,RCONN ,ACONDA
+       WRITE(JFC,*) SP1,'EFKV  ',SP,'NG    ',SP,'BBREAC'
+       WRITE(JFC,*) EFKV  ,NG    ,BBREAC
+ 101   CONTINUE
+***************
+C INSULATION DETAILS
+C             ****    MAIN DUCT    ****
+      CALL COST(4,77,180,GS41,1.,1.,0.,1.,GS41,1.,1.,1.)
+C             ****  OUTS.OUT.WIND  ****
+      CALL COST(4,78,181,GS42,1.,1.,0.,1.,GS42,1.,1.,1.)
+C             ****  OUT CORE LIMB  ****
+      CALL COST(4,81,182,GS45,1.,1.,0.,1.,GS45,1.,1.,1.)
+      XLIMB=NLIMB
+      CALL COST(4,82,183,GS46,DCORE,1.,0.,1.,XLIMB,GS46/XLIMB,1.,1.)
+      CALL COST(3,0,184,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C ASSEMBLY WINDINGS
+      CALL COST(3,79,185,0.,1.,1.,0.,1.,GS41+GS42,1.,1.,1.)
+C
+C WINDING SUPPORT
+      IF(INT(GS47).EQ.0) GOTO 1
+      CALL COST(3,83,188,GS47,1.,1.,0.,1.,GS47,1.,1.,1.)
+C
+C ASSEMBLING ACTIVE PART
+ 1    CONTINUE
+      IF(.NOT.BBREAC)
+     * CALL COST(3,85,190,0.,1.,1.,GG49,1.,GS24,1.,1.,1.)
+      IF(  BBREAC   )
+     * CALL COST(3,86,190,0.,1.,1.,GG49,1.,GS24,1.,1.,1.)
+C
+C...  ELEKTROSTATISK SK#RMNING K#RNBEN REAKTORER
+      IF(GS48.GT.1.E-3)
+     * CALL COST(3,84,189,GS48,1.,1.,0.,1.,GS48,1.,1.,1.)
+C
+      DO 20 I=1,NG
+         IF(EFKV(I) .GT. 50.)  GO TO 11
+         ACM3=1
+         GO TO 12
+   11    ACM3=EFKV(I)/50.
+   12  CALL COST(4,87,190+I,0.,1.,1.,0.,1.,RCONN(I),ACONDA(I),ACM3,1.)
+   20 CONTINUE
+C
+      CALL COST (3,0,195,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (2,0,196,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+      RETURN
+      END

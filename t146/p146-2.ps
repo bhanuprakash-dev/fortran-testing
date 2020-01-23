@@ -1,0 +1,330 @@
+)ATTR DEFAULT(]–_)
+       _ TYPE (INPUT)  INTENS(HIGH)
+       ^ TYPE (INPUT)  INTENS(LOW)
+       ] TYPE (TEXT)   INTENS(HIGH)
+       – TYPE (TEXT)   INTENS(LOW)
+       › TYPE(TEXT)    INTENS(HIGH) COLOR (YELLOW)
+)BODY
+–*]T146 Input–P146-2–*  OBJECT:]&DSYOBJ              – Next Panel_SCROLL–
+–=–Version–&VER–:–&DVERS     –====================–&DAIT                       –
+]&MSG                                                                  –
+]W I N D I N G . .:]A        B        C        D        E        F
+–Top node. . . . .:_C11   – _C21   – _C31   – _C41   – _C51   – _C61   –
+–Bottom node . . .:_C12   – _C22   – _C32   – _C42   – _C52   – _C62   –
+–Function code . .:_C14   – _C24   – _C34   – _C44   – _C54   – _C64   –
+–Yoke dist.( top).:_C15   – _C25   – _C35   – _C45   – _C55   – _C65   –
+–Yoke dist.(bott).:_C16   – _C26   – _C36   – _C46   – _C56   – _C66   –
+–Main duct width .:_C17   – _C27   – _C37   – _C47   – _C57   – _C67   –
+–Winding fraction.:_C110  – _C120  – _C130  – _C140  – _C150  – _C160  –
+–Cable type. . . .:_C111  – _C121  – _C131  – _C141  – _C151  – _C161  –
+–Strand (radial)..:^E12   – ^E22   – ^E32   – ^E42   – ^E52   – ^E62   –
+–Max current dens.:^E17   – ^E27   – ^E37   – ^E47   – ^E57   – ^E67   –
+–Max tens.Sigma0.2:^E18   – ^E28   – ^E38   – ^E48   – ^E58   – ^E68   –
+–Max comp.Sigma0.2:^E19   – ^E29   – ^E39   – ^E49   – ^E59   – ^E69   –
+]O p t i m i z e  :_D11   – _D21   – _D31   – _D41   – _D51   – _D61   –
+–Space factor     :_D12   – _D22   – _D32   – _D42   – _D52   – _D62   –
+–Winding width    :_D13   – _D23   – _D33   – _D43   – _D53   – _D63   –
+–Conductor area   :_D14   – _D24   – _D34   – _D44   – _D54   – _D64   –
+–Limb height . . .(OPT.Y/N):_D91–    _D5     –mm / Aut. wind. layout
+–Core diameter . .(OPT.Y/N):_D92–    _D6     –mm /  (YES/NO): _D111  –
+–Limb flux density(OPT.Y/N):_D93–    _D7     –T/
+–Reac.(Terml1-2 %)(OPT.Y/N):_D94–    _D8     –%/
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 P146-2 1'
+&ZPF13 = 'CMS EXEC MANUAL T146 P146-2 1'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = C11
+
+       IF (&D91 = ' ')  &D91 = YES
+       IF (&D92 = ' ')  &D92 = YES
+       IF (&D93 = ' ')  &D93 = YES
+       IF (&D94 = ' ')  &D94 = YES
+       IF (&D111= ' ')  &D111= NO
+
+       IF (&E17 = ' ')  &E17 = 4.50
+       IF (&E18 = ' ')  &E18 = 120.0
+       IF (&E19 = ' ')  &E19 = 55.0
+       IF (&C110= ' ')  &C110 = 1
+       IF (&D11 = ' ')  &D11 = YES
+       IF (&C111= ' ')  &C111 = SP
+       IF (&D11 = YES)
+         IF (&D12 = ' ')
+           &D12 = 0.45
+
+       IF (&WILI = 2,3,4,5,6)
+         IF (&E27 = ' ')  &E27 = 4.50
+         IF (&E28 = ' ')  &E28 = 120.0
+         IF (&E29 = ' ')  &E29 = 55.0
+         IF (&C120= ' ')  &C120 = 1
+         IF (&D21 = ' ')  &D21 = YES
+         IF (&C121 = ' ')  &C121 = SP
+         IF (&D21 = YES)
+           IF (&D22 = ' ')
+             &D22 = 0.45
+       IF (&WILI = 3,4,5,6)
+         IF (&E37 = ' ')  &E37 = 4.50
+         IF (&E38 = ' ')  &E38 = 120.0
+         IF (&E39 = ' ')  &E39 = 55.0
+         IF (&C130= ' ')  &C130 = 1
+         IF (&D31 = ' ')  &D31 = YES
+         IF (&C131 = ' ')  &C131 = SP
+         IF (&D31 = YES)
+           IF (&D32 = ' ')
+             &D32 = 0.45
+       IF (&WILI = 4,5,6)
+         IF (&E47 = ' ')  &E47 = 4.50
+         IF (&E48 = ' ')  &E48 = 120.0
+         IF (&E49 = ' ')  &E49 = 55.0
+         IF (&C140= ' ')  &C140 = 1
+         IF (&D41 = ' ')  &D41 = YES
+         IF (&C141 = ' ')  &C141 = SP
+         IF (&D41 = YES)
+           IF (&D42 = ' ')
+             &D42 = 0.45
+       IF (&WILI = 5,6)
+         IF (&E57 = ' ')  &E57 = 4.50
+         IF (&E58 = ' ')  &E58 = 120.0
+         IF (&E59 = ' ')  &E59 = 55.0
+         IF (&C150= ' ')  &C150 = 1
+         IF (&D51 = ' ')  &D51 = YES
+         IF (&C151 = ' ')  &C151 = SP
+         IF (&D51 = YES)
+           IF (&D52 = ' ')
+             &D52 = 0.45
+       IF (&WILI = 6)
+         IF (&E67 = ' ')  &E67 = 4.50
+         IF (&E67 = ' ')  &E68 = 120.0
+         IF (&E69 = ' ')  &E69 = 55.0
+         IF (&C160= ' ')  &C160 = 1
+         IF (&D61 = ' ')  &D61 = YES
+         IF (&C161 = ' ')  &C161 = SP
+         IF (&D61 = YES)
+           IF (&D62 = ' ')
+             &D62 = 0.45
+
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+IF (&SCROLL ^= X)
+    IF (&D5 = ?)   .MSG = OPTRM120
+    IF (&D6 = ?)   .MSG = OPTRM121
+    IF (&D7 = ?)   .MSG = OPTRM122
+    IF (&D8 = ?)   .MSG = OPTRM123
+    IF (&E12 = ?)  .MSG = OPTRM063
+    IF (&E22 = ?)  .MSG = OPTRM063
+    IF (&E32 = ?)  .MSG = OPTRM063
+    IF (&E42 = ?)  .MSG = OPTRM063
+    IF (&E52 = ?)  .MSG = OPTRM063
+    IF (&E62 = ?)  .MSG = OPTRM063
+    IF (&E17 = ?)  .MSG = OPTRM068
+    IF (&E27 = ?)  .MSG = OPTRM068
+    IF (&E37 = ?)  .MSG = OPTRM068
+    IF (&E47 = ?)  .MSG = OPTRM068
+    IF (&E57 = ?)  .MSG = OPTRM068
+    IF (&E67 = ?)  .MSG = OPTRM068
+    IF (&E18 = ?)  .MSG = OPTRM069
+    IF (&E28 = ?)  .MSG = OPTRM069
+    IF (&E38 = ?)  .MSG = OPTRM069
+    IF (&E48 = ?)  .MSG = OPTRM069
+    IF (&E58 = ?)  .MSG = OPTRM069
+    IF (&E68 = ?)  .MSG = OPTRM069
+    IF (&E19 = ?)  .MSG = OPTRM070
+    IF (&E29 = ?)  .MSG = OPTRM070
+    IF (&E39 = ?)  .MSG = OPTRM070
+    IF (&E49 = ?)  .MSG = OPTRM070
+    IF (&E59 = ?)  .MSG = OPTRM070
+    IF (&E69 = ?)  .MSG = OPTRM070
+    IF (&D11 = ?)  .MSG = OPTRM058
+    IF (&D21 = ?)  .MSG = OPTRM058
+    IF (&D31 = ?)  .MSG = OPTRM058
+    IF (&D41 = ?)  .MSG = OPTRM058
+    IF (&D51 = ?)  .MSG = OPTRM058
+    IF (&D61 = ?)  .MSG = OPTRM058
+    IF (&D12 = ?)  .MSG = OPTRM059
+    IF (&D22 = ?)  .MSG = OPTRM059
+    IF (&D32 = ?)  .MSG = OPTRM059
+    IF (&D42 = ?)  .MSG = OPTRM059
+    IF (&D52 = ?)  .MSG = OPTRM059
+    IF (&D62 = ?)  .MSG = OPTRM059
+    IF (&D13 = ?)  .MSG = OPTRM060
+    IF (&D23 = ?)  .MSG = OPTRM060
+    IF (&D33 = ?)  .MSG = OPTRM060
+    IF (&D43 = ?)  .MSG = OPTRM060
+    IF (&D53 = ?)  .MSG = OPTRM060
+    IF (&D63 = ?)  .MSG = OPTRM060
+    IF (&D14 = ?)  .MSG = OPTRM061
+    IF (&D24 = ?)  .MSG = OPTRM061
+    IF (&D34 = ?)  .MSG = OPTRM061
+    IF (&D44 = ?)  .MSG = OPTRM061
+    IF (&D54 = ?)  .MSG = OPTRM061
+    IF (&D64 = ?)  .MSG = OPTRM061
+    IF (&D111= ?)  .MSG = OPTRM128
+    IF (&C11 = ?)  .MSG = OPTRM040
+    IF (&C21 = ?)  .MSG = OPTRM040
+    IF (&C31 = ?)  .MSG = OPTRM040
+    IF (&C41 = ?)  .MSG = OPTRM040
+    IF (&C51 = ?)  .MSG = OPTRM040
+    IF (&C61 = ?)  .MSG = OPTRM040
+    IF (&C12 = ?)  .MSG = OPTRM040
+    IF (&C22 = ?)  .MSG = OPTRM040
+    IF (&C32 = ?)  .MSG = OPTRM040
+    IF (&C42 = ?)  .MSG = OPTRM040
+    IF (&C52 = ?)  .MSG = OPTRM040
+    IF (&C62 = ?)  .MSG = OPTRM040
+    IF (&C14 = ?)  .MSG = OPTRM042
+    IF (&C24 = ?)  .MSG = OPTRM042
+    IF (&C34 = ?)  .MSG = OPTRM042
+    IF (&C44 = ?)  .MSG = OPTRM042
+    IF (&C54 = ?)  .MSG = OPTRM042
+    IF (&C64 = ?)  .MSG = OPTRM042
+    IF (&C15 = ?)  .MSG = OPTRM043
+    IF (&C25 = ?)  .MSG = OPTRM043
+    IF (&C35 = ?)  .MSG = OPTRM043
+    IF (&C45 = ?)  .MSG = OPTRM043
+    IF (&C55 = ?)  .MSG = OPTRM043
+    IF (&C65 = ?)  .MSG = OPTRM043
+    IF (&C16 = ?)  .MSG = OPTRM044
+    IF (&C26 = ?)  .MSG = OPTRM044
+    IF (&C36 = ?)  .MSG = OPTRM044
+    IF (&C46 = ?)  .MSG = OPTRM044
+    IF (&C56 = ?)  .MSG = OPTRM044
+    IF (&C66 = ?)  .MSG = OPTRM044
+    IF (&C17 = ?)  .MSG = OPTRM045
+    IF (&C27 = ?)  .MSG = OPTRM045
+    IF (&C37 = ?)  .MSG = OPTRM045
+    IF (&C47 = ?)  .MSG = OPTRM045
+    IF (&C57 = ?)  .MSG = OPTRM045
+    IF (&C67 = ?)  .MSG = OPTRM045
+    IF (&C110 = ?)  .MSG = OPTRM048
+    IF (&C120 = ?)  .MSG = OPTRM048
+    IF (&C130 = ?)  .MSG = OPTRM048
+    IF (&C140 = ?)  .MSG = OPTRM048
+    IF (&C150 = ?)  .MSG = OPTRM048
+    IF (&C160 = ?)  .MSG = OPTRM048
+    IF (&C111 = ?) .MSG = OPTRM034
+    IF (&C121 = ?) .MSG = OPTRM034
+    IF (&C131 = ?) .MSG = OPTRM034
+    IF (&C141 = ?) .MSG = OPTRM034
+    IF (&C151 = ?) .MSG = OPTRM034
+    IF (&C161 = ?) .MSG = OPTRM034
+
+    &D91 = TRUNC (&D91,1)
+    &D91  = TRANS (&D91  ?,? Y,YES N,NO *,*)
+    VER (&D91,NONBLANK,LIST,YES,NO,MSG=OPTRM050)
+
+    &D92 = TRUNC (&D92,1)
+    &D92  = TRANS (&D92  ?,? Y,YES N,NO *,*)
+    VER (&D92,NONBLANK,LIST,YES,NO,MSG=OPTRM051)
+
+    &D93 = TRUNC (&D93,1)
+    &D93  = TRANS (&D93  ?,? Y,YES N,NO *,*)
+    VER (&D93,NONBLANK,LIST,YES,NO,MSG=OPTRM052)
+
+    &D94 = TRUNC (&D94,1)
+    &D94  = TRANS (&D94  ?,? Y,YES N,NO *,*)
+    VER (&D94,NONBLANK,LIST,YES,NO,MSG=OPTRM053)
+
+    IF (&D91 = NO) VER (&D5,NONBLANK,MSG=OPTRM120)
+
+    IF (&D92 = NO) VER (&D6,NONBLANK,MSG=OPTRM121)
+
+    IF (&D93 = NO) VER (&D7,NONBLANK,MSG=OPTRM122)
+
+    IF (&D91 = NO)
+       IF (&D92 = NO)
+          IF (&D93 = NO)
+              &D94 = YES
+    IF (&D94 = NO) VER (&D8,NONBLANK,MSG=OPTRM123)
+    &D111 = TRUNC (&D111,1)
+    &D111 = TRANS (&D111 ?,? Y,YES N,NO *,*)
+    VER (&D111,NONBLANK,LIST,YES,NO,MSG=OPTRM128)
+
+    &D11  = TRUNC (&D11,1)
+    &D11  = TRANS (&D11  ?,? Y,YES N,NO *,*)
+    VER (&D11,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+
+    IF (&WILI = 2,3,4,5,6)
+      &D21 = TRUNC (&D21,1)
+      &D21  = TRANS (&D21  ?,? Y,YES N,NO *,*)
+      VER (&D21,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+    IF (&WILI = 3,4,5,6)
+      &D31 = TRUNC (&D31,1)
+      &D31  = TRANS (&D31  ?,? Y,YES N,NO  *,*)
+      VER (&D31,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+    IF (&WILI = 4,5,6)
+      &D41 = TRUNC (&D41,1)
+      &D41  = TRANS (&D41  ?,? Y,YES N,NO *,*)
+      VER (&D41,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+    IF (&WILI = 5,6)
+      &D51 = TRUNC (&D51,1)
+      &D51  = TRANS (&D51  ?,? Y,YES N,NO *,*)
+      VER (&D51,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+    IF (&WILI = 6)
+      &D61 = TRUNC (&D61,1)
+      &D61  = TRANS (&D61  ?,? Y,YES N,NO *,*)
+      VER (&D61,NONBLANK,LIST,YES,NO,MSG=OPTRM058)
+
+    IF (&WILI = 1,2,3,4,5,6)
+      VER (&C111,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C11,NONBLANK,MSG=OPTRM040)
+      VER (&C12,NONBLANK,MSG=OPTRM040)
+      VER (&C14,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C15,NONBLANK,MSG=OPTRM043)
+      VER (&C16,NONBLANK,MSG=OPTRM044)
+      VER (&C17,NONBLANK,MSG=OPTRM045)
+      VER (&C110,NONBLANK,MSG=OPTRM048)
+    IF (&WILI =  2,3,4,5,6)
+      VER (&C121,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C21,NONBLANK,MSG=OPTRM040)
+      VER (&C22,NONBLANK,MSG=OPTRM040)
+      VER (&C24,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C25,NONBLANK,MSG=OPTRM043)
+      VER (&C26,NONBLANK,MSG=OPTRM044)
+      VER (&C27,NONBLANK,MSG=OPTRM045)
+      VER (&C120,NONBLANK,MSG=OPTRM048)
+
+    IF (&WILI = 3,4,5,6)
+      VER (&C131,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C31,NONBLANK,MSG=OPTRM040)
+      VER (&C32,NONBLANK,MSG=OPTRM040)
+      VER (&C34,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C35,NONBLANK,MSG=OPTRM043)
+      VER (&C36,NONBLANK,MSG=OPTRM044)
+      VER (&C37,NONBLANK,MSG=OPTRM045)
+      VER (&C130,NONBLANK,MSG=OPTRM048)
+
+    IF (&WILI = 4,5,6)
+      VER (&C141,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C41,NONBLANK,MSG=OPTRM040)
+      VER (&C42,NONBLANK,MSG=OPTRM040)
+      VER (&C44,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C45,NONBLANK,MSG=OPTRM043)
+      VER (&C46,NONBLANK,MSG=OPTRM044)
+      VER (&C47,NONBLANK,MSG=OPTRM045)
+      VER (&C140,NONBLANK,MSG=OPTRM048)
+
+    IF (&WILI = 5,6)
+      VER (&C151,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C51,NONBLANK,MSG=OPTRM040)
+      VER (&C52,NONBLANK,MSG=OPTRM040)
+      VER (&C54,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C55,NONBLANK,MSG=OPTRM043)
+      VER (&C56,NONBLANK,MSG=OPTRM044)
+      VER (&C57,NONBLANK,MSG=OPTRM045)
+      VER (&C150,NONBLANK,MSG=OPTRM048)
+
+    IF (&WILI = 6)
+      VER (&C161,NONBLANK,LIST,SP,OR,LR,TC,MSG=OPTRM034)
+      VER (&C61,NONBLANK,MSG=OPTRM040)
+      VER (&C62,NONBLANK,MSG=OPTRM040)
+      VER (&C64,NONBLANK,LIST,M,MV,R,RC,RB,RCB,MSG=OPTRM042)
+      VER (&C65,NONBLANK,MSG=OPTRM043)
+      VER (&C66,NONBLANK,MSG=OPTRM044)
+      VER (&C67,NONBLANK,MSG=OPTRM045)
+      VER (&C160,NONBLANK,MSG=OPTRM048)
+)END

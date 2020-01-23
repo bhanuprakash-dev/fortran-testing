@@ -1,0 +1,91 @@
+C*..* DRAG
+CDRAG
+       SUBROUTINE DRAG(TYP,PRESS,QAKTIV,NDRAG,BDRAG,TDRAG,ALT,BEL,PRMAX)
+C
+C---   BEST³MNING AV ANTAL DRAGSKENOR OCH DESS DIMENSIONER
+C
+       REAL NDRAG
+       DIMENSION BELD(4)
+       DATA BELD/4755.,9150.,11175.,11175./
+C
+ 100   CONTINUE
+C...
+C...
+ 200   BEL1=PRESS
+       BEL2=0.75*PRESS+QAKTIV*0.01
+       BEL=AMAX1(BEL1,BEL2)
+C...
+C...
+       ITYP=TYP-6
+       BELA=BELD(ITYP)
+ 299   CONTINUE
+C...
+C...
+ 300   IF(BEL.LE.BELA) GOTO 302
+ 301   PRMAX= AMIN1(BELA,(BELA-QAKTIV*0.01)/0.75)
+       GOTO 399
+ 302   PRMAX=0.
+ 399   CONTINUE
+C...
+ 400   GOTO(401,402,403,403),ITYP
+ 401   CONTINUE
+ 500       IF(BEL.LE.3170.) GOTO 502
+ 501       IDRAG=4
+           GOTO 599
+ 502       IF(BEL.LE.1580.) GOTO 503
+           IDRAG=3
+           GOTO 599
+ 503       IF(BEL.LE.1060.) GOTO 504
+           IDRAG=2
+           GOTO 599
+ 504       IDRAG=1
+ 599       CONTINUE
+       GOTO 499
+ 402   CONTINUE
+ 600       IF(BEL.LE.6100.) GOTO 602
+ 601       IDRAG=4
+           GOTO 699
+ 602       IF(BEL.LE.3050.) GOTO 603
+           IDRAG=3
+           GOTO 699
+ 603        IF(BEL.LE.2040.) GOTO 604
+           IDRAG=2
+           GOTO 699
+ 604       IDRAG=1
+ 699       CONTINUE
+       GOTO 499
+ 403   CONTINUE
+ 700       IF(BEL.LE.7450.) GOTO 702
+ 701       IDRAG=4
+           GOTO 799
+ 702       IF(BEL.LE.3730.) GOTO 703
+           IDRAG=3
+           GOTO 799
+ 703       IF(BEL.LE.2500.) GOTO 704
+           IDRAG=2
+           GOTO 799
+ 704       IDRAG=1
+ 799       CONTINUE
+ 499   CONTINUE
+C...
+ 800   GOTO(801,802,803,804),IDRAG
+ 801   NDRAG=2
+       BDRAG=75.
+       TDRAG=10.
+       GOTO 899
+ 802   NDRAG=2
+       BDRAG=75.
+       TDRAG=15.
+       GOTO 899
+ 803   NDRAG=4
+       BDRAG=75.
+       TDRAG=15.
+       GOTO 899
+ 804   NDRAG=6
+       BDRAG=75.
+       TDRAG=15.
+ 899   CONTINUE
+C...
+       ALT=IDRAG
+ 199   RETURN
+       END

@@ -1,0 +1,27 @@
+4                           RWILI
+'00700_00 (VK) - XCEL ENERGY'	        IDENT
+'H1','X1','Y1','  '         (TNODE(i),i=1,4)
+100,100,35,0       (SRATE(i),i=1,4)
+0.00				CALCT
+345.00,34.5,13.8,0.00       (UNLINE(i),i=1,4)
+'YN','YN','D','  '         (KCON(i),i=1,4)
+'PM','NO','NO','NO'         (KTYPRW(i),i=1,4)
+16,0.00,0.00,0.00       (NPSTEP(i),i=1,4)
+16,0.00,0.00,0.00       (NMSTEP(i),i=1,4)
+0.625,0.00,0.00,0.00       (PUSTEP(i),i=1,4)
+1050.00,200,110,0.00       (USURG(i),i=1,4)
+100.00,100.00,35.00,0.00       (SLINE(i),i=1,4)
+0.00,0.00,0.00,0.00       (CGRAD(i),i=1,4)
+60                           FREQ
+3                           NPHAS
+'CFR'	                    TYPREG
+2651                           EVALP0
+0                           EVALPK
+'MCUS'	                    MNLCOD
+0.00                           CPUIND
+0.00                           CPUFIX
+'ONAF'	                    KCOOL
+1.67                           FONAN
+'YES'	                    OPERAT
+'YES'	                    DETPRE
+0.00,0.00,0.00       (XREA(i),i=1,3)

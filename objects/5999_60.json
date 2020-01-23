@@ -1,0 +1,1709 @@
+{
+    "ACCESSED": {
+        "DB_NAME": "ACCESSED",
+        "A": "2020-01-14 09:57 70005999_60  "
+    },
+    "RWILI": {
+        "DB_NAME": "NWIND",
+        "A": 4
+    },
+    "IDENT": {
+        "DB_NAME": "IDENT",
+        "A": "70005999_60   PJM - ONCOR ELECTRIC DELIVERY CO., LLC"
+    },
+    "CLASSCOD": {
+        "DB_NAME": "CLASSCOD",
+        "A": "POWT"
+    },
+    "REOPT": {
+        "DB_NAME": "REOPT",
+        "A": "YES",
+        "B": "YES",
+        "C": "YES",
+        "D": "NO"
+    },
+    "USHORE": {
+        "DB_NAME": "REACHX0",
+        "option": {
+            "A": ""
+        },
+        "value": {
+            "A": 6.94
+        }
+    },
+    "EVALP0": {
+        "DB_NAME": "EVALP0",
+        "A": 1446
+    },
+    "DETPRE": {
+        "DB_NAME": "DETPREC",
+        "A": "YES"
+    },
+    "EVALPK": {
+        "DB_NAME": "EVALPK",
+        "A": 550
+    },
+    "CORESE": {
+        "DB_NAME": "CORESE",
+        "A": "TCA"
+    },
+    "CORTYP": {
+        "DB_NAME": "CORETYPE",
+        "A": "TY-3"
+    },
+    "DPHAS": {
+        "DB_NAME": "TPHPH",
+        "A": 156
+    },
+    "DWITA": {
+        "DB_NAME": "TWINDTNK",
+        "A": 729
+    },
+    "DCOCOV": {
+        "DB_NAME": "TCORCOV",
+        "A": 350
+    },
+    "KCOOL": {
+        "DB_NAME": "COOLTYPE",
+        "A": "ONAF"
+    },
+    "FONAN": {
+        "DB_NAME": "SELFCRAT",
+        "A": 1.67
+    },
+    "COOLEQIP": {
+        "DB_NAME": "COOLEQIP",
+        "A": "TANK"
+    },
+    "MNLCOD": {
+        "DB_NAME": "COSTCODE",
+        "A": "M90"
+    },
+    "NPHAS": {
+        "DB_NAME": "NPHASES",
+        "A": 3
+    },
+    "UMAXPU": {
+        "DB_NAME": "OVERVOL",
+        "A": 0
+    },
+    "FREQ": {
+        "DB_NAME": "FREQ",
+        "A": 60
+    },
+    "TOPDTO": {
+        "DB_NAME": "TOPDTOTK",
+        "A": 65
+    },
+    "TTOILM": {
+        "DB_NAME": "MAXDTTO",
+        "A": 65
+    },
+    "TWINDM": {
+        "DB_NAME": "MAXDTMW",
+        "A": 65
+    },
+    "COREMA": {
+        "DB_NAME": "CORELAM",
+        "A": "EXT"
+    },
+    "CKTANK": {
+        "DB_NAME": "TANKTYPE",
+        "A": "TBA1"
+    },
+    "EXTANK": {
+        "DB_NAME": "TANKEXT",
+        "A": 0
+    },
+    "TNODE": {
+        "DB_NAME": "TERMNODE",
+        "A": "H1",
+        "B": "X1",
+        "C": "Y1",
+        "D": ""
+    },
+    "SRATE": {
+        "DB_NAME": "SRATED",
+        "A": 360,
+        "B": 360,
+        "C": 45,
+        "D": 564
+    },
+    "UNLINE": {
+        "DB_NAME": "URATED",
+        "A": 345,
+        "B": 141.5,
+        "C": 13.8,
+        "D": 0
+    },
+    "KTYPRW": {
+        "DB_NAME": "REGTYPE",
+        "A": "PM",
+        "B": "NO",
+        "C": "NO",
+        "D": "NO"
+    },
+    "NPSTEP": {
+        "DB_NAME": "NREGPOS",
+        "A": 8,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "NMSTEP": {
+        "DB_NAME": "NREGNEG",
+        "A": 8,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "PUSTEP": {
+        "DB_NAME": "NREGPRO",
+        "A": 1.25,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "KCON": {
+        "DB_NAME": "CONNEC",
+        "A": "Y/A",
+        "B": "Y/A",
+        "C": "D",
+        "D": ""
+    },
+    "USURG": {
+        "DB_NAME": "BILTERM",
+        "A": 1175,
+        "B": 650,
+        "C": 110,
+        "D": 0
+    },
+    "CGRAD": {
+        "DB_NAME": "GRADINS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "SLINE": {
+        "DB_NAME": "SCPTERM",
+        "A": 360,
+        "B": 360,
+        "C": 0,
+        "D": 0
+    },
+    "WNDOPT": {
+        "DB_NAME": "REOPTW",
+        "A": "YES",
+        "B": "YES",
+        "C": "YES",
+        "D": "YES",
+        "E": "",
+        "F": ""
+    },
+    "DIRECT": {
+        "DB_NAME": "DIRECT",
+        "displayName": "Winding Direction",
+        "A": "L",
+        "B": "L",
+        "C": "L",
+        "D": "L",
+        "E": "",
+        "F": ""
+    },
+    "FILLF": {
+        "DB_NAME": "SPACEFAC",
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0.4,
+        "D": 0.5,
+        "E": 0,
+        "F": 0
+    },
+    "KWITYP": {
+        "DB_NAME": "WINDTYPE",
+        "A": "S4",
+        "B": "CD",
+        "C": "SLS",
+        "D": "CD",
+        "E": "",
+        "F": ""
+    },
+    "KWIFUN": {
+        "DB_NAME": "FUNCCODE",
+        "A": "M",
+        "B": "M",
+        "C": "R",
+        "D": "M",
+        "E": 0,
+        "F": 0
+    },
+    "TERMNO": {
+        "DB_NAME": "TERMNO",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "COVCBL": {
+        "DB_NAME": "COVCBL",
+        "A": 0.46,
+        "B": 0.76,
+        "C": 3.2,
+        "D": 1.52,
+        "E": 0,
+        "F": 0,
+        "G": 0,
+        "H": 0
+    },
+    "HCLAC": {
+        "DB_NAME": "HCLACK",
+        "A": 3,
+        "B": 4,
+        "C": 4,
+        "D": 4,
+        "E": 0,
+        "F": 0
+    },
+    "BDUCT": {
+        "DB_NAME": "BDUCT",
+        "A": 22,
+        "B": 66,
+        "C": 66,
+        "D": 96,
+        "E": 0,
+        "F": 0
+    },
+    "EXTRAR": {
+        "DB_NAME": "EXTINSAR",
+        "A": 40,
+        "B": 200,
+        "C": 0,
+        "D": 40,
+        "E": 0,
+        "F": 0
+    },
+    "DUYOKE": {
+        "DB_NAME": "TYOKETOP",
+        "A": 270,
+        "B": 260,
+        "C": 270,
+        "D": 260,
+        "E": 0,
+        "F": 0
+    },
+    "DLYOKE": {
+        "DB_NAME": "TYOKEBOT",
+        "A": 240,
+        "B": 230,
+        "C": 240,
+        "D": 240,
+        "E": 0,
+        "F": 0
+    },
+    "TYPREG": {
+        "DB_NAME": "TYPEREG",
+        "A": "CFR"
+    },
+    "CPUIND": {
+        "DB_NAME": "INDEX",
+        "A": 0
+    },
+    "CALCT": {
+        "DB_NAME": "CALCTAP",
+        "A": 0
+    },
+    "OPERAT": {
+        "DB_NAME": "OPERCHAR",
+        "A": "YES"
+    },
+    "WNOD1": {
+        "DB_NAME": "WINDNOD1",
+        "A": "Y1",
+        "B": "X1",
+        "C": "1",
+        "D": "H1",
+        "E": "",
+        "F": ""
+    },
+    "WNOD2": {
+        "DB_NAME": "WINDNOD2",
+        "A": "Y2",
+        "B": "X0",
+        "C": "X1",
+        "D": "1",
+        "E": "",
+        "F": ""
+    },
+    "CONMAT": {
+        "DB_NAME": "CONDMAT",
+        "A": "CU",
+        "B": "CU",
+        "C": "CU",
+        "D": "CU",
+        "E": 0,
+        "F": 0
+    },
+    "NGROUP": {
+        "DB_NAME": "NGROUPS",
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 2,
+        "E": 0,
+        "F": 0
+    },
+    "FRACT": {
+        "DB_NAME": "WINDFRAC",
+        "A": 1,
+        "B": 1,
+        "C": 1,
+        "D": 1,
+        "E": null,
+        "F": null
+    },
+    "TENSM": {
+        "DB_NAME": "MAXSIGWP",
+        "A": 198,
+        "B": 198,
+        "C": 198,
+        "D": 198,
+        "E": 0,
+        "F": 0
+    },
+    "PRESSM": {
+        "DB_NAME": "MAXSIGWN",
+        "A": 148,
+        "B": 148,
+        "C": 148,
+        "D": 148,
+        "E": 0,
+        "F": 0
+    },
+    "DELYEAR": {
+        "DB_NAME": "DELYEAR",
+        "A": 0
+    },
+    "DELMONTH": {
+        "DB_NAME": "DELMONTH",
+        "A": 0
+    },
+    "BTANKM": {
+        "DB_NAME": "MAXBTANK",
+        "A": 3650
+    },
+    "HTANKM": {
+        "DB_NAME": "MAXHTANK",
+        "A": 5100
+    },
+    "RLTANM": {
+        "DB_NAME": "MAXLTANK",
+        "A": 10000
+    },
+    "SOUNDM": {
+        "DB_NAME": "MAXDBTANK",
+        "A": 0
+    },
+    "MAXPK": {
+        "DB_NAME": "MAXPK",
+        "A": 0
+    },
+    "MAXP0": {
+        "DB_NAME": "MAXP0",
+        "A": 0
+    },
+    "NUNITS": {
+        "DB_NAME": "NUNITS",
+        "A": 1
+    },
+    "PROCTE": {
+        "DB_NAME": "PROCTE",
+        "A": 0
+    },
+    "PT": {
+        "DB_NAME": "PT",
+        "A": 0
+    },
+    "FN": {
+        "DB_NAME": "FN",
+        "A": 0
+    },
+    "CPUFIX": {
+        "DB_NAME": "FIXPRIC",
+        "A": 0
+    },
+    "KBAND": {
+        "DB_NAME": "LIMBBAND",
+        "A": "STEEL"
+    },
+    "MVAOA": {
+        "DB_NAME": "MVAOA",
+        "A": 360
+    },
+    "MVAFA1": {
+        "DB_NAME": "MVAFA1",
+        "A": 480
+    },
+    "MVAFA2": {
+        "DB_NAME": "MVAFA2",
+        "A": 600
+    },
+    "LV1MVA": {
+        "DB_NAME": "LV1MVA",
+        "A": 360
+    },
+    "LV2MVA": {
+        "DB_NAME": "LV2MVA",
+        "A": 45
+    },
+    "RISE1": {
+        "DB_NAME": "RISE1",
+        "A": 65
+    },
+    "RISE2": {
+        "DB_NAME": "RISE2",
+        "A": 0
+    },
+    "HVKV1": {
+        "DB_NAME": "HVKV1",
+        "A": 345
+    },
+    "XVKV1": {
+        "DB_NAME": "XVKV1",
+        "A": 141.5
+    },
+    "TVKV1": {
+        "DB_NAME": "TVKV1",
+        "A": 13.8
+    },
+    "HVCON": {
+        "DB_NAME": "HVCON",
+        "A": "YN"
+    },
+    "XVCON": {
+        "DB_NAME": "XVCON",
+        "A": "YN"
+    },
+    "TVCON": {
+        "DB_NAME": "TVCON",
+        "A": "D"
+    },
+    "HVBIL": {
+        "DB_NAME": "HVBIL",
+        "A": 1175
+    },
+    "XVBIL": {
+        "DB_NAME": "XVBIL",
+        "A": 650
+    },
+    "TVBIL": {
+        "DB_NAME": "TVBIL",
+        "A": 110
+    },
+    "SOUND": {
+        "DB_NAME": "SOUND",
+        "A": 124.1
+    },
+    "DETC": {
+        "DB_NAME": "DETC",
+        "A": "N"
+    },
+    "DETCPOS": {
+        "DB_NAME": "DETCPOS",
+        "A": 0
+    },
+    "DETNEG": {
+        "DB_NAME": "DETNEG",
+        "A": 0
+    },
+    "DETCPCT": {
+        "DB_NAME": "DETCPCT",
+        "A": 0
+    },
+    "LTC": {
+        "DB_NAME": "LTC",
+        "A": "Y"
+    },
+    "LTCPOS": {
+        "DB_NAME": "LTCPOS",
+        "A": 8
+    },
+    "LTCNEG": {
+        "DB_NAME": "LTCNEG",
+        "A": 8
+    },
+    "LTCPCT": {
+        "DB_NAME": "LTCPCT",
+        "A": 1.25
+    },
+    "LTCTYPE": {
+        "DB_NAME": "LTCTYPE",
+        "A": 3
+    },
+    "REACT": {
+        "DB_NAME": "REACT",
+        "A": 6.936
+    },
+    "BSTR": {
+        "DB_NAME": "BSTR",
+        "A": "N"
+    },
+    "EVALCU": {
+        "DB_NAME": "EVALCU",
+        "A": 550
+    },
+    "EVALFE": {
+        "DB_NAME": "EVALFE",
+        "A": 1446
+    },
+    "CUKW": {
+        "DB_NAME": "CUKW",
+        "A": 0
+    },
+    "CRKW": {
+        "DB_NAME": "CRKW",
+        "A": 0
+    },
+    "SHIPYYMM": {
+        "DB_NAME": "SHIPYYMM",
+        "A": "0000"
+    },
+    "STEPLA": {
+        "DB_NAME": "STEPLA",
+        "A": "NO"
+    },
+    "BSTRLL": {
+        "DB_NAME": "BSTRLL",
+        "A": "N"
+    },
+    "LTCRCAP": {
+        "DB_NAME": "LTCRCAP",
+        "A": "N"
+    },
+    "TEMP": {
+        "DB_NAME": "TEMP",
+        "A": 85
+    },
+    "HVKV2": {
+        "DB_NAME": "HVKV2",
+        "A": 0
+    },
+    "XVKV2": {
+        "DB_NAME": "XVKV2",
+        "A": 0
+    },
+    "ZOPTION": {
+        "DB_NAME": "ZOPTION",
+        "A": 1
+    },
+    "CBLTYP": {
+        "DB_NAME": "CBLTYP",
+        "A": "TC",
+        "B": "TC",
+        "C": "TC",
+        "D": "TC",
+        "E": "SP",
+        "F": "SP"
+    },
+    "BPART": {
+        "DB_NAME": "BSTRAND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "MXCURD": {
+        "DB_NAME": "MAXCURD",
+        "A": 4,
+        "B": 4,
+        "C": 4,
+        "D": 4,
+        "E": null,
+        "F": null
+    },
+    "BWIND": {
+        "DB_NAME": "BWIND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "ACOND0": {
+        "DB_NAME": "ACOND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "XREA": {
+        "DB_NAME": "REACCLIM",
+        "termL1": {
+            "A": 0
+        },
+        "termL2": {
+            "A": 0
+        },
+        "termL3": {
+            "A": 13.5
+        }
+    },
+    "HLIMB": {
+        "DB_NAME": "HLIMB",
+        "option": {
+            "A": ""
+        },
+        "value": {
+            "A": 0
+        }
+    },
+    "DCORE": {
+        "DB_NAME": "DLIMB",
+        "option": {
+            "A": ""
+        },
+        "value": {
+            "A": 0
+        }
+    },
+    "BLIMB": {
+        "DB_NAME": "BLIMB",
+        "option": {
+            "A": ""
+        },
+        "value": {
+            "A": 0
+        }
+    },
+    "LAYOUT": {
+        "DB_NAME": "LAYOUT",
+        "A": "NO"
+    },
+    "COVSTR": {
+        "DB_NAME": "COVSTR",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "CONVAR": {
+        "DB_NAME": "CONDVARN",
+        "A": "NO",
+        "B": "NO",
+        "C": "NO",
+        "D": "NO",
+        "E": "NO",
+        "F": "NO"
+    },
+    "TCEPOX": {
+        "DB_NAME": "TCEPOXY",
+        "A": "NO",
+        "B": "NO",
+        "C": "NO",
+        "D": "NO",
+        "E": "NO",
+        "F": "NO"
+    },
+    "HPART": {
+        "DB_NAME": "HSTRAND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NCDUCT": {
+        "DB_NAME": "NCOOLD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "XOILGR": {
+        "DB_NAME": "NOILGRGC",
+        "A": 7,
+        "B": 7,
+        "C": 0,
+        "D": 7,
+        "E": 0,
+        "F": 0
+    },
+    "COMBWI": {
+        "DB_NAME": "COMBINED",
+        "A": "NO",
+        "B": "NO",
+        "C": "NO",
+        "D": "NO",
+        "E": "NO",
+        "F": "NO"
+    },
+    "OPTTNK": {
+        "DB_NAME": "REOPTTNK",
+        "A": "YES"
+    },
+    "DPHSL": {
+        "DB_NAME": "TPHSL",
+        "A": 0
+    },
+    "BTANK": {
+        "DB_NAME": "BTANK",
+        "A": 0
+    },
+    "HTANK": {
+        "DB_NAME": "HTANK",
+        "A": 0
+    },
+    "LTANK": {
+        "DB_NAME": "LTANK",
+        "A": 0
+    },
+    "SNDSCR": {
+        "DB_NAME": "SOUNDSCR",
+        "A": "NO"
+    },
+    "ALSHLD": {
+        "DB_NAME": "ALSHIELD",
+        "A": "NO"
+    },
+    "TWSUP": {
+        "DB_NAME": "HWINDSUP",
+        "A": 80
+    },
+    "UTURN": {
+        "DB_NAME": "UTURN0",
+        "A": 0
+    },
+    "QMONT": {
+        "DB_NAME": "TOTASSF",
+        "A": 0
+    },
+    "HYOKAD": {
+        "DB_NAME": "HYOKEADD",
+        "A": 0
+    },
+    "NCOOLX": {
+        "DB_NAME": "NCOOLI",
+        "A": -1
+    },
+    "TEMPLO": {
+        "DB_NAME": "TEMPLO",
+        "A": 85
+    },
+    "STACKF": {
+        "DB_NAME": "STACKF",
+        "A": 0
+    },
+    "BLDING": {
+        "DB_NAME": "BLADING",
+        "A": "2/2"
+    },
+    "SPFADU": {
+        "DB_NAME": "USRSPFAC",
+        "A": 0.95
+    },
+    "HLIMBM": {
+        "DB_NAME": "MAXHLIMB",
+        "A": 3300
+    },
+    "HLIMBN": {
+        "DB_NAME": "MINHLIMB",
+        "A": 600
+    },
+    "DLMBMA": {
+        "DB_NAME": "MAXDLIMB",
+        "A": 1500
+    },
+    "DLMBMI": {
+        "DB_NAME": "MINDLIMB",
+        "A": 0
+    },
+    "GTRPM": {
+        "DB_NAME": "MAXMTRAN",
+        "A": 500
+    },
+    "BOOSMA": {
+        "DB_NAME": "MASSACTP",
+        "A": 0
+    },
+    "BOOSVO": {
+        "DB_NAME": "VOLACTP",
+        "A": 0
+    },
+    "BOOSRE": {
+        "DB_NAME": "RESTOT",
+        "A": 0
+    },
+    "BOOSTR": {
+        "DB_NAME": "TURNRAT",
+        "A": 0
+    },
+    "T146AC": {
+        "DB_NAME": "T146ADDC",
+        "A": "NO"
+    },
+    "CVARN": {
+        "DB_NAME": "COREVARN",
+        "A": ""
+    },
+    "BLTOPM": {
+        "DB_NAME": "MAXLIMBB",
+        "A": 1.6
+    },
+    "NLOOPS": {
+        "DB_NAME": "",
+        "A": 8,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "PLIMB": {
+        "DB_NAME": "",
+        "option": {
+            "A": ""
+        },
+        "value": {
+            "A": 1883
+        }
+    },
+    "REOPTX": {
+        "DB_NAME": "",
+        "A": "YES",
+        "B": "YES",
+        "C": "YES",
+        "D": "NO",
+        "E": 0,
+        "F": 0
+    },
+    "RRWDGX": {
+        "DB_NAME": "",
+        "A": 42,
+        "B": 64,
+        "C": 13,
+        "D": 53,
+        "E": 0,
+        "F": 0
+    },
+    "ACONDX": {
+        "DB_NAME": "",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "CURDEX": {
+        "DB_NAME": "",
+        "A": 0.77,
+        "B": 2.34,
+        "C": 2.52,
+        "D": 2.82,
+        "E": 0,
+        "F": 0
+    },
+    "STRWMP": {
+        "DB_NAME": "",
+        "A": 0,
+        "B": 234,
+        "C": 221,
+        "D": 154,
+        "E": 0,
+        "F": 0
+    },
+    "STRWMM": {
+        "DB_NAME": "",
+        "A": 292,
+        "B": 110,
+        "C": 214,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "WLOSSR": {
+        "DB_NAME": "",
+        "A": 2.6,
+        "B": 53.3,
+        "C": 12.5,
+        "D": 97.1,
+        "E": 0,
+        "F": 0
+    },
+    "WLOSSE": {
+        "DB_NAME": "",
+        "A": 0.1,
+        "B": 4.5,
+        "C": 2.3,
+        "D": 5.6,
+        "E": 0,
+        "F": 0
+    },
+    "U1": {
+        "DB_NAME": "",
+        "A": 345,
+        "B": 379.5,
+        "C": 310.5
+    },
+    "U2": {
+        "DB_NAME": "",
+        "A": 141.5,
+        "B": 0,
+        "C": 0
+    },
+    "U3": {
+        "DB_NAME": "",
+        "A": 13.8,
+        "B": 0,
+        "C": 0
+    },
+    "UX12": {
+        "DB_NAME": "",
+        "A": 6.94,
+        "B": 6.57,
+        "C": 7.51,
+        "D": 0
+    },
+    "UX13": {
+        "DB_NAME": "",
+        "A": 14.93,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "UX23": {
+        "DB_NAME": "",
+        "A": 7.21,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "UR12": {
+        "DB_NAME": "",
+        "A": 455.42,
+        "B": 455.15,
+        "C": 531.02,
+        "D": 0
+    },
+    "UR13": {
+        "DB_NAME": "",
+        "A": 19.99,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "UR23": {
+        "DB_NAME": "",
+        "A": 17.41,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "P00": {
+        "DB_NAME": "",
+        "A": 212.8,
+        "B": 0,
+        "C": 0
+    },
+    "BTANKX": {
+        "DB_NAME": "",
+        "A": 3185
+    },
+    "RLTANK": {
+        "DB_NAME": "",
+        "A": 6950
+    },
+    "HTANKX": {
+        "DB_NAME": "",
+        "A": 5747
+    },
+    "GTRP": {
+        "DB_NAME": "",
+        "A": 171059
+    },
+    "CMANUF": {
+        "DB_NAME": "",
+        "A": 852090
+    },
+    "CTROVN": {
+        "DB_NAME": "",
+        "A": 717446
+    },
+    "CLOSSV": {
+        "DB_NAME": "",
+        "A": 558162
+    },
+    "NW": {
+        "DB_NAME": "NW",
+        "A": 0
+    },
+    "DEF": {
+        "DB_NAME": "DEF",
+        "A": ""
+    },
+    "NTURNS": {
+        "DB_NAME": "NTURNS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "WNDTYP": {
+        "DB_NAME": "WNDTYP",
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "",
+        "E": "",
+        "F": ""
+    },
+    "ACOPT": {
+        "DB_NAME": "ACOPT",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NCLACS": {
+        "DB_NAME": "NCLACS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BCLACK": {
+        "DB_NAME": "BCLACK",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NGROPS": {
+        "DB_NAME": "NGROPS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "TYOTOP": {
+        "DB_NAME": "TYOTOP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "TYOBOT": {
+        "DB_NAME": "TYOBOT",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BILWND": {
+        "DB_NAME": "BILWND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "CFIXED": {
+        "DB_NAME": "CFIXED",
+        "A": "NO",
+        "B": "NO",
+        "C": "NO",
+        "D": "NO",
+        "E": "NO",
+        "F": "NO"
+    },
+    "SIG02": {
+        "DB_NAME": "SIG02",
+        "A": 150,
+        "B": 150,
+        "C": 150,
+        "D": 150,
+        "E": 150,
+        "F": 150
+    },
+    "NCOOLD": {
+        "DB_NAME": "NCOOLD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BCOOLD": {
+        "DB_NAME": "BCOOLD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HCBL": {
+        "DB_NAME": "HCBL",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BCBL": {
+        "DB_NAME": "BCBL",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NTRNAX": {
+        "DB_NAME": "NTRNAX",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NTRNRD": {
+        "DB_NAME": "NTRNRD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NCBLAX": {
+        "DB_NAME": "NCBLAX",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NCBLRD": {
+        "DB_NAME": "NCBLRD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NSTRAX": {
+        "DB_NAME": "NSTRAX",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NSTRRD": {
+        "DB_NAME": "NSTRRD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HSTRND": {
+        "DB_NAME": "HSTRND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BSTRND": {
+        "DB_NAME": "BSTRND",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "STRSTA": {
+        "DB_NAME": "STRSTA",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "STRSTR": {
+        "DB_NAME": "STRSTR",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "LACK": {
+        "DB_NAME": "LACK",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "EPOXI": {
+        "DB_NAME": "EPOXI",
+        "units": "",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HCLACK": {
+        "DB_NAME": "HCLACK",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HXCLAC": {
+        "DB_NAME": "HXCLAC",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HXNCMP": {
+        "DB_NAME": "HXNCMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BXINS": {
+        "DB_NAME": "BXINS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "PRCADD": {
+        "DB_NAME": "PRCADD",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "ACOND1": {
+        "DB_NAME": "ACOND1",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "SFOPT": {
+        "DB_NAME": "SFOPT",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "SPAFAC": {
+        "DB_NAME": "SPAFAC",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BWOPT": {
+        "DB_NAME": "BWOPT",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BWDG": {
+        "DB_NAME": "BWDG",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "PRESSP": {
+        "DB_NAME": "PRESSP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "PRESP1": {
+        "DB_NAME": "PRESP1",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "PRESMM": {
+        "DB_NAME": "PRESMM",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NTRXOP": {
+        "DB_NAME": "NTRXOP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NTRNXT": {
+        "DB_NAME": "NTRNXT",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "DLIMB": {
+        "DB_NAME": "DLIMB",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HWDG": {
+        "DB_NAME": "HWDG",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "DWINDI": {
+        "DB_NAME": "DWINDI",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "FSHCRC": {
+        "DB_NAME": "FSHCRC",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "FPCMP1": {
+        "DB_NAME": "FPCMP1",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "FPCMP2": {
+        "DB_NAME": "FPCMP2",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "SIGPER": {
+        "DB_NAME": "SIGPER",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "FRTENS": {
+        "DB_NAME": "FRTENS",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "FRCOMP": {
+        "DB_NAME": "FRCOMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "ZWIND": {
+        "DB_NAME": "",
+        "A": 48,
+        "B": 287,
+        "C": 70,
+        "D": 412,
+        "E": 0,
+        "F": 0
+    },
+    "HLIMBO": {
+        "A": 3797
+    },
+    "DCOREO": {
+        "A": 883
+    },
+    "BLIMBO": {
+        "A": 1.9808
+    },
+    "USHOREO": {
+        "A": 6.94
+    },
+    "FILLFO": {
+        "A": 0.5,
+        "B": 0.5,
+        "C": 0.4,
+        "D": 0.5,
+        "E": 0,
+        "F": 0
+    },
+    "BWINDO": {
+        "A": 41.5,
+        "B": 64.2,
+        "C": 12.7,
+        "D": 53.5,
+        "E": 0,
+        "F": 0
+    },
+    "ACOND0O": {
+        "A": 1409.45,
+        "B": 370.12,
+        "C": 239.05,
+        "D": 213.8,
+        "E": 0,
+        "F": 0
+    },
+    "BDUCTO": {
+        "A": 22,
+        "B": 66,
+        "C": 66,
+        "D": 96,
+        "E": 0,
+        "F": 0
+    },
+    "EVALP0O": {
+        "A": 1446
+    },
+    "EVALPKO": {
+        "A": 550
+    },
+    "KWITYPW": {
+        "DB_NAME": "WINDTYPE TEMP",
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "",
+        "E": "",
+        "F": ""
+    },
+    "CBLTYPW": {
+        "DB_NAME": "CBLTYP TEMP",
+        "A": "SP",
+        "B": "SP",
+        "C": "SP",
+        "D": "SP",
+        "E": "SP",
+        "F": "SP"
+    },
+    "CONMATW": {
+        "DB_NAME": "CONDMAT TEMP",
+        "A": "",
+        "B": "",
+        "C": "",
+        "D": "",
+        "E": "",
+        "F": ""
+    },
+    "COVSTRW": {
+        "DB_NAME": "COVSTR TEMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "COVCBLW": {
+        "DB_NAME": "COVCBL TEMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "NCLACSW": {
+        "DB_NAME": "NCLACS TEMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "BCLACKW": {
+        "DB_NAME": "BCLACK TEMP",
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HLMBMI": {
+        "A": ""
+    },
+    "HLMBMA": {
+        "A": ""
+    },
+    "DCOMIN": {
+        "A": ""
+    },
+    "DCOMAX": {
+        "A": ""
+    },
+    "BLTOP": {
+        "A": ""
+    },
+    "optimization_count": {
+        "LMIN": 1,
+        "LM3A": 2,
+        "LM9A": 31,
+        "EPLM8": ""
+    },
+    "MASSTANK": {
+        "A": 0
+    },
+    "SOUNDPRE": {
+        "A": 0
+    },
+    "PEDTAP": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+    },
+    "PK12": {
+        "A": 0
+    },
+    "P0IND": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0
+    },
+    "VOLTAGE": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "DWIND": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "HWIND": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0,
+        "E": 0,
+        "F": 0
+    },
+    "NCOOLDC": {
+        "A": 0
+    },
+    "REACHX": {
+        "A": 0
+    }
+}

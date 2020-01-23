@@ -1,0 +1,63 @@
+INITSTART 
+ASSGN     &ZPF01    'CMS EXEC MANUAL T146 P146-1 1'
+ASSGN     &ZPF13    'CMS EXEC MANUAL T146 P146-1 1'
+ASSGN     &ZPF02    'CMS EXEC UPDATED T146 TOP'
+ASSGN     &ZPF14    'CMS EXEC UPDATED T146 TOP'
+COMPARAM  PROFILE
+PARAM     ZPF14
+PARAM     ZPF13
+PARAM     ZPF02
+PARAM     ZPF01
+CALL      CVPT      5
+ASSGN     .CURSOR   ID
+PARAM     ' '
+PARAM     &ID
+CALL      CIFEQ     2         2
+ASSGN     &ID       &DSYOBJ
+PARAM     ' '
+PARAM     &A1
+CALL      CIFEQ     2         2
+ASSGN     &A1       'H1'
+PARAM     ' '
+PARAM     &A2
+CALL      CIFEQ     2         2
+ASSGN     &A2       'X1'
+PARAM     ' '
+PARAM     &A15
+CALL      CIFEQ     2         2
+ASSGN     &A15      NO
+PARAM     ' '
+PARAM     &A25
+CALL      CIFEQ     2         2
+ASSGN     &A25      NO
+PARAM     ' '
+PARAM     &A35
+CALL      CIFEQ     2         2
+ASSGN     &A35      NO
+PARAM     ' '
+PARAM     &A45
+CALL      CIFEQ     2         2
+ASSGN     &A45      NO
+PARAM     ' '
+PARAM     &B12
+CALL      CIFEQ     2         2
+ASSGN     &B12      3
+PARAM     ' '
+PARAM     &B13
+CALL      CIFEQ     2         2
+ASSGN     &B13      CFR
+PARAM     ' '
+PARAM     &B34
+CALL      CIFEQ     2         2
+ASSGN     &B34      YES
+PARAM     ' '
+PARAM     &B35
+CALL      CIFEQ     2         2
+ASSGN     &B35      NO
+PARAM     'NO'
+PARAM     &A15
+CALL      CIFEQ     2         4
+PARAM     'NO'
+PARAM     &A25
+CALL      CIFEQ     2         1
+INITEND   

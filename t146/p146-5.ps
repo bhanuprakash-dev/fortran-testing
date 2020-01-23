@@ -1,0 +1,54 @@
+)ATTR DEFAULT(]Ð_)
+       _ TYPE (INPUT) INTENS(HIGH)
+       ^ TYPE (INPUT) INTENS(LOW)
+       ] TYPE (TEXT)  INTENS(HIGH)
+       Ð TYPE (TEXT)  INTENS(LOW)
+       Ý TYPE (TEXT)  INTENS(HIGH) COLOR (YELLOW)
+)BODY
+Ð*]T146 InputÐP146-5Ð*  OBJECT:]&DSYOBJ              Ð Next Panel_SCROLLÐ
+Ð=ÐVersionÐ&VERÐ:Ð&DVERS     Ð====================Ð&DAIT                       Ð
+]-----------------------------------------------------------------------
+]B O O S T E R     Ð
+Ð
+ÐMass.....................(kg) Ð _BOOSMA    Ð
+ÐVolume...................(m3) Ð _BOOSVO    Ð
+ÐEquivalent resistance...(ohm) Ð _BOOSRE    Ð
+ÐTurns ratio............( >1 ) Ð _BOOSTR    Ð
+]-----------------------------------------------------------------------
+Ð
+ÐTurns ratio (for the booster) = N =
+Ð  (Current in reg.wind. without booster) / (Current in reg.wind with booster)
+Ð
+ÐEquivalent resistance =
+Ð  Booster as full transformer:
+Ð                 R1 + R2/(N*N)
+Ð       R1 = resistance in booster, down side
+Ð       R2 = resistance in booster, up side
+Ð
+Ð  Booster autoconnected :
+Ð                 R*(N-1)/(N*N)
+Ð       R  = resistance in the whole winding (series + common)
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 P146-5 1'
+&ZPF13 = 'CMS EXEC MANUAL T146 P146-5 1'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = BOOSMA
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+IF (&SCROLL ^= X)
+  IF (&BOOSMA = ?) .MSG = OPTRM155
+  IF (&BOOSVO = ?) .MSG = OPTRM156
+  IF (&BOOSRE = ?) .MSG = OPTRM157
+  IF (&BOOSTR = ?) .MSG = OPTRM158
+
+  VER (&BOOSMA,NONBLANK,MSG= OPTRM155 )
+  VER (&BOOSVO,NONBLANK,MSG= OPTRM156 )
+  VER (&BOOSRE,NONBLANK,MSG= OPTRM157 )
+  VER (&BOOSTR,NONBLANK,MSG= OPTRM158 )
+)END

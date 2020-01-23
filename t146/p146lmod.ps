@@ -1,0 +1,50 @@
+)ATTR DEFAULT (]–_)
+       % TYPE(OUTPUT) INTENS(HIGH)
+       › TYPE(OUTPUT) INTENS(LOW)
+       _ TYPE(INPUT)  INTENS(HIGH)
+       ^ TYPE(INPUT)  INTENS(LOW)
+       ] TYPE(TEXT)   INTENS(HIGH)
+       – TYPE(TEXT)   INTENS(LOW)
+)BODY
+–*]T146 Input–P146LMOD–*  OBJECT:]&DSYOBJ               –
+–=–Version–&VER–:–&DVERS     –====================–&DAIT                       –
+]
+] O p t i m i z a t i o n  P a r a m e t e r  S e l e c t i o n (LMIN)
+]Identification:%ID                                      –
+–Printout       Box Size       Difference        Function         Variable
+–Int.]ITR–        ]AF–         Step ]DRV–       Conv ]FEPS–      Conv ]EPS–
+–  _ITR  –  _AF            – _DRV           – _FEPS          – _EPS           –
+] PARAM(I)–    ( Max FUNK Calls]NFMX–^NFMX –)
+] 1 ›P11           ] 7 ›P17           ]13 ›P23           ]19 ›P29           –
+] 2 ›P12           ] 8 ›P18           ]14 ›P24           ]20 ›P30           –
+] 3 ›P13           ] 9 ›P19           ]15 ›P25           ]21 ›P31           –
+] 4 ›P14           ]10 ›P20           ]16 ›P26           ]22 ›P32           –
+] 5 ›P15           ]11 ›P21           ]17 ›P27           ]23 ›P33           –
+] 6 ›P16           ]12 ›P22           ]18 ›P28           ]24 ›P34           –
+] X(I)–                                                  ]25 ›P35           –
+]Dcore›I11           ]Acond1›I14           ]Acond4›I17           –
+]Hlimb›I12           ]Acond2›I15           ]Acond5›I18           –
+]Blimb›I13           ]Acond3›I16           ]Acond6›I19           –
+] XREL(I)–(Scaling of the free variables, fixed if 0.):
+]Dcore›H11           ]Acond1›H14           ]Acond4›H17           –
+]Hlimb›H12           ]Acond2›H15           ]Acond5›H18           –
+]Blimb›H13           ]Acond3›H16           ]Acond6›H19           –
+] GREL(I)–(Scaling of constraints, ignored if 0., equality if < 0.):
+]BTan›G17           ]LTan›G18           ]Gtr›G19            ]Snd›G20           –
+]UXC ›G21           ]Bli ›G22           –
+]NLLo›G11           ]Cur1›G23           ]Pr1›G24            ]St1›G25           –
+]Llos›G12           ]Cur2›G26           ]Pr2›G27            ]St2›G28           –
+]MMDc›G13           ]Cur3›G29           ]Pr3›G30            ]St3›G31           –
+]CoSt›G14           ]Cur4›G32           ]Pr4›G33            ]st4›G34           –
+]HTnk›G15           ]Cur5›G35           ]Pr5›G36            ]St5›G37           –
+]HLim›G16           ]Cur6›G38           ]Pr6›G39            ]St6›G40           –
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF13 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = ITR
+)PROC
+)END

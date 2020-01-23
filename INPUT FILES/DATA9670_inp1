@@ -1,0 +1,27 @@
+4                           RWILI
+'Reliance 10000'	        IDENT
+'H1','X1','Y1',''         (TNODE(i),i=1,4)
+24.00,24.00,8.40,0.00       (SRATE(i),i=1,4)
+0.00				CALCT
+138.00,13.80,7.56,0.00       (UNLINE(i),i=1,4)
+'Y','Y','D','  '         (KCON(i),i=1,4)
+'L','PM','NO','NO'         (KTYPRW(i),i=1,4)
+2.00,16.00,0.00,0.00       (NPSTEP(i),i=1,4)
+2.00,16.00,0.00,0.00       (NMSTEP(i),i=1,4)
+2.50,0.625,0.00,0.00       (PUSTEP(i),i=1,4)
+550.00,110.00,110.00,0.00       (USURG(i),i=1,4)
+24.00,0.00,0.0,0.00       (SLINE(i),i=1,4)
+0.00,0.00,0.00,0.00       (CGRAD(i),i=1,4)
+60                           FREQ
+3                           NPHAS
+'CFR'	                    TYPREG
+1430                          EVALP0
+530                           EVALPK
+'MCUS'	                    MNLCOD
+0.00                           CPUIND
+0.00                           CPUFIX
+'ONAF'	                    KCOOL
+1.67                           FONAN
+'YES'	                    OPERAT
+'YES'	                    DETPRE
+0.00,0.00,0.00       (XREA(i),i=1,3)

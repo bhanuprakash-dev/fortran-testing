@@ -1,0 +1,79 @@
+*************************  START OF COMINP   **************************
+       REAL            USHORE,HLIMB,DCORE,BLIMB,MAXP0,MAXPK,SOUNDM,
+     &                 RLTANM,BTANKM,HTANKM,GTRPM,HLIMBM,DLMBMA,DLMBMI,
+     &                 NPHAS,FREQ,EVALP0,EVALPK,DPHAS,DPHSL,DWITA,
+     &                 DCOCOV,EXTANK,TWSUP,UMAXPU,QMONT,FONAN,TOPDTO,
+     &                 TTOILM,TWINDM,BLTOPM,HYOKAD,UTURN,HLIMBN,
+     &                 LTANK,BTANK,HTANK,
+     &                 CURD0(9),MXCURD(9),ACOND0(9),PRESSM(9),TENSM(9)
+       COMMON /CDAIN/  USHORE,HLIMB,DCORE,BLIMB,MAXP0,MAXPK,SOUNDM,
+     &                 RLTANM,BTANKM,HTANKM,GTRPM,HLIMBM,DLMBMA,DLMBMI,
+     &                 NPHAS,FREQ,EVALP0,EVALPK,DPHAS,DPHSL,DWITA,
+     &                 DCOCOV,EXTANK,TWSUP,UMAXPU,QMONT,FONAN,TOPDTO,
+     &                 TTOILM,TWINDM,BLTOPM,HYOKAD,UTURN,HLIMBN,
+     &                 LTANK,BTANK,HTANK,
+     &                 CURD0,MXCURD,ACOND0,PRESSM,TENSM
+*
+       CHARACTER       OPTTNK*4,CORESE*4,CKTANK*4,CORTYP*4,COREMA*4,
+     &                 BLDING*4,CVARN*4,KBAND*5,KCOOL*4,COEQIP*4,
+     &                 TYPREG*4,ETCPL*4,CONSP*4,SNDSCR*4,
+     &                 ALSHLD*4,T146AC(2)*4,REOPT(4)*3,WNDOPT(9)*4,
+     &                 OLTC*5,LAYOUT*3,STEPLA*4
+       COMMON /CDAINC/ OPTTNK,CORESE,CKTANK,CORTYP,COREMA,
+     &                 BLDING,CVARN,KBAND,KCOOL,COEQIP,
+     &                 TYPREG,ETCPL,CONSP,SNDSCR,
+     &                 ALSHLD,T146AC,REOPT,WNDOPT,
+     &                 OLTC,LAYOUT,STEPLA
+*
+       REAL            SRATE(4),UNLINE(4),NPSTEP(4),NMSTEP(4),
+     &                 PUSTEP(4),USURG(4),SLINE(4),XREA(4),
+     &                 DUYOKE(9),DLYOKE(9),BDUCT(9),NGROUP(9),FILLF(9),
+     &                 FRACT(9),BWIND(9),NCDUCT(9),XOILGR(9),
+     &                 XTRNAX(9),XTRNRD(9),XCBLAX(9),
+     &                 XCBLRD(9),XSTRAX(9),XSTRRD(9),HPART(9),BPART(9),
+     &                 COVSTR(9),COVCBL(9),CGRAD(4)
+       COMMON /CDBIN/  SRATE,UNLINE,NPSTEP,NMSTEP,
+     &                 PUSTEP,USURG,SLINE,XREA,
+     &                 DUYOKE,DLYOKE,BDUCT,NGROUP,FILLF,
+     &                 FRACT,BWIND,NCDUCT,XOILGR,
+     &                 XTRNAX,XTRNRD,XCBLAX,
+     &                 XCBLRD,XSTRAX,XSTRRD,HPART,BPART,
+     &                 COVSTR,COVCBL,CGRAD
+*
+       CHARACTER       TNODE(4)*4,KCON(4)*4,KTYPRW(4)*4,WNOD1(9)*4,
+     &                 WNOD2(9)*4,KWITYP(9)*4,KWIFUN(9)*4,COMBWI(9)*4,
+     &                 CONMAT(9)*4,CBLTYP(9)*4,CONVAR(9)*4,TCEPOX(9)*4
+       COMMON /CDBINC/ TNODE,KCON,KTYPRW,WNOD1,
+     &                 WNOD2,KWITYP,KWIFUN,COMBWI,
+     &                 CONMAT,CBLTYP,CONVAR,TCEPOX
+*
+       REAL            ZTRANS,YDELIV,MDELIV,TREVAL,CIMPT,
+     &                 CPUPT,CPUFN,CPUIND,CPUFIX,EXTRAR(9)
+       COMMON /CDCIN/  ZTRANS,YDELIV,MDELIV,TREVAL,CIMPT,
+     &                 CPUPT,CPUFN,CPUIND,CPUFIX,EXTRAR
+*
+       CHARACTER       MNLCOD*8,OPERAT*4,DETPRE*4,IDENT*40,PKLCOD*4,
+     &                 OPTLYR(9)*3,OPTTRN(9)*3,OPTCLD(9)*3,CAL009*4
+       COMMON /CDCINC/ MNLCOD,OPERAT,DETPRE,IDENT,PKLCOD,
+     &                 OPTLYR,OPTTRN,OPTCLD,CAL009
+*
+       REAL            RWILI,CALCT,OFFIN(9),OFFOUT(9),DSPOOL(9),
+     &                 NLAYER(9),NTURNS(9),HCLAC(9)
+       COMMON /CCDNEW/ RWILI,CALCT,OFFIN,OFFOUT,DSPOOL,
+     &                 NLAYER,NTURNS,HCLAC
+*
+       REAL            BOOSMA, BOOSVO, BOOSRE, BOOSTR, TEMPLO, STACKF
+       LOGICAL         BBBOOS
+       COMMON/BOOS/    BOOSMA, BOOSVO, BOOSRE, BOOSTR, BBBOOS
+       COMMON/RTE/     TEMPLO, STACKF
+
+       COMMON /TA1COC/ FLPLMA
+       CHARACTER       FLPLMA*8
+       COMMON /TA1COR/ LAMTH, LAMSPF, LAMMW, LAMOVL, ACCLON, ACCTRA,
+     &                 ACCVER, AMBTEM, LAMSTP, LOSCOR, TA1HOL
+       REAL            LAMTH, LAMSPF, LAMMW, LAMOVL, ACCLON, ACCTRA,
+     &                 ACCVER, AMBTEM, LAMSTP, LOSCOR, TA1HOL
+       COMMON /TA1COI/ NCOOLI
+       INTEGER         NCOOLI
+*************************  END   OF COMINP   **************************
+

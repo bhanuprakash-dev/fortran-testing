@@ -1,0 +1,61 @@
+C*..* CFIN
+CCFIN-S         LTB146/S/ CFIN-S
+C
+C     *******************    NYTT    *************************
+C     ALL PARAMETERS PREVIOUSLY STARTING WITH THE PREFIX 'GSN'
+C     HAVE BEEN CHANGED TO 'GS' TO ACCOMODATE THE FORTRAN 77
+C     NAMING REQUIREMENT OF NOT MORE THAN 6 CHARACTERS.
+C     ********************************************************
+C
+      SUBROUTINE CFIN (BBPRNT,JFC,GS24,GS111,GS112,GS141,GS142,
+     *                 GS1210,GG111,GG1210,GG151,GG152)
+C
+C     KOSTNAD LJUDSK#RMAR
+C
+       LOGICAL BBPRNT
+      CHARACTER SP1*7,SP*10
+       DATA SP1/'       '/,SP/'          '/
+
+***************
+       IF(.NOT.BBPRNT) GO TO 101
+       WRITE(JFC,*) '===== INPUT DATA TO CFIN                     ====='
+       WRITE(JFC,*) SP1,'GS24 ',SP,'GS111',SP,'GS112',SP,'GS141'
+       WRITE(JFC,*) GS24,GS111,GS112,GS141
+       WRITE(JFC,*) SP1,'GS142',SP,'GS1210',SP,'GG111',SP,'GG1210'
+       WRITE(JFC,*) GS142,GS1210,GG111,GG1210
+       WRITE(JFC,*) SP1,'GG151 ',SP,'GG152 '
+       WRITE(JFC,*) GG151,GG152
+ 101   CONTINUE
+***************
+C
+      IF(INT(GS111).EQ.0) GOTO 10
+      CALL COST (3,130,227,GS111,1.,1.,GG111,1.,GS111+GG111,1.,1.,1.)
+      CALL COST (3,131,228,GS112,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (3,132,229,0.,1.,1.,0.,1.,GS111+GG111+GS112,1.,1.,1.)
+      CALL COST (2,0,230,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+   10 CONTINUE
+C
+C      KOSTNAD SLUTMONTERING
+C
+      CALL COST(3,133,231,GS1210,1.,1.,GG1210,1.,GS1210+GG1210,
+     *          1.,1.,1.)
+      CALL COST (3,134,232,0.,1.,1.,0.,1.,GS24,1.,1.,1.)
+      CALL COST (2,0,233,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C     KOSTNAD DEMONTERING
+C
+      CALL COST (3,135,234,0.999,1.,GS24,0.999,GS24,GS24,1.,1.,1.)
+      CALL COST (2,0,234,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C     KOSTNAD OLJA
+C
+      CALL COST (3,136,236,GS141,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (3,137,237,GS142,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (2,0,238,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C     KOSTNAD SEPARATA KYLARE
+C
+      CALL COST(3,145,239,0.,1.,1.,GG151,GG151,1.,1.,1.,1.)
+      CALL COST(3,146,240,0.,1.,1.,GG152,GG152,1.,1.,1.,1.)
+      RETURN
+      END

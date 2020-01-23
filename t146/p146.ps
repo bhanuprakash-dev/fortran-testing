@@ -1,0 +1,273 @@
+)ATTR DEFAULT(]!_)
+      ^ TYPE(OUTPUT) INTENS(HIGH) COLOR (BLUE)
+      " TYPE(OUTPUT) INTENS(HIGH) COLOR (WHITE)
+      Ý TYPE(TEXT)   INTENS(HIGH) COLOR (YELLOW)
+)BODY
+!*]T146 Result!P146  !* OBJECT:]&DSYOBJ              !
+!=!Version!&VER!:!&DVERS     !====================!&DAIT                       !
+]&MESS146                                                                     !
+!Option:_Q! Ý1!Input Ý2!Run  Ý3!Output Ý4!Store ÝX!Exit
+!"CRD       !"NRD    !"HGT    !"RDH       !"CAF       !"CKM       !"CUBE   !
+!Identification:^ID
+!Limb pitch. . . . . . .:  -     ^X55  ! L i m i t s  Detailed costs:_B35!
+!Limb height . . . . . .:_D91!   _X21  !^X35 !-^X31  !
+!Core diameter . . . . .:_D92!   _X22  !^X34 !-^X32 ! Loss evaluation:P0_B14   !
+!Limb flux density . . .:_D93!   _X23   !    !-^X33   !(+ = Price/kW,:PK_B15   !
+!Reactance (Terml 1-2 %):_D94!   _X24   !               - = Fixed kW)
+!  Opt  Spacef   Wind.wdt Duct.wdt Cu arear   J    trnsf Str +  -   RII   Eddy
+ÝA_D11Ð _Y12   ! _Y13  ! _Y14  ! _Y15      ÝA^Y16 ^Y17   ^Y18 ^Y19 ^Y110 ^Y111!
+ÝB_D21Ð _Y22   ! _Y23  ! _Y24  ! _Y25      ÝB^Y26 ^Y27   ^Y28 ^Y29 ^Y210 ^Y211!
+ÝC_D31Ð _Y32   ! _Y33  ! _Y34  ! _Y35      ÝC^Y36 ^Y37   ^Y38 ^Y39 ^Y310 ^Y311!
+ÝD_D41Ð _Y42   ! _Y43  ! _Y44  ! _Y45      ÝD^Y46 ^Y47   ^Y48 ^Y49 ^Y410 ^Y411!
+ÝE_D51Ð _Y52   ! _Y53  ! _Y54  ! _Y55      ÝE^Y56 ^Y57   ^Y58 ^Y59 ^Y510 ^Y511!
+ÝF_D61Ð _Y62   ! _Y63  ! _Y64  ! _Y65      ÝF^Y66 ^Y67   ^Y68 ^Y69 ^Y610 ^Y611!
+! U1     U2     U3    X1-2   X1-3   X2-3  PK1-2  PK1-3  PK2-3    P0sses   level
+!^Z11   ^Z21   ^Z31   ^Z14   ^Z15   ^Z16   ^Z17   ^Z18   ^Z19   ^Z111 !  ^X56  !
+!^Z12   ^Z22   ^Z32   ^Z24   !             ^Z27   !             ^Z211 !  ^X57  !
+!^Z13   ^Z23   ^Z33   ^Z34   !             ^Z37   !             ^Z311 !  ^X58  !
+! Tnk w  l      h       Trnspmss Man cost      OVN.cost  Losseval   Comp price
+!^W11   ^W12   ^W13   !^W14    !^W20         !^W16      ^W17       ^W18        !
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF13 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = Q
+IF (&Q = '2')
+  IF (&ERR = '0') 
+    &MESS146 = 'WARNING: OPTIMISATION NOT COMPLETE'
+  IF (&ERR = '1') 
+    &MESS146 = 'Successful run , Core resonance checked : OK ( ZK-TA 4567-101E )'
+  IF (&ERR = '2') 
+    &MESS146 = 'Core resonance likely   ( checked according to ZK-TA 4567-101E )'
+  IF (&ERR = '3') 
+    &MESS146 = 'Successful run , Core resonance NOT checked  ( ZK-TA 4567-101E )'
+IF (&Q = '3') 
+  &MESS146 = 'Output requests completed'
+IF (&Q = '4') 
+  &MESS146 = 'The data have been stored'
+&Q = ' '
+IF (&B35 = ' ') &B35 = NO
+
+IF (&B14 = ' ') &B14 = 0
+
+IF (&B15 = ' ') &B15 = 0
+
+IF (&B48 = 'NO')
+   &CRD = ' '
+   &NRD = ' '
+   &HGT = ' '
+   &RDH = ' '
+   &CAF = ' '
+   &CKM = ' '
+   &CUBE = ' '
+IF (&B48T1 = 'Y')
+   &CRD = 'Radiators:'
+   &HGT = 'Height:'
+   IF (&RDH ^= 'Warning')
+      IF (&CKM ^= ' ')
+         &CAF = 'Air flow:'
+         &CUBE = 'm3/s'
+IF (&B48T2 = 'Y')
+   &CRD = 'Radiators:'
+   &HGT = 'Height:'
+   IF (&RDH ^= 'Warning')
+      IF (&CKM ^= ' ')
+         &CAF = 'Air flow:'
+         &CUBE = 'm3/s'
+
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+
+  VER (&Q,NONBLANK,LIST,1,2,3,4,X,MSG=OPTRM111)
+
+  IF (&Q = '2')
+
+       IF (&D91 = ?) .MSG = OPTRM050
+       IF (&D92 = ?) .MSG = OPTRM051
+       IF (&D93 = ?) .MSG = OPTRM052
+       IF (&D94 = ?) .MSG = OPTRM053
+
+       IF (&X21 = ?) .MSG = OPTRM120
+       IF (&X22 = ?) .MSG = OPTRM121
+       IF (&X23 = ?) .MSG = OPTRM122
+       IF (&X24 = ?) .MSG = OPTRM123
+
+       IF (&B35 = ?) .MSG = OPTRM030
+       IF (&B14 = ?) .MSG = OPTRM014
+       IF (&B15 = ?) .MSG = OPTRM015
+
+       IF (&D11 = ?) .MSG = OPTRM058
+       IF (&D21 = ?) .MSG = OPTRM058
+       IF (&D31 = ?) .MSG = OPTRM058
+       IF (&D41 = ?) .MSG = OPTRM058
+       IF (&D51 = ?) .MSG = OPTRM058
+       IF (&D61 = ?) .MSG = OPTRM058
+
+       IF (&Y12 = ?) .MSG = OPTRM059
+       IF (&Y22 = ?) .MSG = OPTRM059
+       IF (&Y32 = ?) .MSG = OPTRM059
+       IF (&Y42 = ?) .MSG = OPTRM059
+       IF (&Y52 = ?) .MSG = OPTRM059
+       IF (&Y62 = ?) .MSG = OPTRM059
+
+       IF (&Y13 = ?) .MSG = OPTRM060
+       IF (&Y23 = ?) .MSG = OPTRM060
+       IF (&Y33 = ?) .MSG = OPTRM060
+       IF (&Y43 = ?) .MSG = OPTRM060
+       IF (&Y53 = ?) .MSG = OPTRM060
+       IF (&Y63 = ?) .MSG = OPTRM060
+
+       IF (&Y14 = ?) .MSG = OPTRM045
+       IF (&Y24 = ?) .MSG = OPTRM045
+       IF (&Y34 = ?) .MSG = OPTRM045
+       IF (&Y44 = ?) .MSG = OPTRM045
+       IF (&Y54 = ?) .MSG = OPTRM045
+       IF (&Y64 = ?) .MSG = OPTRM045
+
+       IF (&Y15 = ?) .MSG = OPTRM061
+       IF (&Y25 = ?) .MSG = OPTRM061
+       IF (&Y35 = ?) .MSG = OPTRM061
+       IF (&Y45 = ?) .MSG = OPTRM061
+       IF (&Y55 = ?) .MSG = OPTRM061
+       IF (&Y65 = ?) .MSG = OPTRM061
+
+       &D91 = TRUNC (&D91,1)
+       &D91 = TRANS (&D91 ?,? Y,YES N,NO MSG=OPTRM050)
+       &D92 = TRUNC (&D92,1)
+       &D92 = TRANS (&D92 ?,? Y,YES N,NO MSG=OPTRM051)
+       &D93 = TRUNC (&D93,1)
+       &D93 = TRANS (&D93 ?,? Y,YES N,NO MSG=OPTRM052)
+       &D94 = TRUNC (&D94,1)
+       &D94 = TRANS (&D94 ?,? Y,YES N,NO MSG=OPTRM053)
+
+       IF (&D91 = NO) VER (&X21,NONBLANK,MSG=OPTRM120)
+
+       IF (&D92 = NO) VER (&X22,NONBLANK,MSG=OPTRM121)
+
+       IF (&D93 = NO) VER (&X23,NONBLANK,MSG=OPTRM122)
+
+       IF (&D91 = NO)
+          IF (&D92 = NO)
+             IF (&D93 = NO)
+                 &D94 = YES
+       IF (&D94 = NO) VER (&X24,NONBLANK,MSG=OPTRM123)
+
+       IF (&B14 = ' ')  &B14 = 0
+       VER (&B14,NONBLANK,MSG=OPTRM014)
+
+       IF (&B15 = ' ')  &B15 = 0
+       VER (&B15,NONBLANK,MSG=OPTRM015)
+
+       IF (&B35 = ' ')  &B35 = NO
+       &B35 = TRUNC(&B35,1)
+       &B35 = TRANS (&B35 ?,? Y,YES N,NO MSG=OPTRM030)
+
+       IF (&WILI = 1,2,3,4,5,6)
+            VER (&Y14,NONBLANK,MSG=OPTRM045)
+                &D11 = TRUNC (&D11,1)
+                &D11 = TRANS (&D11 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D11 = 'YES')
+                VER (&Y12,NONBLANK,MSG=OPTRM059)
+                     &Y13 = &BLANK
+            IF (&D11 = 'NO')
+                IF (&Y12 = &BLANK)
+                    VER (&Y13,NONBLANK,MSG=OPTRM060)
+                IF (&Y13 = &BLANK)
+                    VER (&Y12,NONBLANK,MSG=OPTRM059)
+                IF (&Y13 ^= &BLANK)
+                    &Y12 = &BLANK
+                IF (&Y12 ^= &BLANK)
+                    &Y13 = &BLANK
+
+       IF (&WILI =   2,3,4,5,6)
+            VER (&Y24,NONBLANK,MSG=OPTRM045)
+                &D21 = TRUNC (&D21,1)
+                &D21 = TRANS (&D21 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D21 = 'YES')
+                VER (&Y22,NONBLANK,MSG=OPTRM059)
+                     &Y23 = &BLANK
+            IF (&D21 = 'NO')
+                IF (&Y22 = &BLANK)
+                    VER (&Y23,NONBLANK,MSG=OPTRM060)
+                IF (&Y23 = &BLANK)
+                    VER (&Y22,NONBLANK,MSG=OPTRM059)
+                IF (&Y23 ^= &BLANK)
+                    &Y22 = &BLANK
+                IF (&Y22 ^= &BLANK)
+                    &Y23 = &BLANK
+
+       IF (&WILI =     3,4,5,6)
+            VER (&Y34,NONBLANK,MSG=OPTRM045)
+                &D31 = TRUNC (&D31,1)
+                &D31 = TRANS (&D31 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D31 = 'YES')
+                VER (&Y32,NONBLANK,MSG=OPTRM059)
+                     &Y33 = &BLANK
+            IF (&D31 = 'NO')
+                IF (&Y32 = &BLANK)
+                    VER (&Y33,NONBLANK,MSG=OPTRM060)
+                IF (&Y33 = &BLANK)
+                    VER (&Y32,NONBLANK,MSG=OPTRM059)
+                IF (&Y33 ^= &BLANK)
+                    &Y32 = &BLANK
+                IF (&Y32 ^= &BLANK)
+                    &Y33 = &BLANK
+
+       IF (&WILI =       4,5,6)
+            VER (&Y44,NONBLANK,MSG=OPTRM045)
+                &D41 = TRUNC (&D41,1)
+                &D41 = TRANS (&D41 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D41 = 'YES')
+                VER (&Y42,NONBLANK,MSG=OPTRM059)
+                     &Y43 = &BLANK
+            IF (&D41 = 'NO')
+                IF (&Y42 = &BLANK)
+                    VER (&Y43,NONBLANK,MSG=OPTRM060)
+                IF (&Y43 = &BLANK)
+                    VER (&Y42,NONBLANK,MSG=OPTRM059)
+                IF (&Y43 ^= &BLANK)
+                    &Y42 = &BLANK
+                IF (&Y42 ^= &BLANK)
+                    &Y43 = &BLANK
+
+       IF (&WILI =         5,6)
+            VER (&Y54,NONBLANK,MSG=OPTRM045)
+                &D51 = TRUNC (&D51,1)
+                &D51 = TRANS (&D51 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D51 = 'YES')
+                VER (&Y52,NONBLANK,MSG=OPTRM059)
+                     &Y53 = &BLANK
+            IF (&D51 = 'NO')
+                IF (&Y52 = &BLANK)
+                    VER (&Y53,NONBLANK,MSG=OPTRM060)
+                IF (&Y53 = &BLANK)
+                    VER (&Y52,NONBLANK,MSG=OPTRM059)
+                IF (&Y53 ^= &BLANK)
+                    &Y52 = &BLANK
+                IF (&Y52 ^= &BLANK)
+                    &Y53 = &BLANK
+
+       IF (&WILI =           6)
+            VER (&Y64,NONBLANK,MSG=OPTRM045)
+                &D61 = TRUNC (&D61,1)
+                &D61 = TRANS (&D61 ?,? Y,YES N,NO MSG=OPTRM058)
+            IF (&D61 = 'YES')
+                VER (&Y62,NONBLANK,MSG=OPTRM059)
+                     &Y63 = &BLANK
+            IF (&D61 = 'NO')
+                IF (&Y62 = &BLANK)
+                    VER (&Y63,NONBLANK,MSG=OPTRM060)
+                IF (&Y63 = &BLANK)
+                    VER (&Y62,NONBLANK,MSG=OPTRM059)
+                IF (&Y63 ^= &BLANK)
+                    &Y62 = &BLANK
+                IF (&Y62 ^= &BLANK)
+                    &Y63 = &BLANK
+
+)END

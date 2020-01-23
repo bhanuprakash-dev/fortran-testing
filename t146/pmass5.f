@@ -1,0 +1,24 @@
+C*..* PMASS5
+CPMASS5  *******PMASS5 - PRINTOUT OF INPUT DATA FOR MAAA05
+       SUBROUTINE PMASS5(BBPRNT,JFC,BB51,GTANK,VTANK,ACOV,ATAWA,BB07,
+     *                   GCOVER,KCOOL1,PLOSS,AFIELD,GRAD,OTANK,KTAN79)
+*
+       LOGICAL BB51,BB07,BBPRNT
+*
+       CHARACTER SP1*7,SP*10
+       DATA SP1/'       '/,SP/'          '/
+*
+
+*------------------------------------------------------------------
+       WRITE(JFC,*) '===== INPUT DATA TO MASS05 ====='
+       WRITE(JFC,*) SP1,'BB51  ',SP,'GTANK ',SP,'VTANK ',SP,'ACOV  '
+       WRITE(JFC,*) BB51,GTANK,VTANK,ACOV
+       WRITE(JFC,*) SP1,'ATAWA ',SP,'BB07  ',SP,'GCOVER',SP,'KCOOL1'
+       WRITE(JFC,*) ATAWA,BB07,GCOVER,KCOOL1
+       WRITE(JFC,*) SP1,'PLOSS ',SP,'AFIELD',SP,'GRAD  ',SP,'OTANK '
+       WRITE(JFC,*) PLOSS,AFIELD,GRAD,OTANK
+       WRITE(JFC,*) SP1,'KTAN79'
+       WRITE(JFC,*) KTAN79
+C
+       RETURN
+       END

@@ -1,0 +1,201 @@
+)ATTR DEFAULT(]!_)
+       ^ TYPE (INPUT) INTENS(LOW)
+       Ý TYPE (TEXT)  INTENS(HIGH) COLOR (YELLOW)
+)BODY
+!*]T146 Input!P146-4!*  OBJECT:]&DSYOBJ              ! Next Panel_SCROLL!
+!=!Version!&VER!:!&DVERS     !====================!&DAIT                       !
+!
+]T A N K !Type_F11 !                        Insul.distance  Double-shell
+!Dim.free](No=>Width     Height    Length)! Ph-ph    Ph-sl    Winding
+!    _F12!     _F13    ! _F14    ! _F15    ! _F21   ! ^F22   ! _F35!
+!Distance   Distance      Tank        Sound       Field
+!Wdg-tank   Core-cover   extension    screen?     screen?
+!_F23    !   _F24    !   _F25    !    Y/N_F31!    Y/N_F34!
+!. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+]C O R E !    Wind.sup Tot. assy Laminat. Limb   Step-  Core    Top.oil
+!Series  Type  height  force(MN) quality banding Lap   blading  temprise
+!_F41 ! _F42 ! ^F43   ! ^F44   ! _F45 !  _F46  ! _F47 ! _F54 !   _F56  !
+!Overvolt   Uturn0    Hyokeadd   Cool.ducts   Loss      Stack.   Space
+!(%)_F51  ! ^F52    !  _F53   !  (if fixed)   Temp.(C)  Factor   Factor
+!                                ^NCOOLI  !   ^TEMPLO  !^STACKF !^SPFADJ 
+]L I M I T S !
+!Max.Mean.Wdg.Temp.rise :^F61 !  degC! Max.Transport mass :^F74   !tons!
+!Max.Top.Oil  Temp.rise :^F62 !  degC! Max.Sound Power l. :^F75  ! dB  !
+!Max.Flux density . . . :^F63   !T   ! Max.Tank length. . :^F71   !mm  !
+!Max.Limb height. . . . :^F64  ! mm  ! Max.Tank width . . :^F72  ! mm  !
+!Min.Limb height. . . . :^F78  ! mm  ! Max.Tank height. . :^F73   !mm  !
+!Max.Core diameter. . . :^F76  ! mm  ! Max.No-load losses :^F65   !kW  !
+!Min.Core diameter. . . :^F77  ! mm  ! Max.   Load losses :^F66   !kW  !
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 P146-4 1'
+&ZPF13 = 'CMS EXEC MANUAL T146 P146-4 1'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = F11
+       IF (&F12 = ' ')  &F12 = 'YES'
+       IF (&F31 = ' ')  &F31 = 'NO'
+       IF (&F34 = ' ')  &F34 = 'NO'
+       IF (&F35 = ' ')  &F35 = 'NO'
+       IF (&F64 = ' ')  &F64 = 5000
+       IF (&F75 = ' ')  &F75 = 100
+       IF (&F41 = ' ')  &F41 = 'TBA'
+       IF (&F43 = ' ')  &F43 = 0
+       IF (&F44 = ' ')  &F44 = 0
+       IF (&F45 = ' ')  &F45 = 'ZDKH'
+       IF (&F46 = ' ')
+          IF (&F41 = 'TAA ') &F46 = 'GLUED'
+          IF (&F41 = 'TAC ') &F46 = 'GLUED'
+          IF (&F41 = 'TAD ') &F46 = 'GLUED'
+          IF (&F41 = 'TBA ') &F46 = 'ASEC'
+          IF (&F41 = 'TCA ') &F46 = 'ASEC'
+          IF (&F41 = 'TA1 ') &F46 = 'ASEC'
+          IF (&F41 = 'SL-C') &F46 = 'ASEC'
+          IF (&F41 = '130 ') &F46 = 'STEEL'
+       IF (&F47 = ' ')
+          IF (&F41 = 'TAA ') &F47 = 'YES '
+          IF (&F41 = 'TA1 ') &F47 = 'YES '
+          IF (&F41 = 'TAC ') &F47 = 'YES '
+          IF (&F41 = 'TAD ') &F47 = 'YES '
+          IF (&F41 = 'TBA ') &F47 = 'YES '
+          IF (&F41 = 'TCA ') &F47 = 'NO  '
+          IF (&F41 = 'SL-C') &F47 = 'NO  '
+          IF (&F41 = '130 ') &F47 = 'NO  '
+       IF (&F51 = ' ')  &F51 = 5
+       IF (&F53 = ' ')  &F53 = 0
+       IF (&F54 = ' ')  &F54 = '2/2'
+       IF (&F56 = ' ')  &F56 = '50'
+       IF (&F61 = ' ')  &F61 = '65'
+       IF (&F62 = ' ')  &F62 = '60'
+       IF (&F71 = ' ')  &F71 = '13900'
+       IF (&F72 = ' ')  &F72 = '3660'
+       IF (&F73 = ' ')  &F73 = '4700'
+       IF (&F74 = ' ')  &F74 = '500'
+       IF (&F78 = ' ')  &F78 = '600'
+       IF (&TEMPLO = ' ')  &TEMPLO = '75'
+       IF (&STACKF = ' ')  &STACKF = '0.000'
+       IF (&SPFADJ = ' ')  &SPFADJ = '0.95'
+&F55 = 'NO'
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+IF (&SCROLL ^= X)
+  IF (&F11 = ?)  .MSG = OPTRM071
+  IF (&F12 = ?)  .MSG = OPTRM072
+  IF (&F13 = ?)  .MSG = OPTRM073
+  IF (&F14 = ?)  .MSG = OPTRM074
+  IF (&F15 = ?)  .MSG = OPTRM075
+  IF (&F21 = ?)  .MSG = OPTRM076
+  IF (&F22 = ?)  .MSG = OPTRM077
+  IF (&F23 = ?)  .MSG = OPTRM078
+  IF (&F24 = ?)  .MSG = OPTRM079
+  IF (&F25 = ?)  .MSG = OPTRM080
+  IF (&F31 = ?)  .MSG = OPTRM081
+  IF (&F34 = ?)  .MSG = OPTRM084
+  IF (&F35 = ?)  .MSG = OPTRM085
+  IF (&F41 = ?)  .MSG = OPTRM086
+  IF (&F42 = ?)  .MSG = OPTRM087
+  IF (&F43 = ?)  .MSG = OPTRM088
+  IF (&F44 = ?)  .MSG = OPTRM089
+  IF (&F45 = ?)  .MSG = OPTRM090
+  IF (&F46 = ?)  .MSG = OPTRM091
+  IF (&F47 = ?)  .MSG = OPTRM145
+  IF (&F51 = ?)  .MSG = OPTRM092
+  IF (&F52 = ?)  .MSG = OPTRM093
+  IF (&F53 = ?)  .MSG = OPTRM094
+  IF (&F54 = ?)  .MSG = OPTRM095
+  IF (&F56 = ?)  .MSG = OPTRM097
+  IF (&F61 = ?)  .MSG = OPTRM098
+  IF (&F62 = ?)  .MSG = OPTRM099
+  IF (&F63 = ?)  .MSG = OPTRM100
+  IF (&F64 = ?)  .MSG = OPTRM101
+  IF (&F65 = ?)  .MSG = OPTRM102
+  IF (&F66 = ?)  .MSG = OPTRM103
+  IF (&F71 = ?)  .MSG = OPTRM104
+  IF (&F72 = ?)  .MSG = OPTRM105
+  IF (&F73 = ?)  .MSG = OPTRM106
+  IF (&F74 = ?)  .MSG = OPTRM107
+  IF (&F75 = ?)  .MSG = OPTRM108
+  IF (&F76 = ?)  .MSG = OPTRM109
+  IF (&F77 = ?)  .MSG = OPTRM110
+  IF (&F78 = ?)  .MSG = OPTRM130
+  IF (&TEMPLO = ?) .MSG = OPTRM160
+  IF (&STACKF = ?) .MSG = OPTRM161
+  IF (&NCOOLI = ?) .MSG = OPTRM177
+
+  &F11T = TRUNC (&F11,1)
+  IF (&F11T = 'N')
+      &F11 = 'NO'
+  VER (&F11,NONBLANK,LIST,TMY,TMY1,TMY2,TMY3,TMY4,TMY5,TMY6,TMY7,TMY8,
+       TMY9,TAA,TAA1,TAA2,TAD,TBA,TBA1,TBA2,TBA3,N,NO,MSG=OPTRM071)
+  &F12 = TRUNC (&F12,1)
+  &F12 = TRANS (&F12 ?,? Y,YES N,NO *,*)
+  VER (&F12,NONBLANK,LIST,YES,NO,MSG=OPTRM072)
+  IF (&F12 = 'NO')
+    VER (&F13,NONBLANK,MSG=OPTRM073)
+    VER (&F14,NONBLANK,MSG=OPTRM074)
+    VER (&F15,NONBLANK,MSG=OPTRM075)
+  &NPH = TRUNC (&NPH,1)
+  IF (&NPH ^= 1)
+    VER (&F21,NONBLANK,MSG=OPTRM076)
+  IF (&F12 = 'YES')
+    VER (&F23,NONBLANK,MSG=OPTRM078)
+    VER (&F24,NONBLANK,MSG=OPTRM079)
+    VER (&F25,NONBLANK,MSG=OPTRM080)
+  &F31 = TRUNC (&F31,1)
+  &F31 = TRANS (&F31 ?,? Y,YES N,NO *,*)
+  VER (&F31,NONBLANK,LIST,YES,NO,MSG=OPTRM081)
+  &F34 = TRUNC (&F34,1)
+  &F34 = TRANS (&F34 ?,? Y,YES N,NO *,*)
+  VER (&F34,NONBLANK,LIST,YES,NO,MSG=OPTRM084)
+  &F35 = TRUNC (&F35,1)
+  &F35 = TRANS (&F35 ?,? Y,YES N,NO *,*)
+  VER (&F35,NONBLANK,LIST,YES,NO,MSG=OPTRM085)
+  VER (&F41,NONBLANK,LIST,TAA,TAC,TAD,TBA,TCA,SL-C,130,MSG=OPTRM086)
+  IF (&F42 = 'TY  ') &F42 = 'TY-3'
+  IF (&F41 = 'TAA ') VER(&F42,NONBLANK,LIST,D,T,MSG=OPTRM129)
+  IF (&F41 = 'TA1 ') VER(&F42,NONBLANK,LIST,T,MSG=OPTRM175)
+  IF (&F41 = 'TAC ') VER(&F42,NONBLANK,LIST,D,T,MSG=OPTRM129)
+  IF (&F41 = 'TAD ') VER(&F42,NONBLANK,LIST,D,T,MSG=OPTRM129)
+  IF (&F41 = 'TBA ') VER(&F42,NONBLANK,LIST,D,T,EY,DY,TY-3,TY-1,MSG=OPTRM087)
+  IF (&F41 = 'TCA ') VER(&F42,NONBLANK,LIST,D,T,EY,DY,TY-3,TY-1,MSG=OPTRM087)
+  IF (&F41 = 'SL-C') VER(&F42,NONBLANK,LIST,D,T,EY,DY,TY-3,TY-1,MSG=OPTRM087)
+  IF (&F41 = '130 ') VER(&F42,NONBLANK,LIST,D,T,MSG=OPTRM129)
+  IF (&F35 = 'NO')
+    VER (&F44,NONBLANK,MSG=OPTRM089)
+  VER (&F45,NONBLANK,LIST,M5,ZDKH,PLJT,HI-B,EXT,MSG=OPTRM090)
+  &F46 = TRUNC (&F46,1)
+  IF (&F41 = 'TAA ') &F46 = TRANS (&F46 ?,? G,GLUED MSG=OPTRM038)
+  IF (&F41 = 'TA1 ') &F46 = TRANS (&F46 ?,? A,ASEC  MSG=OPTRM176)
+  IF (&F41 = 'TAC ') &F46 = TRANS (&F46 ?,? G,GLUED MSG=OPTRM039)
+  IF (&F41 = 'TAD ') &F46 = TRANS (&F46 ?,? G,GLUED MSG=OPTRM127)
+  IF (&F41 = 'TBA ') &F46 = TRANS (&F46 ?,? S,STEEL A,ASEC MSG=OPTRM124)
+  IF (&F41 = 'TCA ') &F46 = TRANS (&F46 ?,? S,STEEL A,ASEC MSG=OPTRM125)
+  IF (&F41 = 'SL-C') &F46 = TRANS (&F46 ?,? S,STEEL A,ASEC G,GLUED MSG=OPTRM126)
+  IF (&F41 = '130 ') &F46 = TRANS (&F46 ?,? S,STEEL G,GLUED MSG=OPTRM153)
+  VER (&F46,NONBLANK,LIST,GLUED,STEEL,ASEC)
+  &F47 = TRUNC (&F47,1)
+  IF (&F41='TAA ') &F47 = TRANS (&F47 ?,? Y,YES N,NO  MSG=OPTRM145)
+  IF (&F41='TAC ') &F47 = TRANS (&F47 ?,? Y,YES N,NO  MSG=OPTRM145)
+  IF (&F41='TAD ') &F47 = TRANS (&F47 ?,? Y,YES N,NO  MSG=OPTRM145)
+  IF (&F41='TBA ') &F47 = TRANS (&F47 ?,? Y,YES N,NO  MSG=OPTRM145)
+  IF (&F41='TA1 ') &F47 = TRANS (&F47 ?,? Y,YES N,NO  MSG=OPTRM145)
+  IF (&F41='TCA ') &F47 = TRANS (&F47 ?,?  N,NO  MSG=OPTRM143)
+  IF (&F41='SL-C') &F47 = TRANS (&F47 ?,?  N,NO  MSG=OPTRM144)
+  IF (&F41='130 ') &F47 = TRANS (&F47 ?,?  N,NO  MSG=OPTRM154)
+  VER (&F47,NONBLANK,LIST,YES,NO)
+  &F54 = TRUNC (&F54,1)
+  &F54 = TRANS (&F54 ?,? 2,2/2 4,4/4 *,*)
+  VER (&F54,NONBLANK,LIST,2/2,4/4,MSG=OPTRM095)
+  VER (&F56,NONBLANK,MSG=OPTRM097)
+  IF (&B12 = 1)
+     VER (&F42,LIST,EY,DY,TY-1,D,MSG=OPTRM141)
+  IF (&B12 = 3)
+     VER (&F42,LIST,TY-3,T,MSG=OPTRM140)
+  VER(&TEMPLO, LIST , 75, 85, MSG=OPTRM160)
+  IF (&STACKF ^= '0.000' )
+     VER(&F41, LIST, 130, MSG=OPTRM161)
+)END

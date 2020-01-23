@@ -1,0 +1,184 @@
+)ATTR DEFAULT (]–_)
+       _ TYPE(INPUT)  INTENS(HIGH)
+       ^ TYPE(INPUT)  INTENS(LOW)
+       ª TYPE(OUTPUT) INTENS(LOW)
+       ] TYPE(TEXT)   INTENS(HIGH)
+       – TYPE(TEXT)   INTENS(LOW)
+       › TYPE(TEXT)   INTENS(HIGH)  COLOR (YELLOW)
+)BODY
+–*]T146 Input–P146-1–*  OBJECT:]&DSYOBJ              – Next Panel_SCROLL–
+–=–Version–&VER–:–&DVERS     –====================–&DAIT                       –
+–Identification..............:^ID                                      –
+–Terminal node. . . . . .:_A1–     _A2–     _A3–     _A4–
+–Rated power. . . . (MVA):_A12    –_A22    –_A32    –_A42   –
+–Rated voltage. . . .(kV):_A13    –_A23    –_A33    –_A43   –
+–Connection . . . . . . .:_A14–    _A24–    _A34–    _A44–
+–Regulation type. . . . .:_A15–    _A25–    _A35–    ªA45–
+–No. of plus  steps . . .:_A16–    _A26–    _A36–
+–No. of minus steps . . .:_A17–    _A27–    _A37–
+–Step-size. . . . . . (%):_A18  –  _A28  –  _A38  –
+–Short-circuit power(GVA):_A10   – _A20   – _A30   – _A40   –
+–BIL. . . . . . . . .(kV):_A19  –  _A29  –  _A39  –  _A49  –
+–
+–Freq..:_B11– Wdg/limb:_WILI–Cooling type......:_B31 –Cost code:_B18 –
+–Phases:_B12– CFR/VFR :_B13 –Selfcool.ratio....:_B32 –Fix Price:_B23 –(%)–
+–
+–Re-opt. margin(%).:_B22   – EvalP0...:_B14    –
+–Loss calc. at step:_A110  – EvalPK...:_B15    –
+–    –
+–Printout(Yes/No)
+–-  Oper.xtics_B34–         ...... Current Limiting Reactors(%).......  .
+–-  Det.costs _B35–         Terml1:^B41  –Terml2:^B42  – Terml3:^B43    –
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 P146-1 1'
+&ZPF13 = 'CMS EXEC MANUAL T146 P146-1 1'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+       .CURSOR = ID
+
+       IF (&ID = ' ')    &ID = &DSYOBJ
+       IF (&A1 = ' ')    &A1 = 'H1'
+       IF (&A2 = ' ')    &A2 = 'X1'
+       IF (&A15 = ' ')   &A15 = NO
+       IF (&A25 = ' ')   &A25 = NO
+       IF (&A35 = ' ')   &A35 = NO
+       IF (&A45 = ' ')   &A45 = NO
+       IF (&B12 = ' ')   &B12 = 3
+       IF (&B13 = ' ')   &B13 = CFR
+       IF (&B34 = ' ')   &B34 = YES
+       IF (&B35 = ' ')   &B35 = NO
+       IF (&A15 = 'NO')
+         IF (&A25 = 'NO')
+
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+IF (&SCROLL ^= X)
+    IF (&ID = ?)   .MSG = OPTRM000
+    IF (&A110 = ?) .MSG = OPTRM119
+    IF (&A1 = ?)   .MSG = OPTRM001
+    IF (&A12 = ?)  .MSG = OPTRM002
+    IF (&A13 = ?)  .MSG = OPTRM003
+    IF (&A14 = ?)  .MSG = OPTRM004
+    IF (&A15 = ?)  .MSG = OPTRM005
+    IF (&A16 = ?)  .MSG = OPTRM006
+    IF (&A17 = ?)  .MSG = OPTRM007
+    IF (&A18 = ?)  .MSG = OPTRM008
+    IF (&A19 = ?)  .MSG = OPTRM009
+    IF (&A10 = ?)  .MSG = OPTRM010
+    IF (&A2 = ?)   .MSG = OPTRM001
+    IF (&A22 = ?)  .MSG = OPTRM002
+    IF (&A23 = ?)  .MSG = OPTRM003
+    IF (&A24 = ?)  .MSG = OPTRM004
+    IF (&A25 = ?)  .MSG = OPTRM005
+    IF (&A26 = ?)  .MSG = OPTRM006
+    IF (&A27 = ?)  .MSG = OPTRM007
+    IF (&A28 = ?)  .MSG = OPTRM008
+    IF (&A29 = ?)  .MSG = OPTRM009
+    IF (&A20 = ?)  .MSG = OPTRM010
+    IF (&A21 = ?)  .MSG = OPTRM035
+    IF (&A3 = ?)   .MSG = OPTRM001
+    IF (&A32 = ?)  .MSG = OPTRM002
+    IF (&A33 = ?)  .MSG = OPTRM003
+    IF (&A34 = ?)  .MSG = OPTRM004
+    IF (&A35 = ?)  .MSG = OPTRM005
+    IF (&A36 = ?)  .MSG = OPTRM006
+    IF (&A37 = ?)  .MSG = OPTRM007
+    IF (&A38 = ?)  .MSG = OPTRM008
+    IF (&A39 = ?)  .MSG = OPTRM009
+    IF (&A30 = ?)  .MSG = OPTRM010
+    IF (&A31 = ?)  .MSG = OPTRM035
+    IF (&A4 = ?)   .MSG = OPTRM001
+    IF (&A42 = ?)  .MSG = OPTRM002
+    IF (&A43 = ?)  .MSG = OPTRM003
+    IF (&A44 = ?)  .MSG = OPTRM004
+    IF (&A45 = ?)  .MSG = OPTRM005
+    IF (&A49 = ?)  .MSG = OPTRM009
+    IF (&A40 = ?)  .MSG = OPTRM010
+    IF (&A41 = ?)  .MSG = OPTRM035
+    IF (&B11 = ?)  .MSG = OPTRM011
+    IF (&B12 = ?)  .MSG = OPTRM012
+    IF (&B13 = ?)  .MSG = OPTRM013
+    IF (&B14 = ?)  .MSG = OPTRM014
+    IF (&B15 = ?)  .MSG = OPTRM015
+    IF (&B18 = ?)  .MSG = OPTRM018
+    IF (&B22 = ?)  .MSG = OPTRM020
+    IF (&B23 = ?)  .MSG = OPTRM021
+    IF (&B31 = ?)  .MSG = OPTRM026
+    IF (&B32 = ?)  .MSG = OPTRM027
+    IF (&B34 = ?)  .MSG = OPTRM029
+    IF (&B35 = ?)  .MSG = OPTRM030
+    IF (&B41 = ?)  .MSG = OPTRM031
+    IF (&B42 = ?)  .MSG = OPTRM031
+    IF (&B43 = ?)  .MSG = OPTRM031
+    IF (&WILI= ?)  .MSG = OPTRM032
+
+    IF (&A15 = 'NO')
+      IF (&A25 = 'NO')
+  VER (&A12,NONBLANK,MSG=OPTRM002)
+  VER (&A13,NONBLANK,MSG=OPTRM003)
+  VER (&A14,NONBLANK,LIST,I,I/A,Y,YN,Y/A,D,MSG=OPTRM004)
+  VER (&A15,NONBLANK,LIST,NO,L,PM,CF,MSG=OPTRM005)
+  IF (&A15 ^= NO)
+    VER (&A16,NONBLANK,MSG=OPTRM006)
+    VER (&A17,NONBLANK,MSG=OPTRM007)
+    VER (&A18,NONBLANK,MSG=OPTRM008)
+  VER (&A19,NONBLANK,MSG=OPTRM009)
+  VER (&A10,NONBLANK,MSG=OPTRM010)
+
+  VER (&A22,NONBLANK,MSG=OPTRM002)
+  VER (&A23,NONBLANK,MSG=OPTRM003)
+  VER (&A24,NONBLANK,LIST,I,I/A,Y,YN,Y/A,D,MSG=OPTRM004)
+  VER (&A25,NONBLANK,LIST,NO,L,PM,CF,MSG=OPTRM005)
+  IF (&A25 ^= NO)
+    VER (&A26,NONBLANK,MSG=OPTRM006)
+    VER (&A27,NONBLANK,MSG=OPTRM007)
+    VER (&A28,NONBLANK,MSG=OPTRM008)
+  VER (&A29,NONBLANK,MSG=OPTRM009)
+  VER (&A20,NONBLANK,MSG=OPTRM010)
+
+  IF (&A3 ^= ' ')
+    VER (&A32,NONBLANK,MSG=OPTRM002)
+    VER (&A33,NONBLANK,MSG=OPTRM003)
+    VER (&A34,NONBLANK,LIST,I,I/A,Y,YN,Y/A,D,MSG=OPTRM004)
+    VER (&A35,NONBLANK,LIST,NO,L,PM,CF,MSG=OPTRM005)
+    IF (&A35 ^= NO)
+      VER (&A36,NONBLANK,MSG=OPTRM006)
+      VER (&A37,NONBLANK,MSG=OPTRM007)
+      VER (&A38,NONBLANK,MSG=OPTRM008)
+    VER (&A39,NONBLANK,MSG=OPTRM009)
+    VER (&A30,NONBLANK,MSG=OPTRM010)
+
+  IF (&A4 ^= ' ')
+    VER (&A42,NONBLANK,MSG=OPTRM002)
+    VER (&A43,NONBLANK,MSG=OPTRM003)
+    VER (&A44,NONBLANK,LIST,I,I/A,Y,YN,Y/A,D,MSG=OPTRM004)
+    VER (&A49,NONBLANK,MSG=OPTRM009)
+    VER (&A40,NONBLANK,MSG=OPTRM010)
+
+  IF (&A110 = &BLANK ) &A110 = 0
+
+  &B11 = TRUNC (&B11,2)
+  VER (&B11,NONBLANK,LIST,50,60,MSG=OPTRM011)
+  &B12 = TRUNC (&B12,1)
+  VER (&B12,NONBLANK,LIST,1,3,MSG=OPTRM012)
+  &WILI = TRUNC(&WILI,1)
+  VER (&WILI,NONBLANK,LIST,1,2,3,4,5,6,MSG=OPTRM032)
+  &B13  = TRANS(&B13  ?,? C,CFR V,VFR *,*)
+  VER (&B13,NONBLANK,LIST,CFR,VFR,MSG=OPTRM013)
+  VER (&B18,NONBLANK,MSG=OPTRM018)
+  VER (&B31,NONBLANK,LIST,ONAN,ONAF,OFAF,MSG=OPTRM026)
+  IF (&B31 = ONAN) &B32 = 1.0
+  IF (&B31 = OFAF) &B32 = 0.0
+  IF (&B31 = ONAF)
+    VER (&B32,NONBLANK,MSG=OPTRM027)
+  &B34 = TRUNC(&B34,1)
+  &B34  = TRANS(&B34  ?,? Y,YES N,NO MSG=OPTRM029)
+  VER (&B34,NONBLANK,LIST,YES,NO)
+  &B35 = TRUNC(&B35,1)
+  &B35  = TRANS(&B35  ?,? Y,YES N,NO MSG=OPTRM030)
+  VER (&B35,NONBLANK,LIST,YES,NO)
+)END

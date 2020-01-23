@@ -1,0 +1,847 @@
+€
+LIST OF CONTENTS
+
+        1.   INTRODUCTION
+        2.   COST CALCULATION
+        3.   ENVIRONMENT
+        4.   TECHNICAL CALCULATION
+        5.   INPUT DATA
+        5.1  PANEL 1
+        5.2  PANEL 2
+        5.3  PANEL 3
+        5.4  PANEL 4
+        5.5  PANEL 5
+        5.   INPUT DATA CHECK AND ERROR MESSAGES
+        6.   STACKING FACTOR FOR "130-kV CORE"
+        7.   NO LOAD POWER AND CURRENTS - EXTERNAL LOSS PARAMETERS
+        7.1  How to use
+        7.2  Specification of the external data
+        7.3  Network frequency 50 / 60 Hz
+        8.   OPTIMIZING TRANSFORMERS AT SELF-COOLED POWER
+        9.   BOOSTER TRANSFORMERS
+
+
+1. INTRODUCTION
+
+        Program T31146 is intended for technical calculation and optimization
+        of core-type transformers. Up to 9 variables can be optimized and the
+        user can control the calculation in order to comply with his
+        requirements.
+
+        The optimization is carried out by minimisation of a comparison price
+        which consists of an estimate of the transformer manufacturing price
+        and a loss evaluation.
+
+        The following variables can be optimized:
+            - Diameter of core limb
+            - Height of core limb
+            - Flux density
+            - Conductor areas in all windings ( up to 6)
+
+        During the optimization the following limitations are taken into
+        consideration:
+            - Maximum and minimum core diameter
+            - Maximum limb height
+            - Maximum flux density
+            - Maximum tank dimensions
+            - Maximum sound power level
+            - Maximum transportation mass
+            - Maximum tangential stress in windings during short circuit
+            - Maximum current density
+            - Maximum no-load losses
+            - Maximum load losses
+            - Reactance (equality)
+
+2. COST CALCULATION
+
+        Detailed cost calculation is done if a detailed cost file is called.
+        This file type consists 2190 data.
+        If instead a simplified cost file is called, only an estimate of the
+        transformer price will be evaluated.This type of cost calculation only
+        uses prices for copper, core lamination, oil and upgrading factors
+        covering the linear dependence in the total price of the three cost
+        types.
+        A certain data within the cost file dictionary selects which type of
+        cost calculation which shall be used.
+
+
+2.1 Detailed cost calculation
+
+        The comparison price is calculated:
+
+        CCOPM   =   (CMANUF + Pt )*(1 + (Fixed_Price)/100) + COIL + CLOSS
+
+        where
+
+        - CMANUF    = Manufacturing price at today's price level
+        - PT        = Type cost overhead  (%)
+        - COIL      = Cost of oil at today's price level
+        - CLOSS     = Capitalized losses
+
+2.2 Estimated cost calculation
+
+        The comparing price is calculated:
+
+        CCOMP  =  (CU-C + FE-C + OL-C) * (1 + (Fixed_Price)/100)
+
+        where
+        - CU-C = Copper cost * upgrading factor for Cu.
+        - FE-C = Core lamination cost * upgrading factor for Fe.
+        - OL-C = Oil cost * upgrading factor for transformer oil.
+
+3. ENVIRONMENT
+
+        T146  is run in BATES and input data are entered on four or five
+        panels. The fifth panel is used only for booster transformers.
+        A sixth panel displays a summary of input data and the result of the
+        calculation. From this panel new runs with altered input data can be
+        started.
+
+        The complete result is written to a file and can be browsed and/or
+        directed to a printer.
+
+
+4. TECHNICAL CALCULATION
+
+        The program calculates the main dimensions of the core and windings,
+        and, when requested, also the dimensions of the tank together with the
+        oil required to fill the tank with the active part in place.
+
+        During the optimization, which requires the functions to be optimized
+        to be continuous, calculated fractions of turns, cooling ducts and so
+        on are retained. Once the final calculation is requested, with no
+        optimization, these are rounded off to the nearest convenient integer
+        (or fraction where applicable). The principle applied at this stage is
+        to keep as close as possible to the overall optimum for all the
+        optimized quantities.
+
+        The winding design program WDES should be used to calculate a more
+        detailed winding layout starting with the main winding dimensions as
+        calculated by T146. These winding layout data will be stored on the
+        database and will be available for a final run of T146 to produce a
+        more detailed design of the transformer.
+
+        The program produces a printout on request. This printout reproduces
+        the input data to the program and also the result of the  calculations.
+
+        The  printout includes detailed data on the operating characteristics
+        of the transformer as well as a detailed costing which shows the masses
+
+        and volumes of the main components of the transformer.
+
+5. INPUT DATA
+
+        When the panels are displayed in input mode, option 1 in BATES, all
+        entered data are stored on the data base.
+
+        When the panels are displayed from the program during execution the
+        input data are stored only on request.
+
+
+
+5.1 PANEL 1  P146-1
+
+        Panel 1 is used for entry of specification and cost data.
+
+        IDENTIFICATION
+            Any free text which will be used as ident in the T146 report in the
+            page heading.
+
+        TERMINAL NODE
+            Terminal node name, consisting of 1 letter and one digit (unique
+            combination). The digit 0 is reserved for the neutral point in Y-
+            and Y/Auto - connected windings.
+
+        RATED POWER (MVA)
+            Rated power for the terminal concerned. This information is
+            normally found in the customer specification.
+
+        RATED VOLTAGE (kV)
+            Rated voltage for the terminal concerned. This information is
+            normally found in the customer specification.
+
+        CONNECTION
+            Connection of windings:
+                I       1-phase
+                I/A     1-phase auto connected
+                Y       Star connection
+                Y/A     Star connection auto connected
+                D       Delta connection
+
+        REGULATION TYPE
+            Type of regulation:
+                NO      No regulation
+                L       Linear regulation
+                PM      Plus-minus regulation
+                CF      Coarse-fine regulation
+
+            Standard value NO
+
+        NO. OF PLUS STEPS
+            Number of + regulating steps in the regulating range.
+
+        NO. OF MINUS STEPS
+            Number of - regulating steps in the regulating range.
+
+        STEP-SIZE
+            Size of each regulating step, in % of rated voltage.
+
+        SHORT-CIRCUIT POWER
+            Short circuit power of the network (GVA).
+
+        BIL
+            Impulse voltage (kV)
+
+        FREQ.
+            Rated frequency (Hz)
+
+        PHASES
+            Number of phases.  1 or 3.
+            Standard value 3
+
+        WDG/LIMB
+            Number of windings per limb
+
+        CFR/VFR
+            CFR constant flux regulation
+            VFR variable flux regulation
+            Standard value CFR
+
+        COOLING TYPE
+            ONAN Oil Natural Air Natural
+            ONAF Oil Natural Air Forced
+            OFAF Oil Forced  Air Forced
+
+        SELF COOLING RATIO
+            Self cooling ratio (PU). See chapter 8.
+
+        COST CODE
+            Cost file code. This code together with an external file will
+            select the wanted cost file and type of cost calculation.
+            The code is key element in the external reference table. The
+            file have the following contents:
+            Column 1:   Cost Code (pos 9-16).
+            Column 2:   File address to the wanted cost file (pos 21-44).
+            Column 3:   Cost calculation generation code (integer).
+                        Values greater or equal to 92 will give estimated cost
+                        calculations, and smaller values shall be used for
+                        detailed cost calculations (pos 60-62).
+
+        FIXPRICE
+            Cost addition for fixed price (per cent)
+
+        RE-OPTIMISATION MARGIN
+            After the first optimization, the comparison price is allowed to
+            rise by the RE-OPTIMISATION MARGIN (%) to optimize the
+            manufacturing price.
+
+        LOSS CALCULATION AT STEP NO.
+            If the tap number given is not the nominal maximum or minimum tap,
+            then the losses and reactance will be calculated and printed out at
+            this tap as well.
+
+        EVALP0
+            Loss evaluation for no load losses. (cost/kW)
+
+        EVALPK
+            Loss evaluation for load losses. (cost/kW)
+
+        OPERATING XTICS
+            Printout of operating characteristics.  YES/NO
+            Standard value YES
+
+        DETAILED COSTS
+            Detailed cost report YES/NO
+            Standard value NO
+
+        CURRENT LIMITING REACTORS
+            Size of extra current limiting reactor inside the transformer
+            tank.  (% of base impedance).
+
+5.2 PANEL 2  P146-2
+
+        WINDING NODE TOP-BOTTOM
+            Winding nodes. An internal node is defined by a digit, an external
+            node by a letter and a digit.
+
+
+
+        FUNCTION CODE
+            Function code for the winding:
+                M       Main winding
+                MV      Main winding with variation of turns
+                R       Regulating winding
+                RB      Regulating winding connected with a booster to the main
+                        windings
+                RC      Coarse step at CF-regulation
+                RCB     Coarse step at CF-regulation and the winding is
+                        connected by a booster to the main windings. This code
+                        must be used together with the code RB for the fine
+                        step reg.winding.
+
+        YOKE DISTANCE TOP-BOTTOM
+            Distance winding-top yoke, winding- bottom yoke (mm).
+
+        MAIN DUCT WIDTH
+            Main duct inside winding (mm)
+
+        WINDING FRACTION
+            Fraction of main winding (PU)
+            Standard value 1
+
+        CABLE TYPE
+            Type of strand insulation used on cable
+                SP  Paper covering
+                OR  Unglued strip (2 parallel strands in common paper covering)
+                LR  Glued strip (2 parallel strands in common paper covering)
+                TC Transposed cable
+            Standard value SP
+
+        STRAND DIM. RADIAL
+            Strand  dimensions radially (mm).
+            Standard value is 2.44 mm.
+            This value is used in the calculation of eddy losses.
+
+        MAX.CURRENT DENS.
+            Maximum allowed current density (A/mm2)
+            Standard value: 4.5
+
+        MAX.SIGMA0.2 TENS./COMPR.
+            Maximum allowed tensile/compressive stress (N/mm2).
+            Standard values: 120/55
+            Note:
+                If a winding is not optimized, it is possible to enter current
+                density instead of conductor area. In such cases the field
+                CONDUCTOR AREA shall be blanked and the current density desired
+                shall be entered in the field for maximum current density:
+                MAX CURR DENSITY.
+
+        OPTIMIZE WINDINGS
+            Possible values : YES / NO
+            -   YES: Space factor have to be entered unless automatic winding
+                lay out is selected. Conductor area will be optimized.
+            -   NO: Conductor area and winding width according to input panel
+                will be used
+
+        SPACE  FACTOR
+            Space factor of winding:
+
+                (Number of Turns)*(Conductor Area)
+                ---------------------------------------------
+                (Total Radial Winding Width)*(Winding Height)
+
+        WINDING WIDTH
+            Total radial width of winding (mm).
+            If the winding is to be optimized this value will be ignored.
+
+        CONDUCTOR AREA
+            Conductor area for all parallel groups (mm2).
+            ACOND will be ignored if the winding is to be optimized.
+
+        LIMB HEIGHT
+            Height of core limb (mm).
+            If HLIMB is optimized and a value for HLIMB greater than 100 is
+            entered, this value is used as a start  value for the optimization.
+
+        CORE DIAMETER
+            Diameter of core limb (mm).
+            If DLIMB is optimized and a value for DLIMB greater than 1 is
+            entered, this value is used as a start  value for the
+            optimization.
+
+        LIMB FLUX DENSITY
+            Flux density in core limb (T).
+            If the flux density is to be optimized, then the value given is
+            ignored.
+
+        REACTANCE TERML 1-2(%)
+            Reactance (%) between the two first terminals for nominal tap
+            position. Power base is rated power for the first terminal. The
+            reactance will be ignored if both HLIMB and DLIMB have fixed
+            values.
+
+        AUTOMATIC WINDING LAYOUT
+            If winding lay out is ordered , then the program will make a
+            winding lay out, and the space factors will be calculated. Then the
+            optimization routine will search for a optimal design with these
+            spacefactors, new lay out, and so on until the difference in the
+            spacefactor is less than a certain small value.
+
+            Standard value: NO.
+
+
+
+5.3 PANEL 3  P146-3
+        Note: All data on this panel are used due to needs from the detailed
+        cost calculation routine.
+
+        WINDING TYPE
+            Winding type:
+                L,L1,L2         Layer winding
+                S,S1-S6         Helical winding
+                SLL,SLL1,SLL2   Series loop winding
+                SLS,SLS1-SLS6   Series loop helical winding
+                CD              Continuous disc winding
+                SD              Interleaved disc winding
+                D2              Disc 2 winding
+
+        NO. PARALLEL GROUPS
+            Number of parallel groups within the winding.
+            Standard value 1
+
+        CONDUCTOR MATERL
+            Conductor material
+                CU      Copper
+                AL      Aluminium
+            Standard value CU
+
+
+        STRAND DIM. AXIAL
+            Strand dimensions axially (mm).
+            An  axial dimension will be estimated by the program if not
+            supplied.
+
+        COVERING STRAND-CABLE
+            Thickness of paper covering, double sided, for strand/cable.
+            These values are used in the cost calculations. If no values are
+            entered, the thickness will be estimated by the program.
+
+        VARNISHED COND. CU
+            If you use varnished copper or not (YES/NO). If you enter OR or LR
+            as cable type this automatically becomes YES.
+            Standard value NO
+
+        EPOXY GLUE (TC)
+            If you use epoxy glue on transposed cable or not (YES/NO). It can
+            only be used for transposed cable.
+            Standard value NO
+
+        EXTRA AXIAL INSUL.
+            Additional axial insulation in the winding (mm)
+
+        SPACER HEIGHT
+            Height of normal spacers in the winding (mm)
+
+        NO OF COOLING DUCTS / OIL GUIDING RINGS
+            Number of internal cooling ducts/number of oil guiding rings.
+            If OILGD RINGS is greater than 0, NCOOLD will be set to 0 in the
+            program. If no input data is given, the number of cooling ducts
+            will be estimated by the program. These values are used only in
+            the cost calculation.
+
+        COMBINED WINDING
+            If the winding concerned is to be wound directly onto the winding
+            immediately to its inside, or will have the winding immediately
+            outside of it wound directly onto it, then enter YES.
+            This data has influence only on the detailed cost calculation.
+            Standard value: NO
+
+5.4 PANEL 4  P146-4
+
+        TANK TYPE
+            Type of tank:
+                TMY1-TMY9   Special Ludvika designs.
+                TMY         = TMY2
+                TAA         = TAA2
+                TAA1        vacuum proof TAA-tank
+                TAA2        non-vacuum proof TAA-tank
+                TBA         = TBA2
+                TBA1        TBA rectangular tank
+                TBA2        TBA oval tank
+                TBA3        TBA one straight tank end
+                TAD         non-vacuum proof TAA-tank
+
+        TANK DIM.FREE
+            Tank dimensions free:
+                YES     Tank dimensions will be calculated
+                NO      TANK  WIDTH,HEIGHT & LENGTH must be supplied.
+            Standard value YES
+
+        TANK WIDTH
+            Required Tank width (mm)   *)
+
+        TANK HEIGHT
+            Required Tank height (mm)  *)
+
+        TANK LENGTH
+            Required Tank length (mm)  *)
+
+
+        *)  TANK WIDTH, HEIGHT & LENGTH are used only  if  tank dimensions are
+            fixed (DIM.FREE = NO).
+
+        INSUL.DISTANCE PH-PH
+            Distance phase to phase if applicable (mm)
+
+        INSUL.DISTANCE PH-SL
+            Distance phase to side limb if applicable (mm).
+
+        DOUBLE-SHELL WINDING
+            Double-shell high current winding with compensated cleats and
+            leads.
+            This data has influence only on the detailed cost calculation.
+            YES/NO; Standard value NO
+
+        DISTANCE WDG-TANK
+            Distance winding to tank (mm).
+            Used only if tank dimensions are free.
+
+        DISTANCE CORE-COVER
+            Distance  core  to  cover.  (mm)
+            Used only if tank dimensions are free.
+
+        TANK EXTENSION
+            Extension of tank (mm).
+            Used only if tank dimensions are free. Inside length of tank=
+
+                (length of active part) + 2*(WDG-TANK)+(TANK EXTENSION)
+
+        SOUND SCREEN?
+            Sound screens on tank YES/NO
+            Standard value NO
+
+        FIELD SCREEN?
+            High conductive field screen (Aluminium or Copper) along one tank
+            side, YES/NO .
+            Standard value NO.
+
+        CORE SERIES
+            Core series:
+                TAA     TAA core
+                TAC     TAC core
+                TAD     TAD core
+                TBA     TBA core
+                TCA     TCA core
+                SL-C    side limb core.
+                130     130 - kV CORE (T and D types)
+
+        CORE TYPE
+            Core type:
+                D       two wound limbs
+                DY      two wound limbs with side limbs
+                EY      one wound limb with side limbs
+                T       three wound limbs (Three phase )
+                TY      three wound limbs with side limbs (Three phase )
+                TY-1    three wound limbs with side limbs (Single phase)
+
+        WIND.SUP HEIGHT
+            Thickness of laminated winding support (mm).
+            Standard value 0 ( No winding supports )
+
+        TOT. ASSY FORCE
+            Total final adjustment force (MN).
+            Only used for core series SL-C.
+            Standard value 0.
+
+        LAMINAT. QUALITY
+            Core steel quality.
+                M5      Oriented steel
+                HI-B    Super-oriented steel
+                ZDKH    Super-oriented steel (LASER-treated).
+                PLJT    Plasmajet steel (LASER-treated)
+                EXT     Externally specified quality
+                        If this code is selected, then the no load losses and
+                        no load current will be based on constants, picked
+                        from an external file. The file is stored in the same
+                        directory as the cost files, and have the name
+                        "EXTCOR".
+            Standard value ZDKH
+
+        LIMB BANDING
+            Limb banding
+                ASEC    ASECOND band
+                ST      Steel band
+                GLUED   Glued core
+            Standard value ASEC.
+
+        STEP LAP
+            Core lamination joint , YES / NO.
+
+        CORE BLADING
+            Core blading. 2/2 or 4/4.
+            Standard value 2/2 .
+
+        TOP OIL TEMPRISE
+            Calculated (estimated) top oil temperature rise above 30 degrees
+            ambient temperature. This data is used for calculation of number
+            of cooling ducts in core.
+            Standard value MAXDTTO .
+
+        OVERVOLT
+            Highest system over voltage (per cent).
+            Standard value 5
+
+        UTURN0
+            Turn voltage at 1 T, 50 Hz.
+            Normally this data is calculated by the program.
+
+        HYOKEADD
+            Increase of yoke height.
+            For TCA cores
+                HYOKEADD = increase of yoke height  (area  reinforcement)
+            For TBA cores
+                (-1)*HYOKEADD = yoke height reduction.
+            Standard value 0
+
+        COOL.DUCTS
+            If the number of cooling ducts in the core is specified here, this
+            value will be used instead of the internally calculated value.
+            However, both values will be printed in the T146 report.
+
+        LOSS TEMP. (C)
+            Temperature in centigrade used during calculation of winding
+            resistance and losses.
+            Allowed values: 75, 85.
+            Standard value 75.
+
+        STACK. FACTOR
+            Ratio between active core limb cross section area and nominal area
+            based on Core Diameter (Panel 3). Stacking Factor is used only for
+            "130-kV" cores. Standard value 0.000 indicates that the program
+            shall calculate the Stacking Factor.
+            Standard value 0.000.
+
+        MAX.MEAN.WDG.TEMP.RISE
+            Maximum allowed mean temp. rise in winding (degrees Celsius).
+
+        MAX.TOP.OIL TEMP.RISE
+            Maximum allowed top oil temperature rise (degrees Celsius).
+
+        MAXFLUX DENSITY
+            Maximum allowed flux density in core limb (T).
+            Standard value 1.95 for M5, 1.98 for HI-B, 1.98 for ZDKH.
+
+        MAX.LIMB HEIGHT
+            Maximum allowed limb height (mm).
+            Standard value  5000
+
+        MAX.CORE DIAMETER
+            Maximum allowed limb diameter (mm).
+            Standard value:
+                600     for TAA
+                670     for "130 kV-CORE"
+                1040    for TBA
+                1040    for TCA without side limb
+                1500    for LTB with side limb
+                1500    for TCA with side
+
+        MIN.CORE DIAMETER
+            Minimum allowed limb diameter (mm).
+            Standard value
+                265     for TAA
+                265     for TBA
+                265     for "130-kV CORE"
+                500     for TCA without side limb
+                555     for LTB with side limb
+                680     for TCA with side limb
+
+        MAX.TRANSPORT MASS
+            Maximum allowed transport mass (tons)
+            Standard value 500
+
+        MAX.SOUND POWER LEVEL
+            Maximum allowed sound power level (dB).
+            In the detailed print out of no load data, also the sound pressure
+            level will be presented.
+
+        MAX.TANK LENGTH
+            Maximum allowed tank length (mm).
+            Standard value  13900.
+
+        MAX.TANK WIDTH
+            Maximum allowed tank width (mm).
+            Standard value  3660.
+
+        MAX.TANK HEIGHT
+            Maximum allowed tank height (mm).
+            Standard value  4700.
+
+        MAX.NO-LOAD LOSSES
+            Maximum allowed no load losses (kW).
+            If this data is supplied, the loss evaluation for the no-load
+            losses will be ignored.
+
+        MAX.LOAD LOSSES
+            Maximum allowed load losses (kW).
+            If this data is supplied, the loss evaluation for the load losses
+            will be ignored.
+
+5.5 PANEL 5  P146-5
+
+        This panel is used only if booster  is  announced by the function code
+        for the regulating windings.
+
+        BOOSTER MASS
+            Total mass of the booster (kg).
+
+        BOOSTER VOLUME
+            Total volume of the booster (m3)
+
+        EQUIVALENT RESISTANCE
+            Total resistance of the booster evaluated for the "low voltage
+            side". (Resistance from "high voltage side is reduced by the turns
+            ratio squared.)
+            Formulas are printed on the panel.
+
+        TURNS RATIO
+            Turns ratio. Independent of auto or full booster, this value can be
+            defined as:
+                    Current in the regulating winding without booster
+                    ------------------------------------------------------
+                    Current in the regulating winding with booster
+
+
+
+6. STACKING FACTOR  FOR  "130-kV CORE"
+
+        It is possible to change the stacking factor (core
+        fill factor) for "130"-cores on panel 4. Standard value is
+        0.000, which indicates that the program shall calculate
+        the stacking factor.  Definition:
+
+            Stacking factor =
+
+            Active core area / (Core diameter/2)2 / 3.141593
+
+
+7. NO LOAD POWER AND CURRENTS - EXTERNAL LOSS PARAMETERS.
+
+7.1 How to use
+        Normally all factors used for calculation of active and
+        apparent no load losses are kept inside the source code
+        for T146. However, if core lamination quality is entered
+        as "EXT" on the fourth input panel, then the program will
+        open an external file, and use loss parameters from that
+        file instead.
+        A text label is also stored together with the loss para
+        meters. This label will be printed out in the block of
+        core data, just after the first short cost report.
+
+
+7.2 Specification of external data
+        The loss parameters are disposed as follows:
+        -   Approximations for the specific losses are divided in three
+            ranges:< 1.3 Tesla; 1.3 - 1.8 Tesla; > 1.8 Tesla.
+            For the first and third range a second degree polynomial is used
+            for the loss calculations, and in the second range a forth degree
+            polynomial is used.
+
+        Eight sets of data are specified from an external file:
+
+        -   Active losses for limbs and yokes
+        -   Active losses for corners in single phase units
+        -   Active losses for corners in T-core units
+        -   Active losses for corners in TY-3 units (three main Limbs and
+            side limbs for three phase transformers)
+        -   Apparent losses for limbs and yokes
+        -   Apparent losses for corners in single phase units
+        -   Apparent losses for corners in T-core units
+        -   Apparent losses for corners in TY-3 units (three main limbs and
+            side limbs for three phase transformers)
+
+        Each set consists of:
+
+        -   3 data for B < 1.3 Tesla
+              Loss = K +   L * B +  M * B**2
+
+        -   5 data for 1.3 < B < 1.8 Tesla
+              Loss = K +   L * B +  M * B**2 +  N * B**3 +  P * B**4
+
+        -   3 data for B > 1.8 Tesla
+              Loss = K +   L * B +  M * B**2
+
+        Dimensions for the specific losses are  W/kg resp. VA/kg.
+        Dimension for flux density is Tesla
+
+        This means that it is possible to control calculations of no load
+        properties from an external file. Different files can be used if the
+        start up procedure asks for it (compare with questions about company
+        today).
+        The external data are easy to maintain since they are stored on an
+        ordinary sequential file.
+
+7.3 Network frequency  50 / 60 Hz
+        The approximations are concerns 50 Hz.
+        For 60 Hz the active losses are increased by a factor 1.33, and the
+        apparent losses are increased by 1.25. (In accordance with our present
+        program version). These two numbers are essential to know when new
+        parameters shall be calculated outgoing from statistics from 60 Hz
+        trafos.
+
+
+8. OPTIMIZING TRANSFORMERS AT SELF-COOLED POWER.
+
+        If cooling type is specified as 'ONAF' on the first input panel, then
+        it is possible to calculate the transformer based either on ONAN or
+        ONAF power. The choice is made with the input parameter 'Self cooling
+        ratio' (SCR).
+        If SRC > 3, then the input value is interpreted as a percentage value,
+        and the input is divided by 100 in order to get a per unit value (PU)
+        The limit "3" make it possible to enter self cooling data either as PU
+        or percentage value, provided that the "self cooling ratio" according to
+
+        above is less than 300 % or 3 PU.
+
+        1.
+        Self cooling ratio <=  1.
+            Rated power is interpreted as forced air power, and the self cooled
+            power is:  Rated power * SCR .
+
+        2.
+        "Self cooling ratio" > 1.
+            Rated powers specified on the 1 st input panel are the self cooled
+            power. Optimization is made based on this power, and short circuit
+            impedance is based on this power (as usual).
+
+            However the the maximal currents at self cooled power are increased
+            by the SCR - factor, during check of maximal current density. Also
+            the rated powers are increased with SCR - factor during checks of
+            that the maximum power are in accordance with licence agreement.
+
+9. BOOSTER TRANSFORMERS
+        The presence of a booster is announced from input panel 2 via
+        "Function Code".
+        A regulating winding connected via booster, is indicated by the code
+        "RB" instead of the normal "R" , and similar to this a coarse step
+        regulating winding is indicated by "RCB" instead of "RC".
+
+        If a booster is announced on panel 2, then a fifth panel will pop up
+        after the four standard panels.
+        From this panel the following data are entered:
+
+        -   Mass of the booster (kg)
+        -   Volume of the booster (m3)
+        -   Turns ratio ( N > 1), or fictive turns ratio for auto-boosters.
+        -   Equivalent resistance of the booster seen from the down voltage
+            side of the booster. This value is calculated by the formula:
+
+            Not Auto-connected booster:
+                (R-ekv) =  (R-down side) + (R-upside) / N**2
+
+            Auto-connected booster:
+                (R-ekv) =  R * (N-1) / N**2
+
+                R = total resistance in the booster winding (series+common)
+
+        The booster is considered by the program on following points:
+
+        -   Mass and of the booster is included in values for cleats and leads
+            for terminal 2. This means that mass for active part, transport
+            mass and total mass includes the mass of the booster.
+
+        -   The volume of the booster is added to the volume of active part,
+            which means that the amount of free oil will be reduced by the
+            booster
+
+        -   The "RI2-losses" in the booster is added to the main winding with
+            function code "RB". In this way the booster losses are considered
+            in the total values for the main transformer, and during the
+            optimization.
+
+        -   Number of turns currents and conductor area for main windings with
+            the function codes "RB" or "RCB" are changed in correspondence
+            with the booster-turns-ratio.
+
+
+
+

@@ -1,0 +1,427 @@
+# SCCS_ID: @($)9.1\t12/15/86\tmakefile
+
+SHELL = /bin/sh
+
+FCOMP = gfortran
+
+#FFLAGS =  -debug -O0 -nofor-main -c -tracebacki
+
+#FFLAGS = -O2 -i8 -r8 -assume byterecl -c -nodefaultlibs
+
+#FFLAGS = -O -g
+
+FFLAGS = 
+
+#FCOMP = gfortran
+
+CLINK = cc
+
+#CLINK = /usr/bin/cpp -P -traditional
+
+OBJECTS = \
+	adjust.o \
+	block.o \
+	blockc.o \
+	byta79.o \
+	calcpy.o \
+	check.o \
+	chfunk.o \
+	chi.o \
+	chr.o \
+	constr.o \
+	contd.o \
+	contyp.o \
+	cooldp.o \
+	cooleq.o \
+	cor1.o \
+	cor130.o \
+	cor2.o \
+	core1n.o \
+	corn.o \
+	cost79.o \
+	cost92.o \
+	covma.o \
+	curdim.o \
+	curdns.o \
+	dbgnrl.o \
+	dbgwg.o \
+	dbpost.o \
+	dbprep.o \
+	dbpwg.o \
+	dbwseg.o \
+	dimcur.o \
+	dimscc.o \
+	dsp146.o \
+	edmult.o \
+	errrut.o \
+	extin.o \
+	fbb.o \
+	fprint.o \
+	frfunk.o \
+	funk.o \
+	funkfr.o \
+	head1.o \
+	head2.o \
+	icheck.o \
+	inp1.o \
+	inp2.o \
+	inp3.o \
+	inp4.o \
+	inp5.o \
+	inp6.o \
+	inx146.o \
+	limchk.o \
+	lminca.o \
+	lmod.o \
+	loop1.o \
+	loss.o \
+	losspr.o \
+	lwind.o \
+	mass79.o \
+	mass92.o \
+	movedb.o \
+	ncool.o \
+	nloadn.o \
+	nlossr.o \
+	nodcon.o \
+	npage.o \
+	omf013.o \
+	opcalc.o \
+	pag79x.o \
+	pagc92.o \
+	page01.o \
+	page02.o \
+	page79.o \
+	pagecr.o \
+	pageu.o \
+	pageut.o \
+	pcool.o \
+	penlty.o \
+	pep1.o \
+	pkl79.o \
+	plimit.o \
+	pnmass.o \
+	prcons.o \
+	preact.o \
+	precre.o \
+	preff.o \
+	prep1.o \
+	prepar.o \
+	preset.o \
+	preta1.o \
+	pretan.o \
+	pretem.o \
+	preval.o \
+	prnld.o \
+	prpan.o \
+	prtot.o \
+	prukpk.o \
+	prux.o \
+	prwa.o \
+	prwi.o \
+	prwida.o \
+	prwr.o \
+	prwt.o \
+	putdb.o \
+	readch.o \
+	relnta.o \
+	rnolo.o \
+	rprint.o \
+	scdime.o \
+	screw.o \
+	scstre.o \
+	siactp.o \
+	sitank.o \
+	siterm.o \
+	siwind.o \
+	soundp.o \
+	ssearc.o \
+	sub146.o \
+	t31146.o \
+	tab79.o \
+	table1.o \
+	turnca.o \
+	typwdg.o \
+	ukpk.o \
+	ukx.o \
+	uscod.o \
+	voltag.o \
+	wdglay.o \
+	wdgtyp.o \
+	winddi.o \
+	wmess.o \
+	wx146.o
+
+LINK_SPEC =  $(BAT_LIB)/lib/dsysub.a \
+             $(BAT_LIB)/lib/frnsub.a \
+             $(BAT_LIB)/lib/optsub.a \
+             $(BAT_LIB)/lib/corsub.a 
+
+
+t146: $(OBJECTS) 
+	$(FLINK) $(FFLAGS) $(OBJECTS) $(LINK_SPEC) $(BAT_EX_LIB) -o t146.exe 
+
+adjust.o:  adjust.f 
+	$(FCOMP) adjust.f 
+block.o:  block.f 
+	$(FCOMP) block.f 
+blockc.o:  blockc.f 
+	$(FCOMP) blockc.f 
+byta79.o:  byta79.f 
+	$(FCOMP) byta79.f 
+calcpy.o:  calcpy.f 
+	$(FCOMP) calcpy.f 
+check.o:  check.f 
+	$(FCOMP) check.f 
+chfunk.o:  chfunk.f 
+	$(FCOMP) chfunk.f 
+chi.o:  chi.f 
+	$(FCOMP) chi.f 
+chr.o:  chr.f 
+	$(FCOMP) chr.f 
+constr.o:  constr.f 
+	$(FCOMP) constr.f 
+contd.o:  contd.f 
+	$(FCOMP) contd.f 
+contyp.o:  contyp.f 
+	$(FCOMP) contyp.f 
+cooldp.o:  cooldp.f 
+	$(FCOMP) cooldp.f 
+cooleq.o:  cooleq.f 
+	$(FCOMP) cooleq.f 
+cor1.o:  cor1.f 
+	$(FCOMP) cor1.f 
+cor130.o:  cor130.f 
+	$(FCOMP) cor130.f 
+cor2.o:  cor2.f 
+	$(FCOMP) cor2.f 
+core1n.o:  core1n.f 
+	$(FCOMP) core1n.f 
+corn.o:  corn.f 
+	$(FCOMP) corn.f 
+cost79.o:  cost79.f 
+	$(FCOMP) cost79.f 
+cost92.o:  cost92.f 
+	$(FCOMP) cost92.f 
+covma.o:  covma.f 
+	$(FCOMP) covma.f 
+curdim.o:  curdim.f 
+	$(FCOMP) curdim.f 
+curdns.o:  curdns.f 
+	$(FCOMP) curdns.f 
+dbgnrl.o:  dbgnrl.f 
+	$(FCOMP) dbgnrl.f 
+dbgwg.o:  dbgwg.f 
+	$(FCOMP) dbgwg.f 
+dbpost.o:  dbpost.f 
+	$(FCOMP) dbpost.f 
+dbprep.o:  dbprep.f 
+	$(FCOMP) dbprep.f 
+dbpwg.o:  dbpwg.f 
+	$(FCOMP) dbpwg.f 
+dbwseg.o:  dbwseg.f 
+	$(FCOMP) dbwseg.f 
+dimcur.o:  dimcur.f 
+	$(FCOMP) dimcur.f 
+dimscc.o:  dimscc.f 
+	$(FCOMP) dimscc.f 
+dsp146.o:  dsp146.f 
+	$(FCOMP) dsp146.f 
+edmult.o:  edmult.f 
+	$(FCOMP) edmult.f 
+errrut.o:  errrut.f 
+	$(FCOMP) errrut.f 
+extin.o:  extin.f 
+	$(CLINK) -P -D$$BAT_OS extin.f > battmp.f ; $(FCOMP) battmp.f ; cp battmp.o extin.o
+fbb.o:  fbb.f 
+	$(FCOMP) fbb.f 
+fprint.o:  fprint.f 
+	$(FCOMP) fprint.f 
+frfunk.o:  frfunk.f 
+	$(FCOMP) frfunk.f 
+funk.o:  funk.f 
+	$(FCOMP) funk.f 
+funkfr.o:  funkfr.f 
+	$(FCOMP) funkfr.f 
+head1.o:  head1.f 
+	$(FCOMP) head1.f 
+head2.o:  head2.f 
+	$(FCOMP) head2.f 
+icheck.o:  icheck.f 
+	$(FCOMP) icheck.f 
+inp1.o:  inp1.f 
+	$(FCOMP) inp1.f 
+inp2.o:  inp2.f 
+	$(FCOMP) inp2.f 
+inp3.o:  inp3.f 
+	$(FCOMP) inp3.f 
+inp4.o:  inp4.f 
+	$(FCOMP) inp4.f 
+inp5.o:  inp5.f 
+	$(FCOMP) inp5.f 
+inp6.o:  inp6.f 
+	$(FCOMP) inp6.f 
+inx146.o:  inx146.f 
+	$(FCOMP) inx146.f 
+limchk.o:  limchk.f 
+	$(FCOMP) limchk.f 
+lminca.o:  lminca.f 
+	$(FCOMP) lminca.f 
+lmod.o:  lmod.f 
+	$(FCOMP) lmod.f 
+loop1.o:  loop1.f 
+	$(FCOMP) loop1.f 
+loss.o:  loss.f 
+	$(FCOMP) loss.f 
+losspr.o:  losspr.f 
+	$(FCOMP) losspr.f 
+lwind.o:  lwind.f 
+	$(FCOMP) lwind.f 
+mass79.o:  mass79.f 
+	$(FCOMP) mass79.f 
+mass92.o:  mass92.f 
+	$(FCOMP) mass92.f 
+movedb.o:  movedb.f 
+	$(FCOMP) movedb.f 
+ncool.o:  ncool.f 
+	$(FCOMP) ncool.f 
+nloadn.o:  nloadn.f 
+	$(FCOMP) nloadn.f 
+nlossr.o:  nlossr.f 
+	$(CLINK) -P -D$$BAT_OS nlossr.f > battmp.f ; $(FCOMP) battmp.f ; cp battmp.o nlossr.o
+nodcon.o:  nodcon.f 
+	$(FCOMP) nodcon.f 
+npage.o:  npage.f 
+	$(FCOMP) npage.f 
+omf013.o:  omf013.f 
+	$(FCOMP) omf013.f 
+opcalc.o:  opcalc.f 
+	$(FCOMP) opcalc.f 
+pag79x.o:  pag79x.f 
+	$(FCOMP) pag79x.f 
+pagc92.o:  pagc92.f 
+	$(FCOMP) pagc92.f 
+page01.o:  page01.f 
+	$(FCOMP) page01.f 
+page02.o:  page02.f 
+	$(FCOMP) page02.f 
+page79.o:  page79.f 
+	$(FCOMP) page79.f 
+pagecr.o:  pagecr.f 
+	$(FCOMP) pagecr.f 
+pageu.o:  pageu.f 
+	$(FCOMP) pageu.f 
+pageut.o:  pageut.f 
+	$(FCOMP) pageut.f 
+pcool.o:  pcool.f 
+	$(FCOMP) pcool.f 
+penlty.o:  penlty.f 
+	$(FCOMP) penlty.f 
+pep1.o:  pep1.f 
+	$(FCOMP) pep1.f 
+pkl79.o:  pkl79.f 
+	$(FCOMP) pkl79.f 
+plimit.o:  plimit.f 
+	$(FCOMP) plimit.f 
+pnmass.o:  pnmass.f 
+	$(FCOMP) pnmass.f 
+prcons.o:  prcons.f 
+	$(FCOMP) prcons.f 
+preact.o:  preact.f 
+	$(FCOMP) preact.f 
+precre.o:  precre.f 
+	$(FCOMP) precre.f 
+preff.o:  preff.f 
+	$(FCOMP) preff.f 
+prep1.o:  prep1.f 
+	$(FCOMP) prep1.f 
+prepar.o:  prepar.f 
+	$(FCOMP) prepar.f 
+preset.o:  preset.f 
+	$(FCOMP) preset.f 
+preta1.o:  preta1.f 
+	$(FCOMP) preta1.f 
+pretan.o:  pretan.f 
+	$(FCOMP) pretan.f 
+pretem.o:  pretem.f 
+	$(FCOMP) pretem.f 
+preval.o:  preval.f 
+	$(FCOMP) preval.f 
+prnld.o:  prnld.f 
+	$(FCOMP) prnld.f 
+prpan.o:  prpan.f 
+	$(CLINK) -P -D$$BAT_OS prpan.f > battmp.f ; $(FCOMP) battmp.f ; cp battmp.o prpan.o
+prtot.o:  prtot.f 
+	$(FCOMP) prtot.f 
+prukpk.o:  prukpk.f 
+	$(FCOMP) prukpk.f 
+prux.o:  prux.f 
+	$(FCOMP) prux.f 
+prwa.o:  prwa.f 
+	$(FCOMP) prwa.f 
+prwi.o:  prwi.f 
+	$(FCOMP) prwi.f 
+prwida.o:  prwida.f 
+	$(FCOMP) prwida.f 
+prwr.o:  prwr.f 
+	$(FCOMP) prwr.f 
+prwt.o:  prwt.f 
+	$(FCOMP) prwt.f 
+putdb.o:  putdb.f 
+	$(FCOMP) putdb.f 
+readch.o:  readch.f 
+	$(FCOMP) readch.f 
+relnta.o:  relnta.f 
+	$(FCOMP) relnta.f 
+rnolo.o:  rnolo.f 
+	$(FCOMP) rnolo.f 
+rprint.o:  rprint.f 
+	$(FCOMP) rprint.f 
+scdime.o:  scdime.f 
+	$(FCOMP) scdime.f 
+screw.o:  screw.f 
+	$(FCOMP) screw.f 
+scstre.o:  scstre.f 
+	$(FCOMP) scstre.f 
+siactp.o:  siactp.f 
+	$(FCOMP) siactp.f 
+sitank.o:  sitank.f 
+	$(FCOMP) sitank.f 
+siterm.o:  siterm.f 
+	$(FCOMP) siterm.f 
+siwind.o:  siwind.f 
+	$(FCOMP) siwind.f 
+soundp.o:  soundp.f 
+	$(FCOMP) soundp.f 
+ssearc.o:  ssearc.f 
+	$(FCOMP) ssearc.f 
+sub146.o:  sub146.f 
+	$(FCOMP) sub146.f 
+t31146.o:  t31146.f 
+	$(CLINK) -P -D$$BAT_OS t31146.f > battmp.f ; $(FCOMP) battmp.f ; cp battmp.o t31146.o
+tab79.o:  tab79.f 
+	$(FCOMP) tab79.f 
+table1.o:  table1.f 
+	$(FCOMP) table1.f 
+turnca.o:  turnca.f 
+	$(FCOMP) turnca.f 
+typwdg.o:  typwdg.f 
+	$(FCOMP) typwdg.f 
+ukpk.o:  ukpk.f 
+	$(FCOMP) ukpk.f 
+ukx.o:  ukx.f 
+	$(FCOMP) ukx.f 
+uscod.o:  uscod.f 
+	$(FCOMP) uscod.f 
+voltag.o:  voltag.f 
+	$(FCOMP) voltag.f 
+wdglay.o:  wdglay.f 
+	$(FCOMP) wdglay.f 
+wdgtyp.o:  wdgtyp.f 
+	$(FCOMP) wdgtyp.f 
+winddi.o:  winddi.f 
+	$(FCOMP) winddi.f 
+wmess.o:  wmess.f 
+	$(FCOMP) wmess.f 
+wx146.o:  wx146.f 
+	$(FCOMP) wx146.f 

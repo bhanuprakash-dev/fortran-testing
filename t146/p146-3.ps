@@ -1,0 +1,494 @@
+)ATTR DEFAULT(]–_)
+       _ TYPE (INPUT)  INTENS(HIGH)
+       ^ TYPE (INPUT)  INTENS(LOW)
+       ] TYPE (TEXT)   INTENS(HIGH)
+       – TYPE (TEXT)   INTENS(LOW)
+       › TYPE(TEXT)    INTENS(HIGH) COLOR (YELLOW)
+)BODY
+–*]T146 Input–P146-3–*  OBJECT:]&DSYOBJ              – Next Panel_SCROLL–
+–=–Version–&VER–:–&DVERS     –====================–&DAIT                       –
+]
+–W I N D I N G :]    A        B        C        D        E        F
+–
+–Winding type. . .:_C13   – _C23   – _C33   – _C43   – _C53   – _C63   –
+–
+–No. parallel grps:_C18   – _C28   – _C38   – _C48   – _C58   – _C68   –
+–Conductor materl.:_C19   – _C29   – _C39   – _C49   – _C59   – _C69   –
+–Strand dim.(ax.) :^E11  –  ^E21  –  ^E31  –  ^E41  –  ^E51  –  ^E61    –
+–
+–Covering(strand) :^E13  –  ^E23  –  ^E33  –  ^E43  –  ^E53  –  ^E63    –
+–Covering(cable ) :^E14  –  ^E24  –  ^E34  –  ^E44  –  ^E54  –  ^E64    –
+–Varnished cond Cu:_C112  – _C122  – _C132  – _C142  – _C152  – _C162  –
+–Epoxy glue (TC) .:_C113 –  _C123 –  _C133 –  _C143 –  _C153 –  _C163 –
+–
+–Extra axial insul:^E110 –  ^E210 –  ^E310 –  ^E410 –  ^E510 –  ^E610 –
+–Spacer height . .:_E111 –  _E211 –  _E311 –  _E411 –  _E511 –  _E611 –
+–
+–No of cool. dcts :^E15  –  ^E25  –  ^E35  –  ^E45  –  ^E55  –  ^E65    –
+]or–oilguiding rng:^E16  –  ^E26  –  ^E36  –  ^E46  –  ^E56  –  ^E66    –
+–
+–Comb. winding. . :^E201–   ^E202–   ^E203–   ^E204–   ^E205–   ^E206–
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 P146-3 1'
+&ZPF13 = 'CMS EXEC MANUAL T146 P146-3 1'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+       .CURSOR = C13
+
+
+       IF (&C18  = ' ')  &C18  = 1
+       IF (&C19  = ' ')  &C19  = CU
+       IF (&C112 = ' ')  &C112 = NO
+       IF (&E13  = ' ')  &E13  = 0.5
+       IF (&E14  = ' ')  &E14  = 0.
+       IF (&C113 = ' ')  &C113 = NO
+       IF (&E110 = ' ')  &E110 = 0.0
+       IF (&E111 = ' ')
+           &E111 = 3.0
+           &DUM = TRUNC (&C13,1)
+           IF ( &DUM = L  )  &E111 = 0.0
+           &DUM = TRUNC (&C13,2)
+           IF ( &DUM = D2 )  &E111 = 3.0
+           IF ( &DUM = CD )  &E111 = 3.0
+           IF ( &DUM = SD )  &E111 = 3.0
+           &DUM = TRUNC (&C13,3)
+           IF ( &DUM = SLS ) &E111 = 3.0
+           IF ( &DUM = SLL ) &E111 = 0.0
+       IF (&C112 = ' ')
+           IF (&C111 = OR) &C112 = YES
+           IF (&C111 = LR) &C112 = YES
+       IF (&E16 = ' ')
+        IF (&E15 = ' ')  &E15 = 0
+       IF (&E201 = ' ')  &E201 = NO
+
+    IF (&WILI   =   2,3,4,5,6)
+       IF (&C28  = ' ')  &C28  = 1
+       IF (&C29  = ' ')  &C29  = CU
+       IF (&E23  = ' ')  &E23  = 0.5
+       IF (&E24  = ' ')  &E24  = 0.
+       IF (&C122 = ' ')  &C122 = NO
+       IF (&C123 = ' ')  &C123 = NO
+       IF (&E210 = ' ')  &E210 = 0.0
+       IF (&E211 = ' ')
+           &E211 = 3.0
+           &DUM = TRUNC (&C23,1)
+           IF ( &DUM = L  )  &E211 = 0.0
+           &DUM = TRUNC (&C23,2)
+           IF ( &DUM = D2 )  &E211 = 3.0
+           IF ( &DUM = CD )  &E211 = 3.0
+           IF ( &DUM = SD )  &E211 = 3.0
+           &DUM = TRUNC (&C23,3)
+       IF (&C122 = ' ')
+           IF ( &DUM = SLS ) &E211 = 3.0
+           IF ( &DUM = SLL ) &E211 = 0.0
+       IF (&C121 = OR) &C122 = YES
+       IF (&C121 = LR) &C122 = YES
+       IF (&E26 = ' ')
+          IF (&E25 = ' ')
+              &E25 = 0
+       IF (&E202 = ' ') &E202 = NO
+
+    IF (&WILI   =     3,4,5,6)
+       IF (&C38  = ' ')  &C38  = 1
+       IF (&C39  = ' ')  &C39  = CU
+       IF (&E33  = ' ')  &E33  = 0.5
+       IF (&E34  = ' ')  &E34  = 0.
+       IF (&C132 = ' ')  &C132 = NO
+       IF (&C133 = ' ')  &C133 = NO
+       IF (&E310 = ' ')  &E310 = 0.0
+       IF (&E311 = ' ')
+           &E311 = 3.0
+           &DUM = TRUNC (&C33,1)
+           IF ( &DUM = L  )  &E311 = 0.0
+           &DUM = TRUNC (&C33,2)
+           IF ( &DUM = D2 )  &E311 = 3.0
+           IF ( &DUM = CD )  &E311 = 3.0
+           IF ( &DUM = SD )  &E311 = 3.0
+           &DUM = TRUNC (&C33,3)
+       IF (&C132 = ' ')
+           IF ( &DUM = SLS ) &E311 = 3.0
+           IF ( &DUM = SLL ) &E311 = 0.0
+       IF (&C132 = ' ')
+           IF (&C131 = OR) &C132 = YES
+           IF (&C131 = LR) &C132 = YES
+       IF (&E36 = ' ')
+           IF (&E35 = ' ') &E35 = 0
+       IF (&E203 = ' ') &E203 = NO
+
+    IF (&WILI   =       4,5,6)
+       IF (&C48  = ' ')  &C48  = 1
+       IF (&C49  = ' ')  &C49  = CU
+       IF (&E43  = ' ')  &E43  = 0.5
+       IF (&E44  = ' ')  &E44  = 0.
+       IF (&C142 = ' ')  &C142 = NO
+       IF (&C143 = ' ')  &C143 = NO
+       IF (&E410 = ' ')  &E410 = 0.0
+       IF (&E411 = ' ')
+           &E411 = 3.0
+           &DUM = TRUNC (&C43,1)
+           IF ( &DUM = L  )  &E411 = 0.0
+           &DUM = TRUNC (&C43,2)
+           IF ( &DUM = D2 )  &E411 = 3.0
+           IF ( &DUM = CD )  &E411 = 3.0
+           IF ( &DUM = SD )  &E411 = 3.0
+           &DUM = TRUNC (&C43,3)
+           IF ( &DUM = SLS ) &E411 = 3.0
+           IF ( &DUM = SLL ) &E411 = 0.0
+       IF (&C142 = ' ')
+           IF (&C141 = OR) &C142 = YES
+           IF (&C141 = LR) &C142 = YES
+       IF (&E46 = ' ')
+           IF (&E45 = ' ') &E45 = 0
+       IF (&E204 = ' ') &E204 = NO
+
+    IF (&WILI   =         5,6)
+       IF (&C58  = ' ')  &C58  = 1
+       IF (&C59  = ' ')  &C59  = CU
+       IF (&E53  = ' ')  &E53  = 0.5
+       IF (&E54  = ' ')  &E54  = 0.
+       IF (&C152 = ' ')  &C152 = NO
+       IF (&C153 = ' ')  &C153 = NO
+       IF (&E510 = ' ')  &E510 = 0.0
+       IF (&E511 = ' ')
+           &E511 = 3.0
+           &DUM = TRUNC (&C53,1)
+           IF ( &DUM = L  )  &E511 = 0.0
+           &DUM = TRUNC (&C53,2)
+           IF ( &DUM = D2 )  &E511 = 3.0
+           IF ( &DUM = CD )  &E511 = 3.0
+           IF ( &DUM = SD )  &E511 = 3.0
+           &DUM = TRUNC (&C53,3)
+           IF ( &DUM = SLS ) &E511 = 3.0
+           IF ( &DUM = SLL ) &E511 = 0.0
+       IF (&C152 = ' ')
+           IF (&C151 = OR) &C152 = YES
+           IF (&C151 = LR) &C152 = YES
+       IF (&E56 = ' ')
+           IF (&E55 = ' ') &E55 = 0
+       IF (&E205 = ' ') &E205 = NO
+
+    IF (&WILI   =           6)
+       IF (&C68  = ' ')  &C68  = 1
+       IF (&C69  = ' ')  &C69  = CU
+       IF (&E63  = ' ')  &E63  = 0.5
+       IF (&E64  = ' ')  &E64  = 0.
+       IF (&C162 = ' ')  &C162 = NO
+       IF (&C163 = ' ')  &C163 = NO
+       IF (&E610 = ' ')  &E610 = 0.0
+       IF (&E611 = ' ')
+           &E611 = 3.0
+           &DUM = TRUNC (&C63,1)
+           IF ( &DUM = L  )  &E611 = 0.0
+           &DUM = TRUNC (&C63,2)
+           IF ( &DUM = D2 )  &E611 = 3.0
+           IF ( &DUM = CD )  &E611 = 3.0
+           IF ( &DUM = SD )  &E611 = 3.0
+           &DUM = TRUNC (&C63,3)
+           IF ( &DUM = SLS ) &E611 = 3.0
+           IF ( &DUM = SLL ) &E611 = 0.0
+       IF (&C162 = ' ')
+           IF (&C161 = OR) &C162 = YES
+           IF (&C161 = LR) &C162 = YES
+       IF (&E66 = ' ')
+           IF (&E65 = ' ') &E65 = 0
+       IF (&E206 = ' ') &E206 = NO
+
+
+)REINIT
+REFRESH (*)
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+
+IF (&SCROLL ^= X)
+
+    IF (&C13 = ?)  .MSG = OPTRM041
+    IF (&C23 = ?)  .MSG = OPTRM041
+    IF (&C33 = ?)  .MSG = OPTRM041
+    IF (&C43 = ?)  .MSG = OPTRM041
+    IF (&C53 = ?)  .MSG = OPTRM041
+    IF (&C63 = ?)  .MSG = OPTRM041
+    IF (&C18 = ?)  .MSG = OPTRM046
+    IF (&C28 = ?)  .MSG = OPTRM046
+    IF (&C38 = ?)  .MSG = OPTRM046
+    IF (&C48 = ?)  .MSG = OPTRM046
+    IF (&C58 = ?)  .MSG = OPTRM046
+    IF (&C68 = ?)  .MSG = OPTRM046
+    IF (&C19 = ?)  .MSG = OPTRM047
+    IF (&C29 = ?)  .MSG = OPTRM047
+    IF (&C39 = ?)  .MSG = OPTRM047
+    IF (&C49 = ?)  .MSG = OPTRM047
+    IF (&C59 = ?)  .MSG = OPTRM047
+    IF (&C69 = ?)  .MSG = OPTRM047
+    IF (&C112 = ?) .MSG = OPTRM146
+    IF (&C122 = ?) .MSG = OPTRM146
+    IF (&C132 = ?) .MSG = OPTRM146
+    IF (&C142 = ?) .MSG = OPTRM146
+    IF (&C152 = ?) .MSG = OPTRM146
+    IF (&C162 = ?) .MSG = OPTRM146
+    IF (&C113 = ?) .MSG = OPTRM150
+    IF (&C123 = ?) .MSG = OPTRM150
+    IF (&C133 = ?) .MSG = OPTRM150
+    IF (&C143 = ?) .MSG = OPTRM150
+    IF (&C153 = ?) .MSG = OPTRM150
+    IF (&C163 = ?) .MSG = OPTRM150
+    IF (&E111 = ?) .MSG = OPTRM033
+    IF (&E211 = ?) .MSG = OPTRM033
+    IF (&E311 = ?) .MSG = OPTRM033
+    IF (&E411 = ?) .MSG = OPTRM033
+    IF (&E511 = ?) .MSG = OPTRM033
+    IF (&E611 = ?) .MSG = OPTRM033
+    IF (&E11 = ?)  .MSG = OPTRM062
+    IF (&E21 = ?)  .MSG = OPTRM062
+    IF (&E31 = ?)  .MSG = OPTRM062
+    IF (&E41 = ?)  .MSG = OPTRM062
+    IF (&E51 = ?)  .MSG = OPTRM062
+    IF (&E61 = ?)  .MSG = OPTRM062
+    IF (&E13 = ?)  .MSG = OPTRM064
+    IF (&E23 = ?)  .MSG = OPTRM064
+    IF (&E33 = ?)  .MSG = OPTRM064
+    IF (&E43 = ?)  .MSG = OPTRM064
+    IF (&E53 = ?)  .MSG = OPTRM064
+    IF (&E63 = ?)  .MSG = OPTRM064
+    IF (&E14 = ?)  .MSG = OPTRM065
+    IF (&E24 = ?)  .MSG = OPTRM065
+    IF (&E34 = ?)  .MSG = OPTRM065
+    IF (&E44 = ?)  .MSG = OPTRM065
+    IF (&E54 = ?)  .MSG = OPTRM065
+    IF (&E64 = ?)  .MSG = OPTRM065
+    IF (&E15 = ?)  .MSG = OPTRM066
+    IF (&E25 = ?)  .MSG = OPTRM066
+    IF (&E35 = ?)  .MSG = OPTRM066
+    IF (&E45 = ?)  .MSG = OPTRM066
+    IF (&E55 = ?)  .MSG = OPTRM066
+    IF (&E65 = ?)  .MSG = OPTRM066
+    IF (&E16 = ?)  .MSG = OPTRM067
+    IF (&E26 = ?)  .MSG = OPTRM067
+    IF (&E36 = ?)  .MSG = OPTRM067
+    IF (&E46 = ?)  .MSG = OPTRM067
+    IF (&E56 = ?)  .MSG = OPTRM067
+    IF (&E66 = ?)  .MSG = OPTRM067
+    IF (&E201 = ?) .MSG = OPTRM037
+    IF (&E202 = ?) .MSG = OPTRM037
+    IF (&E203 = ?) .MSG = OPTRM037
+    IF (&E204 = ?) .MSG = OPTRM037
+    IF (&E205 = ?) .MSG = OPTRM037
+    IF (&E206 = ?) .MSG = OPTRM037
+    IF (&E110 = ?) .MSG = OPTRM049
+    IF (&E210 = ?) .MSG = OPTRM049
+    IF (&E310 = ?) .MSG = OPTRM049
+    IF (&E410 = ?) .MSG = OPTRM049
+    IF (&E510 = ?) .MSG = OPTRM049
+    IF (&E610 = ?) .MSG = OPTRM049
+  IF (&WILI = 1,2,3,4,5,6)
+      VER (&C13,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C18,NONBLANK,MSG=OPTRM046)
+      &C19 = TRUNC (&C19,1)
+      &C19  = TRANS (&C19  ?,? C,CU A,AL *,*)
+      VER (&C19,LIST,CU,AL,MSG=OPTRM047)
+      &C112 = TRANS(&C112 ?,? Y,YES N,NO *,*)
+      VER (&C112,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C112 = YES)
+           VER (&C19,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C113 = TRANS(&C113 ?,? Y,YES N,NO *,*)
+      VER (&C113,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C113 = YES)
+         VER (&C111,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E111 = TRUNC (&E111,'.')
+           &DUM = TRUNC (&C13,1)
+           IF ( &DUM = L  )  VER (&E111,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C13,2)
+           IF ( &DUM = D2 ) VER (&E111,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E111,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E111,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C13,3)
+           IF ( &DUM = SLS ) VER (&E111,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E111,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C13,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E111,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E201 = TRANS (&E201 ?,? Y,YES N,NO *,*)
+     VER (&E201,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E16 ^= '0' )
+           IF (  &E16 ^= &BLANK )
+                 &E15  = 0
+  IF (&WILI = 2,3,4,5,6)
+      VER (&C23,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C28,NONBLANK,MSG=OPTRM046)
+      &C29 = TRUNC (&C29,1)
+      &C29  = TRANS (&C29  ?,? C,CU A,AL *,*)
+      VER (&C29,LIST,CU,AL,MSG=OPTRM047)
+      &C122 = TRANS(&C122 ?,? Y,YES N,NO *,*)
+      VER (&C122,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C122 = YES)
+           VER (&C29,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C123 = TRANS(&C123 ?,? Y,YES N,NO *,*)
+      VER (&C123,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C123 = YES)
+         VER (&C121,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E211 = TRUNC (&E211,'.')
+           &DUM = TRUNC (&C23,1)
+           IF ( &DUM = L  )  VER (&E211,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C23,2)
+           IF ( &DUM = D2 ) VER (&E211,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E211,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E211,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C23,3)
+           IF ( &DUM = SLS ) VER (&E211,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E211,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C23,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E211,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E202 = TRANS (&E202 ?,? Y,YES N,NO *,*)
+     VER (&E202,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E26 ^= '0' )
+           IF (  &E26 ^= &BLANK )
+                 &E25  = 0
+  IF (&WILI = 3,4,5,6)
+      VER (&C33,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C38,NONBLANK,MSG=OPTRM046)
+      &C39 = TRUNC (&C39,1)
+      &C39  = TRANS (&C39  ?,? C,CU A,AL *,*)
+      VER (&C39,LIST,CU,AL,MSG=OPTRM047)
+      &C132 = TRANS(&C132 ?,? Y,YES N,NO *,*)
+      VER (&C132,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C132 = YES)
+           VER (&C39,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C133 = TRANS(&C133 ?,? Y,YES N,NO *,*)
+      VER (&C133,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C133 = YES)
+         VER (&C131,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E311 = TRUNC (&E311,'.')
+           &DUM = TRUNC (&C33,1)
+           IF ( &DUM = L  )  VER (&E311,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C33,2)
+           IF ( &DUM = D2 ) VER (&E311,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E311,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E311,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C33,3)
+           IF ( &DUM = SLS ) VER (&E311,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E311,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C33,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E311,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E203 = TRANS (&E203 ?,? Y,YES N,NO *,*)
+     VER (&E203,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E36 ^= '0' )
+           IF (  &E36 ^= &BLANK )
+                 &E35  = 0
+  IF (&WILI = 4,5,6)
+      VER (&C43,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C48,NONBLANK,MSG=OPTRM046)
+      &C49 = TRUNC (&C49,1)
+      &C49  = TRANS (&C49  ?,? C,CU A,AL *,*)
+      VER (&C49,LIST,CU,AL,MSG=OPTRM047)
+      &C142 = TRANS(&C142 ?,? Y,YES N,NO *,*)
+      VER (&C142,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C142 = YES)
+           VER (&C49,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C143 = TRANS(&C143 ?,? Y,YES N,NO *,*)
+      VER (&C143,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C143 = YES)
+         VER (&C141,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E411 = TRUNC (&E411,'.')
+           &DUM = TRUNC (&C43,1)
+           IF ( &DUM = L  )  VER (&E411,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C43,2)
+           IF ( &DUM = D2 ) VER (&E411,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E411,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E411,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C43,3)
+           IF ( &DUM = SLS ) VER (&E411,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E411,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C43,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E411,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E204 = TRANS (&E204 ?,? Y,YES N,NO *,*)
+     VER (&E204,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E46 ^= '0' )
+           IF (  &E46 ^= &BLANK )
+                 &E45  = 0
+  IF (&WILI = 5,6)
+      VER (&C53,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C58,NONBLANK,MSG=OPTRM046)
+      &C59 = TRUNC (&C59,1)
+      &C59  = TRANS (&C59  ?,? C,CU A,AL *,*)
+      VER (&C59,LIST,CU,AL,MSG=OPTRM047)
+      &C152 = TRANS(&C152 ?,? Y,YES N,NO *,*)
+      VER (&C152,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C152 = YES)
+           VER (&C59,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C153 = TRANS(&C153 ?,? Y,YES N,NO *,*)
+      VER (&C153,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C153 = YES)
+         VER (&C151,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E511 = TRUNC (&E511,'.')
+           &DUM = TRUNC (&C53,1)
+           IF ( &DUM = L  )  VER (&E511,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C53,2)
+           IF ( &DUM = D2 ) VER (&E511,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E511,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E511,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C53,3)
+           IF ( &DUM = SLS ) VER (&E511,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E511,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C53,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E511,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E205 = TRANS (&E205 ?,? Y,YES N,NO *,*)
+     VER (&E205,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E56 ^= '0' )
+           IF (  &E56 ^= &BLANK )
+                 &E55  = 0
+  IF (&WILI = 6)
+      VER (&C63,NONBLANK,LIST,L,L1,L2,L3,S,S1,S2,S3,S4,S5,S6,
+           S7,S8,S9,S10,S11,S12,SLL,SLL1,SLL2,
+           SLS,SLS1,SLS2,SLS3,SLS4,SLS5,SLS6,CD,SD,D2,MSG=OPTRM041)
+      VER (&C68,NONBLANK,MSG=OPTRM046)
+      &C69 = TRUNC (&C69,1)
+      &C69  = TRANS (&C69  ?,? C,CU A,AL *,*)
+      VER (&C69,LIST,CU,AL,MSG=OPTRM047)
+      &C162 = TRANS(&C162 ?,? Y,YES N,NO *,*)
+      VER (&C162,NONBLANK,LIST,NO,YES,MSG=OPTRM148)
+      IF (&C162 = YES)
+           VER (&C69,NONBLANK,LIST,CU,MSG=OPTRM147)
+      &C163 = TRANS(&C163 ?,? Y,YES N,NO *,*)
+      VER (&C163,NONBLANK,LIST,NO,YES,MSG=OPTRM152)
+      IF (&C163 = YES)
+         VER (&C161,NONBLANK,LIST,TC,MSG=OPTRM151)
+      &E611 = TRUNC (&E611,'.')
+           &DUM = TRUNC (&C63,1)
+           IF ( &DUM = L  )  VER (&E611,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM = TRUNC (&C63,2)
+           IF ( &DUM = D2 ) VER (&E611,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = CD ) VER (&E611,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SD ) VER (&E611,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           &DUM = TRUNC (&C63,3)
+           IF ( &DUM = SLS ) VER (&E611,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+           IF ( &DUM = SLL ) VER (&E611,NONBLANK,LIST,0,0.,0.0,MSG=OPTRM033)
+           &DUM2 = TRUNC (&C63,1)
+           IF ( &DUM ^= SLS )
+            IF ( &DUM ^= SLL )
+             IF ( &DUM2 = S ) VER (&E611,NONBLANK,RANGE,1,9,MSG=OPTRM033)
+     &E206 = TRANS (&E206 ?,? Y,YES N,NO *,*)
+     VER (&E206,NONBLANK,LIST,NO,YES,MSG=OPTRM037)
+     IF (  &E66 ^= '0' )
+           IF (  &E66 ^= &BLANK )
+                 &E65  = 0
+)END

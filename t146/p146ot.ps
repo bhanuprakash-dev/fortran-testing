@@ -1,0 +1,33 @@
+)ATTR DEFAULT (!]_)
+      [ TYPE(TEXT)   INTENS(HIGH) COLOR (YELLOW)
+)BODY
+]*!T146 Output]P146OT]* OBJECT:!&DSYOBJ              ]
+]===============================================================================
+!
+]Option=_OPT]
+]
+!  1]Display
+!  2]Print to IDENT=_PRINTID]
+]
+!  X]Return to the previous panel
+]
+]===============================================================================
+]
+]
+]
+]
+[PF1=User's manual [PF2=Update History]
+)INIT
+&ZPF01 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF13 = 'CMS EXEC MANUAL T146 1 0'
+&ZPF02 = 'CMS EXEC UPDATED T146 TOP'
+&ZPF14 = 'CMS EXEC UPDATED T146 TOP'
+VPUT (ZPF01 ZPF02 ZPF13 ZPF14) PROFILE
+
+ &OPT = &BLANK
+)REINIT
+.ATTR (.CURSOR) = 'COLOR(YELLOW) HILITE(REVERSE)'
+)PROC
+  IF (.RESP = END) &OPT = X
+  VER (&OPT,NONBLANK,LIST,1,2,X,MSG=OPTRM111)
+)END

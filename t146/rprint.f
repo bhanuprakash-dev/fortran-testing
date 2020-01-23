@@ -1,0 +1,63 @@
+CRPRINT-S         LTB146/S/ RPRINT-S
+CRPRINT
+        SUBROUTINE RPRINT(JFC,IDENT,DATE,IPAGE,IRAD,RUB,BBFINE,
+     &             LTEXT,R1,R2,R3,R4,R5,R6)
+C
+       CHARACTER IDENT*(*),CSTYR*1,LTEXT*24,TICO*8,
+     &           MNLC*8,RUB(15)*4,CC*4,DATE*26
+C
+       LOGICAL BBFINE,BBF
+C
+       CC = RUB(14)
+C
+       IF(IRAD.LT.60) GO TO 100
+       IPAGE=IPAGE+1
+       IRAD= 6
+       WRITE(JFC,820) IDENT,DATE,IPAGE,(RUB(L),L=1,14),
+     &              CC,CC,CC
+C
+ 100   SUM = R3+R5+R6
+       SUM1= SUM+R1+R2+R4
+       IF( ABS(SUM1) .LT. 0.1 ) GO TO 999
+       READ (LTEXT,810)CSTYR
+       IF( (.NOT.BBFINE) .AND. (CSTYR.EQ.' ') ) GO TO 999
+C
+       BBF = (CC.EQ.'HRS '.AND. R6.LE.999.)
+       IF(.NOT.BBF)
+     & WRITE(JFC,800) LTEXT,INT(R1),INT(R2),INT(R3),INT(R4),INT(R5),
+     & INT(R6),INT(SUM)
+       IF(BBF)
+     & WRITE(JFC,801) LTEXT,INT(R1),INT(R2),INT(R3),INT(R4),INT(R5),
+     &     R6,INT(SUM)
+       IRAD =IRAD + 1
+ 150   CONTINUE
+C
+       IF(CSTYR.EQ.'1') GO TO 210
+       IF(CSTYR.EQ.'2') GO TO 210
+       GOTO 999
+C
+C...   EXTRA RADMATNING
+ 210   WRITE(JFC,815)
+       IRAD=IRAD+1
+       IF(IRAD.GT.50) GO TO 220
+       GO TO 999
+C
+C...   NY SIDA
+ 220   IF(IRAD.LT.15) GO TO 999
+       IPAGE=IPAGE+1
+       IRAD=6
+       WRITE(JFC,820) IDENT,DATE,IPAGE,(RUB(L),L=1,14),
+     &              CC,CC,CC
+C
+ 999   CONTINUE
+       RETURN
+ 800   FORMAT (6X,A22,I6,5I7,I8)
+ 801   FORMAT (6X,A22,I6,4I7,F7.2,I8)
+ 810   FORMAT (23X,A1)
+ 815   FORMAT (1X)
+ 820   FORMAT (1H1,5X,A40,1X,A26,' Page',I2,/6X,
+     &         13A4,/6X/6X,'C O M P O N E N T',6X,'--SHAPED ',
+     &         'MATERIAL--  ---GOODS---  MANUF.   -SUM-'/
+     &         1X,28X,'net.kg',2X,
+     &         'gr.kg',3X,A4,4X,'kg',4X,A4,3X,A4,3X,A4)
+       END

@@ -1,0 +1,89 @@
+INITSTART 
+ASSGN     &ZPF01    'CMS EXEC MANUAL T146 1 0'
+ASSGN     &ZPF13    'CMS EXEC MANUAL T146 1 0'
+ASSGN     &ZPF02    'CMS EXEC UPDATED T146 TOP'
+ASSGN     &ZPF14    'CMS EXEC UPDATED T146 TOP'
+COMPARAM  PROFILE
+PARAM     ZPF14
+PARAM     ZPF13
+PARAM     ZPF02
+PARAM     ZPF01
+CALL      CVPT      5
+ASSGN     .CURSOR   Q
+PARAM     '2'
+PARAM     &Q
+CALL      CIFEQ     2         17
+PARAM     '0'
+PARAM     &ERR
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'WARNING: OPTIMISATION NOT COMPLETE'
+PARAM     '1'
+PARAM     &ERR
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'Successful run , Core resonance checked : OK ( ZK-TA 4567-101E )'
+PARAM     '2'
+PARAM     &ERR
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'Core resonance likely   ( checked according to ZK-TA 4567-101E )'
+PARAM     '3'
+PARAM     &ERR
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'Successful run , Core resonance NOT checked  ( ZK-TA 4567-101E )'
+PARAM     '3'
+PARAM     &Q
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'Output requests completed'
+PARAM     '4'
+PARAM     &Q
+CALL      CIFEQ     2         2
+ASSGN     &MESS146  'The data have been stored'
+ASSGN     &Q        ' '
+PARAM     ' '
+PARAM     &B35
+CALL      CIFEQ     2         2
+ASSGN     &B35      NO
+PARAM     ' '
+PARAM     &B14
+CALL      CIFEQ     2         2
+ASSGN     &B14      0
+PARAM     ' '
+PARAM     &B15
+CALL      CIFEQ     2         2
+ASSGN     &B15      0
+PARAM     'NO'
+PARAM     &B48
+CALL      CIFEQ     2         8
+ASSGN     &CRD      ' '
+ASSGN     &NRD      ' '
+ASSGN     &HGT      ' '
+ASSGN     &RDH      ' '
+ASSGN     &CAF      ' '
+ASSGN     &CKM      ' '
+ASSGN     &CUBE     ' '
+PARAM     'Y'
+PARAM     &B48T1
+CALL      CIFEQ     2         11
+ASSGN     &CRD      'Radiators:'
+ASSGN     &HGT      'Height:'
+PARAM     'Warning'
+PARAM     &RDH
+CALL      CIFNEQ    2         6
+PARAM     ' '
+PARAM     &CKM
+CALL      CIFNEQ    2         3
+ASSGN     &CAF      'Air flow:'
+ASSGN     &CUBE     'm3/s'
+PARAM     'Y'
+PARAM     &B48T2
+CALL      CIFEQ     2         11
+ASSGN     &CRD      'Radiators:'
+ASSGN     &HGT      'Height:'
+PARAM     'Warning'
+PARAM     &RDH
+CALL      CIFNEQ    2         6
+PARAM     ' '
+PARAM     &CKM
+CALL      CIFNEQ    2         3
+ASSGN     &CAF      'Air flow:'
+ASSGN     &CUBE     'm3/s'
+INITEND   

@@ -1,0 +1,558 @@
+PROCSTART 
+PARAM     X
+PARAM     &SCROLL
+CALL      CIFNEQ    2         554
+PARAM     ?
+PARAM     &ID
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM000
+PARAM     ?
+PARAM     &A110
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM119
+PARAM     ?
+PARAM     &A1
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM001
+PARAM     ?
+PARAM     &A12
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM002
+PARAM     ?
+PARAM     &A13
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM003
+PARAM     ?
+PARAM     &A14
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM004
+PARAM     ?
+PARAM     &A15
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM005
+PARAM     ?
+PARAM     &A16
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM006
+PARAM     ?
+PARAM     &A17
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM007
+PARAM     ?
+PARAM     &A18
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM008
+PARAM     ?
+PARAM     &A19
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM009
+PARAM     ?
+PARAM     &A10
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM010
+PARAM     ?
+PARAM     &A2
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM001
+PARAM     ?
+PARAM     &A22
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM002
+PARAM     ?
+PARAM     &A23
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM003
+PARAM     ?
+PARAM     &A24
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM004
+PARAM     ?
+PARAM     &A25
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM005
+PARAM     ?
+PARAM     &A26
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM006
+PARAM     ?
+PARAM     &A27
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM007
+PARAM     ?
+PARAM     &A28
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM008
+PARAM     ?
+PARAM     &A29
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM009
+PARAM     ?
+PARAM     &A20
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM010
+PARAM     ?
+PARAM     &A21
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM035
+PARAM     ?
+PARAM     &A3
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM001
+PARAM     ?
+PARAM     &A32
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM002
+PARAM     ?
+PARAM     &A33
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM003
+PARAM     ?
+PARAM     &A34
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM004
+PARAM     ?
+PARAM     &A35
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM005
+PARAM     ?
+PARAM     &A36
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM006
+PARAM     ?
+PARAM     &A37
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM007
+PARAM     ?
+PARAM     &A38
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM008
+PARAM     ?
+PARAM     &A39
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM009
+PARAM     ?
+PARAM     &A30
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM010
+PARAM     ?
+PARAM     &A31
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM035
+PARAM     ?
+PARAM     &A4
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM001
+PARAM     ?
+PARAM     &A42
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM002
+PARAM     ?
+PARAM     &A43
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM003
+PARAM     ?
+PARAM     &A44
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM004
+PARAM     ?
+PARAM     &A45
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM005
+PARAM     ?
+PARAM     &A49
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM009
+PARAM     ?
+PARAM     &A40
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM010
+PARAM     ?
+PARAM     &A41
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM035
+PARAM     ?
+PARAM     &B11
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM011
+PARAM     ?
+PARAM     &B12
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM012
+PARAM     ?
+PARAM     &B13
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM013
+PARAM     ?
+PARAM     &B14
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM014
+PARAM     ?
+PARAM     &B15
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM015
+PARAM     ?
+PARAM     &B18
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM018
+PARAM     ?
+PARAM     &B22
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM020
+PARAM     ?
+PARAM     &B23
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM021
+PARAM     ?
+PARAM     &B31
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM026
+PARAM     ?
+PARAM     &B32
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM027
+PARAM     ?
+PARAM     &B34
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM029
+PARAM     ?
+PARAM     &B35
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM030
+PARAM     ?
+PARAM     &B41
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM031
+PARAM     ?
+PARAM     &B42
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM031
+PARAM     ?
+PARAM     &B43
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM031
+PARAM     ?
+PARAM     &WILI
+CALL      CIFEQ     2         2
+ASSGN     .MSG      OPTRM032
+PARAM     'NO'
+PARAM     &A15
+CALL      CIFEQ     2         4
+PARAM     'NO'
+PARAM     &A25
+CALL      CIFEQ     2         1
+MSGPARAM  OPTRM002
+NBPARAM   NO
+PARAM     &A12
+CALL      CVR       3
+MSGPARAM  OPTRM003
+NBPARAM   NO
+PARAM     &A13
+CALL      CVR       3
+MSGPARAM  OPTRM004
+PARAM     D
+PARAM     Y/A
+PARAM     YN
+PARAM     Y
+PARAM     I/A
+PARAM     I
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A14
+CALL      CVR       10
+MSGPARAM  OPTRM005
+PARAM     CF
+PARAM     PM
+PARAM     L
+PARAM     NO
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A15
+CALL      CVR       8
+PARAM     NO
+PARAM     &A15
+CALL      CIFNEQ    2         13
+MSGPARAM  OPTRM006
+NBPARAM   NO
+PARAM     &A16
+CALL      CVR       3
+MSGPARAM  OPTRM007
+NBPARAM   NO
+PARAM     &A17
+CALL      CVR       3
+MSGPARAM  OPTRM008
+NBPARAM   NO
+PARAM     &A18
+CALL      CVR       3
+MSGPARAM  OPTRM009
+NBPARAM   NO
+PARAM     &A19
+CALL      CVR       3
+MSGPARAM  OPTRM010
+NBPARAM   NO
+PARAM     &A10
+CALL      CVR       3
+MSGPARAM  OPTRM002
+NBPARAM   NO
+PARAM     &A22
+CALL      CVR       3
+MSGPARAM  OPTRM003
+NBPARAM   NO
+PARAM     &A23
+CALL      CVR       3
+MSGPARAM  OPTRM004
+PARAM     D
+PARAM     Y/A
+PARAM     YN
+PARAM     Y
+PARAM     I/A
+PARAM     I
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A24
+CALL      CVR       10
+MSGPARAM  OPTRM005
+PARAM     CF
+PARAM     PM
+PARAM     L
+PARAM     NO
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A25
+CALL      CVR       8
+PARAM     NO
+PARAM     &A25
+CALL      CIFNEQ    2         13
+MSGPARAM  OPTRM006
+NBPARAM   NO
+PARAM     &A26
+CALL      CVR       3
+MSGPARAM  OPTRM007
+NBPARAM   NO
+PARAM     &A27
+CALL      CVR       3
+MSGPARAM  OPTRM008
+NBPARAM   NO
+PARAM     &A28
+CALL      CVR       3
+MSGPARAM  OPTRM009
+NBPARAM   NO
+PARAM     &A29
+CALL      CVR       3
+MSGPARAM  OPTRM010
+NBPARAM   NO
+PARAM     &A20
+CALL      CVR       3
+PARAM     ' '
+PARAM     &A3
+CALL      CIFNEQ    2         52
+MSGPARAM  OPTRM002
+NBPARAM   NO
+PARAM     &A32
+CALL      CVR       3
+MSGPARAM  OPTRM003
+NBPARAM   NO
+PARAM     &A33
+CALL      CVR       3
+MSGPARAM  OPTRM004
+PARAM     D
+PARAM     Y/A
+PARAM     YN
+PARAM     Y
+PARAM     I/A
+PARAM     I
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A34
+CALL      CVR       10
+MSGPARAM  OPTRM005
+PARAM     CF
+PARAM     PM
+PARAM     L
+PARAM     NO
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A35
+CALL      CVR       8
+PARAM     NO
+PARAM     &A35
+CALL      CIFNEQ    2         13
+MSGPARAM  OPTRM006
+NBPARAM   NO
+PARAM     &A36
+CALL      CVR       3
+MSGPARAM  OPTRM007
+NBPARAM   NO
+PARAM     &A37
+CALL      CVR       3
+MSGPARAM  OPTRM008
+NBPARAM   NO
+PARAM     &A38
+CALL      CVR       3
+MSGPARAM  OPTRM009
+NBPARAM   NO
+PARAM     &A39
+CALL      CVR       3
+MSGPARAM  OPTRM010
+NBPARAM   NO
+PARAM     &A30
+CALL      CVR       3
+PARAM     ' '
+PARAM     &A4
+CALL      CIFNEQ    2         28
+MSGPARAM  OPTRM002
+NBPARAM   NO
+PARAM     &A42
+CALL      CVR       3
+MSGPARAM  OPTRM003
+NBPARAM   NO
+PARAM     &A43
+CALL      CVR       3
+MSGPARAM  OPTRM004
+PARAM     D
+PARAM     Y/A
+PARAM     YN
+PARAM     Y
+PARAM     I/A
+PARAM     I
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &A44
+CALL      CVR       10
+MSGPARAM  OPTRM009
+NBPARAM   NO
+PARAM     &A49
+CALL      CVR       3
+MSGPARAM  OPTRM010
+NBPARAM   NO
+PARAM     &A40
+CALL      CVR       3
+PARAM     &BLANK
+PARAM     &A110
+CALL      CIFEQ     2         2
+ASSGN     &A110     0
+PARAM     2
+PARAM     &B11
+CALL      CTRNC     2         &ZZ0
+ASSGN     &B11      &ZZ0
+MSGPARAM  OPTRM011
+PARAM     60
+PARAM     50
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B11
+CALL      CVR       6
+PARAM     1
+PARAM     &B12
+CALL      CTRNC     2         &ZZ1
+ASSGN     &B12      &ZZ1
+MSGPARAM  OPTRM012
+PARAM     3
+PARAM     1
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B12
+CALL      CVR       6
+PARAM     1
+PARAM     &WILI
+CALL      CTRNC     2         &ZZ2
+ASSGN     &WILI     &ZZ2
+MSGPARAM  OPTRM032
+PARAM     6
+PARAM     5
+PARAM     4
+PARAM     3
+PARAM     2
+PARAM     1
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &WILI
+CALL      CVR       10
+MSGPARAM  NODEF
+PARAM     *
+PARAM     *
+PARAM     VFR
+PARAM     V
+PARAM     CFR
+PARAM     C
+PARAM     ?
+PARAM     ?
+PARAM     &B13
+CALL      CTRNS     10        &ZZ3
+ASSGN     &B13      &ZZ3
+MSGPARAM  OPTRM013
+PARAM     VFR
+PARAM     CFR
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B13
+CALL      CVR       6
+MSGPARAM  OPTRM018
+NBPARAM   NO
+PARAM     &B18
+CALL      CVR       3
+MSGPARAM  OPTRM026
+PARAM     OFAF
+PARAM     ONAF
+PARAM     ONAN
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B31
+CALL      CVR       7
+PARAM     ONAN
+PARAM     &B31
+CALL      CIFEQ     2         2
+ASSGN     &B32      1.0
+PARAM     OFAF
+PARAM     &B31
+CALL      CIFEQ     2         2
+ASSGN     &B32      0.0
+PARAM     ONAF
+PARAM     &B31
+CALL      CIFEQ     2         5
+MSGPARAM  OPTRM027
+NBPARAM   NO
+PARAM     &B32
+CALL      CVR       3
+PARAM     1
+PARAM     &B34
+CALL      CTRNC     2         &ZZ4
+ASSGN     &B34      &ZZ4
+MSGPARAM  OPTRM029
+PARAM     NO
+PARAM     N
+PARAM     YES
+PARAM     Y
+PARAM     ?
+PARAM     ?
+PARAM     &B34
+CALL      CTRNS     8         &ZZ5
+ASSGN     &B34      &ZZ5
+MSGPARAM  NODEF
+PARAM     NO
+PARAM     YES
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B34
+CALL      CVR       6
+PARAM     1
+PARAM     &B35
+CALL      CTRNC     2         &ZZ6
+ASSGN     &B35      &ZZ6
+MSGPARAM  OPTRM030
+PARAM     NO
+PARAM     N
+PARAM     YES
+PARAM     Y
+PARAM     ?
+PARAM     ?
+PARAM     &B35
+CALL      CTRNS     8         &ZZ7
+ASSGN     &B35      &ZZ7
+MSGPARAM  NODEF
+PARAM     NO
+PARAM     YES
+KEYPARAM  LIST
+NBPARAM   NO
+PARAM     &B35
+CALL      CVR       6
+PROCEND   

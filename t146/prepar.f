@@ -1,0 +1,213 @@
+*********************************************************************
+*                                                                   *
+*      The copyright to the computer program herein is  the         *
+*      property of ABB TRANSFORMERS , Sweden.  The  program         *
+*      may be used or copied only with the written  permis-         *
+*      sion of ABB TRANSFORMERS  or in accordance with  the         *
+*      terms of agreement under which the program has  been         *
+*      supplied.                                                    *
+*                                                                   *
+*      In no event shall ABB TRANSFORMERS   be  liable  for         *
+*      incidental or consequential damages arising from use         *
+*      of this program.                                             *
+*                                                                   *
+*********************************************************************
+
+************************************************************************
+*
+*      Subroutine PREPAR
+*      -----------------
+*
+C...   Title:  Performs preliminary calculations
+C...           and sets complementary variables needed
+C...           during the subsequent calculations
+*
+*      Written: XX-XX-XX by A.N.Other  , XXXX
+*      Revised: 85-10-18 by Ron Bell   , TRAFO/IK
+*      Revised: 88-02-10 by Ron Bell   , TRAFO/IK
+*      Revised: 91-12-09 by B-G Bladh    SETFO/TS
+*             MNL75 and some input data of small intereset are removed.
+*      Revised: 02-07-15 by W. Henning , K9ZUK
+*             Fixed array out of bounds for BBHELP(0:10)*
+************************************************************************
+*
+       SUBROUTINE PREPAR
+*
+C... Declarations
+*
+CC*SBBL Start of the declarations block.
+*
+       include'com1.h'
+*
+       EQUIVALENCE
+     &  (XZ0001(1)    ,  AARR   (1)    ),
+     &  (XZ0181(1)    ,  BARR   (1)    ),
+     &  (XZ0301(1)    ,  IARR   (1)    ),
+     &  (XZ0761(1)    ,  EDDCO1 (1)    ),
+     &  (XZ0981(1)    ,  RAACON (1)    )
+       EQUIVALENCE
+     &  (XZ1031(1)    ,  SIGM   (1)    ),
+     &  (XZ1211(1)    ,  EXTX   (1)    ),
+     &  (XZ1215(1)    ,  KCON   (1)    ),
+     &  (XZ1255(1)    ,  SLINE  (1)    ),
+     &  (XZ1259(1)    ,  SRATE  (1)    )
+       EQUIVALENCE
+     &  (XZ1263(1)    ,  SRATEP (1)    ),
+     &  (XZ1267(1)    ,  UDIM   (1)    ),
+     &  (XZ1283(1)    ,  UNLINE (1)    ),
+     &  (XZ1311(1)    ,  BBHELP (1)    ),
+     &  (XZ1378       ,  BBERR         ),
+     &  (XZ1391       ,  BBTS          ),
+     &  (XZ1363(1)    ,  BBSCR  (1)    )
+       EQUIVALENCE
+     &  (XZ1376       ,  BBDSHE        ),
+     &  (XZ1381       ,  BBFLDS        ),
+     &  (XZ1395       ,  BBWISU        ),
+     &  (XZ1401       ,  APOED         )
+       EQUIVALENCE
+     &  (XZ1409       ,  BPOED         ),
+     &  (XZ1428       ,  DOUTW         ),
+     &  (XZ1431       ,  DRV           ),
+     &  (XZ1437       ,  EPS           ),
+     &  (XZ1442       ,  FEPS          )
+       EQUIVALENCE
+     &  (XZ1444       ,  AF            ),
+     &  (XZ1446       ,  FREQ          ),
+     &  (XZ1452       ,  GACTP         ),
+     &  (XZ1484       ,  ITR           ),
+     &  (XZ1486       ,  JFC           ),
+     &  (XZ1497       ,  NFMX          )
+       EQUIVALENCE
+     &  (XZ1499       ,  NG            ),
+     &  (XZ1501       ,  NPHAS         ),
+     &  (XZ1508       ,  NWILI         ),
+     &  (XZ1509       ,  NWOULI        ),
+     &  (XZ1513       ,  PI            )
+       EQUIVALENCE
+     &  (XZ1532       ,  RMY0          ),
+     &  (XZ1542       ,  SNOML         ),
+     &  (XZ1545       ,  SQR3          ),
+     &  (XZ1571       ,  ZWOULI        )
+*
+       REAL       UDIM(4),UNLINE(4),SRATEP(4),SRATE(4),
+     &            SLINE(4),AARR(200),RAACON(9),SIGM(9),EXTX(4),
+     &            EDDCO1(9),BARR(100),AF,APOED,BPOED,CCON,DOUTW,DRV,
+     &            EPS,FEPS,FREQ,GACTP,OMEGA,PI,RMY0,SNOML,SQR3,ZWOULI
+*
+       INTEGER    KCON(4),IARR(100),I,IND1,ITR,NFMX,
+     &            NG,NPHAS,NWILI,NWLPPH,NWOULI,JFC
+*
+       LOGICAL    BBSCR(4),BBWISU,BBFLDS,BBDSHE,BBHELP(0:10),
+     &            BBTS,BBERR
+*
+CC*SEBL End of the declarations block.
+*
+C... Steering variables for the optimisation routine LMIN
+*
+CC*SBBL Start of the steering block.
+*
+	
+       AF=BARR(35)
+       DRV=BARR(34)
+       EPS=BARR(32)
+       FEPS=BARR(33)
+       NFMX=IARR(3)
+       IF(IARR(50).GT.0) ITR=IARR(50)
+	
+*
+CC*SEBL End of the steering block.
+*
+C... Allocation of values to BBHELP
+C... Setting to zero via DATA statement in MAIN1
+*
+CC*SBBL Start of the allocation block.
+*
+       IND1=IARR(52)
+	write(*,*) 'before if in prepar',XZ1301(9)
+
+       IF(IND1.GE.0.AND.IND1.LE.10) BBHELP(IND1)=.TRUE.
+*	
+	write(*,*) 'after if in prepar',XZ1301(9)
+	
+       OMEGA=2.*PI*FREQ
+       BBSCR(3)=.FALSE.
+*
+CC*SEBL End of the allocation block.
+*
+C... Calculation of equivalent power rating for each terminal
+*
+       DO 299 I=1,NG
+       CCON=1.
+       IF(KCON(I).EQ.1.OR.KCON(I).EQ.11) CCON=SQR3
+*
+       UDIM(I)=UNLINE(I)/CCON
+       print *,UDIM(I),'UDIM',CCON,UNLINE(I)
+*
+C--- Equivalent values for one limb
+*
+       SRATEP(I)=SRATE(I)/ZWOULI
+       IF(I.LE.3) THEN
+          BBSCR(I)=.FALSE.
+          IF (ABS(SLINE(I)).GT.0.) BBSCR(I)=.TRUE.
+       END IF
+  299  CONTINUE
+*
+
+C... Calculation of EDDCO1 for each winding
+*
+       DO 399 I=1,NWILI
+*
+C... EDDCO1 = Auxiliary variable for calculation of additional losses
+*
+  399  EDDCO1(I)=OMEGA*OMEGA*RMY0*RMY0/(36.*RAACON(I)/SIGM(I))
+*
+       NWLPPH=NWOULI/NPHAS
+       SNOML=SRATEP(1)
+*
+C... Impedance (pu) in the network is calculated from short-cct power.
+*
+       DO 499 I=1,NG
+       EXTX(I)=1000.
+       IF (SLINE(I).GT.0.) EXTX(I)=3.*SNOML/SLINE(I)*FLOAT(NWLPPH)
+       IF (SLINE(I).LT.0.) EXTX(I)=0.
+  499  CONTINUE
+*
+C... Determination of constants for "Other eddy losses"
+*
+CC*SBBL Start of the "Other eddy losses" block
+*
+       IF (BBDSHE) THEN
+          BPOED=1.5E-4
+       ELSE
+          BPOED=2.5E-4
+       ENDIF
+*
+       IF (BBWISU) THEN
+          IF (BBFLDS) THEN
+             APOED=1.6E+5
+          ELSE
+             APOED=2.0E+5
+          ENDIF
+       ELSE
+          IF (BBFLDS) THEN
+             APOED=2.8E+5
+          ELSE
+             APOED=3.5E+5
+          ENDIF
+       ENDIF
+*
+CC*SEBL End of the "Other eddy losses" block
+*
+*
+C... Setting to zero of certain variables
+*
+CC*SBBL Start of the "setting to zero" block
+*
+       DOUTW=0.
+       GACTP=0.
+*
+CC*SEBL End of the "setting to zero" block
+*
+        
+       RETURN
+       END

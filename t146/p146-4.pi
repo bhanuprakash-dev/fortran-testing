@@ -1,0 +1,180 @@
+INITSTART 
+ASSGN     &ZPF01    'CMS EXEC MANUAL T146 P146-4 1'
+ASSGN     &ZPF13    'CMS EXEC MANUAL T146 P146-4 1'
+ASSGN     &ZPF02    'CMS EXEC UPDATED T146 TOP'
+ASSGN     &ZPF14    'CMS EXEC UPDATED T146 TOP'
+COMPARAM  PROFILE
+PARAM     ZPF14
+PARAM     ZPF13
+PARAM     ZPF02
+PARAM     ZPF01
+CALL      CVPT      5
+ASSGN     .CURSOR   F11
+PARAM     ' '
+PARAM     &F12
+CALL      CIFEQ     2         2
+ASSGN     &F12      'YES'
+PARAM     ' '
+PARAM     &F31
+CALL      CIFEQ     2         2
+ASSGN     &F31      'NO'
+PARAM     ' '
+PARAM     &F34
+CALL      CIFEQ     2         2
+ASSGN     &F34      'NO'
+PARAM     ' '
+PARAM     &F35
+CALL      CIFEQ     2         2
+ASSGN     &F35      'NO'
+PARAM     ' '
+PARAM     &F64
+CALL      CIFEQ     2         2
+ASSGN     &F64      5000
+PARAM     ' '
+PARAM     &F75
+CALL      CIFEQ     2         2
+ASSGN     &F75      100
+PARAM     ' '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F41      'TBA'
+PARAM     ' '
+PARAM     &F43
+CALL      CIFEQ     2         2
+ASSGN     &F43      0
+PARAM     ' '
+PARAM     &F44
+CALL      CIFEQ     2         2
+ASSGN     &F44      0
+PARAM     ' '
+PARAM     &F45
+CALL      CIFEQ     2         2
+ASSGN     &F45      'ZDKH'
+PARAM     ' '
+PARAM     &F46
+CALL      CIFEQ     2         33
+PARAM     'TAA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'GLUED'
+PARAM     'TAC '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'GLUED'
+PARAM     'TAD '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'GLUED'
+PARAM     'TBA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'ASEC'
+PARAM     'TCA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'ASEC'
+PARAM     'TA1 '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'ASEC'
+PARAM     'SL-C'
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'ASEC'
+PARAM     '130 '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F46      'STEEL'
+PARAM     ' '
+PARAM     &F47
+CALL      CIFEQ     2         33
+PARAM     'TAA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'YES '
+PARAM     'TA1 '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'YES '
+PARAM     'TAC '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'YES '
+PARAM     'TAD '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'YES '
+PARAM     'TBA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'YES '
+PARAM     'TCA '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'NO  '
+PARAM     'SL-C'
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'NO  '
+PARAM     '130 '
+PARAM     &F41
+CALL      CIFEQ     2         2
+ASSGN     &F47      'NO  '
+PARAM     ' '
+PARAM     &F51
+CALL      CIFEQ     2         2
+ASSGN     &F51      5
+PARAM     ' '
+PARAM     &F53
+CALL      CIFEQ     2         2
+ASSGN     &F53      0
+PARAM     ' '
+PARAM     &F54
+CALL      CIFEQ     2         2
+ASSGN     &F54      '2/2'
+PARAM     ' '
+PARAM     &F56
+CALL      CIFEQ     2         2
+ASSGN     &F56      '50'
+PARAM     ' '
+PARAM     &F61
+CALL      CIFEQ     2         2
+ASSGN     &F61      '65'
+PARAM     ' '
+PARAM     &F62
+CALL      CIFEQ     2         2
+ASSGN     &F62      '60'
+PARAM     ' '
+PARAM     &F71
+CALL      CIFEQ     2         2
+ASSGN     &F71      '13900'
+PARAM     ' '
+PARAM     &F72
+CALL      CIFEQ     2         2
+ASSGN     &F72      '3660'
+PARAM     ' '
+PARAM     &F73
+CALL      CIFEQ     2         2
+ASSGN     &F73      '4700'
+PARAM     ' '
+PARAM     &F74
+CALL      CIFEQ     2         2
+ASSGN     &F74      '500'
+PARAM     ' '
+PARAM     &F78
+CALL      CIFEQ     2         2
+ASSGN     &F78      '600'
+PARAM     ' '
+PARAM     &TEMPLO
+CALL      CIFEQ     2         2
+ASSGN     &TEMPLO   '75'
+PARAM     ' '
+PARAM     &STACKF
+CALL      CIFEQ     2         2
+ASSGN     &STACKF   '0.000'
+PARAM     ' '
+PARAM     &SPFADJ
+CALL      CIFEQ     2         2
+ASSGN     &SPFADJ   '0.95'
+ASSGN     &F55      'NO'
+INITEND   

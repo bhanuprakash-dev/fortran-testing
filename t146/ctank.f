@@ -1,0 +1,89 @@
+C*..* CTANK
+CCTANK-S         LTB146/S/ CTANK-S
+C
+C     *******************    NYTT    *************************
+C     ALL PARAMETERS PREVIOUSLY STARTING WITH THE PREFIX 'GSN'
+C     HAVE BEEN CHANGED TO 'GS' TO ACCOMODATE THE FORTRAN 77
+C     NAMING REQUIREMENT OF NOT MORE THAN 6 CHARACTERS.
+C     ********************************************************
+C
+C
+      SUBROUTINE CTANK (BBPRNT,JFC,NTANK,ACOV,TANKDI,KODRAD,NRAD,RSEK,
+     *           NCEQ,GS51,GS52,GS53,GS61,GS71,GS72,GG151,GG152,
+     *                  GG51,GG52,GG54,GG55,GG61,GG63,GG71,GG72,GG74)
+C
+C***     TANK COSTS
+C
+        LOGICAL BBHELP,BBPRNT
+C
+C
+      CHARACTER SP1*7,SP*10
+       DATA SP1/'       '/,SP/'          '/
+
+***************
+       IF(.NOT.BBPRNT) GO TO 101
+       WRITE(JFC,*) '===== INPUT DATA TO CTANK                    ====='
+       WRITE(JFC,*) SP1,'NTANK ',SP,'ACOV  ',SP,'TANKDI',SP,'KODRAD'
+       WRITE(JFC,*) NTANK,ACOV,TANKDI,KODRAD
+       WRITE(JFC,*) SP1,'NRAD  ',SP,'RSEK  ',SP,'NCEQ  ',SP,'GS51 '
+       WRITE(JFC,*) NRAD,RSEK,NCEQ,GS51
+       WRITE(JFC,*) SP1,'GS52 ',SP,'GS53 ',SP,'GS61 ',SP,'GS71 '
+       WRITE(JFC,*) GS52,GS53,GS61,GS71
+       WRITE(JFC,*) SP1,'GS72 ',SP,'GG151 ',SP,'GG152 ',SP,'GG51  '
+       WRITE(JFC,*) GS72,GG151,GG152,GG51
+       WRITE(JFC,*) SP1,'GG52  ',SP,'GG54  ',SP,'GG55  ',SP,'GG61  '
+       WRITE(JFC,*) GG52,GG54,GG55,GG61
+       WRITE(JFC,*) SP1,'GG63  ',SP,'GG71  ',SP,'GG72  ',SP,'GG74  '
+       WRITE(JFC,*) GG63,GG71,GG72,GG74
+ 101   CONTINUE
+***************
+      IX=87+NTANK
+C      L*DA PL*TF#RDIG
+      CALL COST (4,IX,197,GS51,ACOV,1.,GG51,1.,TANKDI,1.,1.,1.)
+C      L*DA @VRIGT, TILLVERKNING
+      CALL COST (4,96,198,GS52,1.,1.,GG52,1.,GS52+GG52,1.,1.,1.)
+C      YTBEHANDLING
+      CALL COST (4,97,199,0.,1.,1.,0.,1.,GS51+GG51+GS52+GG52,1.,1.,1.)
+       BBHELP = (GS53.GT.0.1)
+       IF(.NOT.BBHELP)
+     *   CALL COST(3,0,200,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+       IF( BBHELP)
+C          F#LTSK#RMNING
+     *   CALL COST(3,124,200,GS53,1.,1.,0.,1.,GS53,1.,1.,1.)
+C
+      IX = 97 + KODRAD
+      CALL COST (3,IX,201,0.,1.,1.,GG54,RSEK,1.,1.,1.,1.)
+      CALL COST (4,103,202,0.,1.,1.,GG55,1.,
+     *           GS51+GG51+GS52+GG52+GG54+GG55, 1.,1.,1.)
+      IF( NCEQ .EQ. 4 )
+     *  CALL COST (4,119,202,0.,1.,1.,0.,1.,GG151+GG152,1.,1.,1.)
+      CALL COST (3,0,202,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (2,0,203,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C
+C***     COVER COSTS
+C
+      IF(NTANK.GE.3.AND.NTANK.LE.6) IX=110
+      IF(NTANK.LE.2.OR.NTANK.EQ.7)  IX=111
+      IF(NTANK.EQ.8)                IX=112
+C
+      CALL COST (4,IX,208,GS71,1.,1.,GG71,1.,GS71+GG71,1.,1.,1.)
+      CALL COST (4,113,209,GS72,1.,1.,GG72,1.,GS72+GG72,1.,1.,1.)
+      CALL COST (4,114,210,0.,1.,1.,0.,1.,GS71+GG71+GS72+GG72,
+     *           1., 1., 1.)
+      CALL COST (3,0,211,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+      CALL COST (3,115,212,0.,1.,1.,GG74,1.,GS71+GG71+GS72+GG72+GG74,
+     *           1.,1.,1.)
+      CALL COST (2,0,213,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+C
+C
+C***     COSTS  COOLING EQUIPMENT
+C
+      IF(.NOT.(NCEQ.EQ.3 .OR. NCEQ.EQ.5) ) GO TO 10
+      IX=102+NCEQ
+      CALL COST (3,IX,204,GS61,1.,1.,GG61,1.,GS61+GG61+GG63,1.,1.,1.)
+      CALL COST (3,108,205,0.,1.,1.,0.,1.,GS61+GG61+GG63,1.,1.,1.)
+      CALL COST (3,109,206,0.,1.,1.,GG63,1.,GS61+GG61+GG63,1.,1.,1.)
+   10 CALL COST (2,0,207,0.,1.,1.,0.,1.,1.,1.,1.,1.)
+      RETURN
+      END

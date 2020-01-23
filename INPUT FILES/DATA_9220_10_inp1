@@ -1,0 +1,27 @@
+3                           RWILI
+'70009220_10   PJM - BLACK & VEATCH'	        IDENT
+'H1','X1','  ','  '         (TNODE(i),i=1,4)
+324.00,324.00,0,0       (SRATE(i),i=1,4)
+0.00				CALCT
+242.00,19.0,0,0.00       (UNLINE(i),i=1,4)
+'YN','D', 0,'  '         (KCON(i),i=1,4)
+'L','NO','NO','NO'         (KTYPRW(i),i=1,4)
+2.00,0.00,0.00,0.00       (NPSTEP(i),i=1,4)
+2.00,0.00,0.00,0.00       (NMSTEP(i),i=1,4)
+2.50,0.00,0.00,0.00       (PUSTEP(i),i=1,4)
+750.00,150.00,0.00,0.00       (USURG(i),i=1,4)
+324.00,324.00,0.00,0.00       (SLINE(i),i=1,4)
+95.00,0.00,0.00,0.00       (CGRAD(i),i=1,4)
+60                           FREQ
+3                           NPHAS
+'CFR'	                    TYPREG
+1500                           EVALP0
+1500                           EVALPK
+'MCUS'	                    MNLCOD
+0.00                           CPUIND
+0.00                           CPUFIX
+'ONAF'	                    KCOOL
+1.67                           FONAN
+'YES'	                    OPERAT
+'YES'	                    DETPRE
+0.00,0.00,0.00       (XREA(i),i=1,3)

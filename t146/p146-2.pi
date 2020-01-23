@@ -1,0 +1,244 @@
+INITSTART 
+ASSGN     &ZPF01    'CMS EXEC MANUAL T146 P146-2 1'
+ASSGN     &ZPF13    'CMS EXEC MANUAL T146 P146-2 1'
+ASSGN     &ZPF02    'CMS EXEC UPDATED T146 TOP'
+ASSGN     &ZPF14    'CMS EXEC UPDATED T146 TOP'
+COMPARAM  PROFILE
+PARAM     ZPF14
+PARAM     ZPF13
+PARAM     ZPF02
+PARAM     ZPF01
+CALL      CVPT      5
+ASSGN     .CURSOR   C11
+PARAM     ' '
+PARAM     &D91
+CALL      CIFEQ     2         2
+ASSGN     &D91      YES
+PARAM     ' '
+PARAM     &D92
+CALL      CIFEQ     2         2
+ASSGN     &D92      YES
+PARAM     ' '
+PARAM     &D93
+CALL      CIFEQ     2         2
+ASSGN     &D93      YES
+PARAM     ' '
+PARAM     &D94
+CALL      CIFEQ     2         2
+ASSGN     &D94      YES
+PARAM     ' '
+PARAM     &D111
+CALL      CIFEQ     2         2
+ASSGN     &D111     NO
+PARAM     ' '
+PARAM     &E17
+CALL      CIFEQ     2         2
+ASSGN     &E17      4.50
+PARAM     ' '
+PARAM     &E18
+CALL      CIFEQ     2         2
+ASSGN     &E18      120.0
+PARAM     ' '
+PARAM     &E19
+CALL      CIFEQ     2         2
+ASSGN     &E19      55.0
+PARAM     ' '
+PARAM     &C110
+CALL      CIFEQ     2         2
+ASSGN     &C110     1
+PARAM     ' '
+PARAM     &D11
+CALL      CIFEQ     2         2
+ASSGN     &D11      YES
+PARAM     ' '
+PARAM     &C111
+CALL      CIFEQ     2         2
+ASSGN     &C111     SP
+PARAM     YES
+PARAM     &D11
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D12
+CALL      CIFEQ     2         2
+ASSGN     &D12      0.45
+PARAM     6
+PARAM     5
+PARAM     4
+PARAM     3
+PARAM     2
+PARAM     &WILI
+CALL      CIFEQ     6         32
+PARAM     ' '
+PARAM     &E27
+CALL      CIFEQ     2         2
+ASSGN     &E27      4.50
+PARAM     ' '
+PARAM     &E28
+CALL      CIFEQ     2         2
+ASSGN     &E28      120.0
+PARAM     ' '
+PARAM     &E29
+CALL      CIFEQ     2         2
+ASSGN     &E29      55.0
+PARAM     ' '
+PARAM     &C120
+CALL      CIFEQ     2         2
+ASSGN     &C120     1
+PARAM     ' '
+PARAM     &D21
+CALL      CIFEQ     2         2
+ASSGN     &D21      YES
+PARAM     ' '
+PARAM     &C121
+CALL      CIFEQ     2         2
+ASSGN     &C121     SP
+PARAM     YES
+PARAM     &D21
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D22
+CALL      CIFEQ     2         2
+ASSGN     &D22      0.45
+PARAM     6
+PARAM     5
+PARAM     4
+PARAM     3
+PARAM     &WILI
+CALL      CIFEQ     5         32
+PARAM     ' '
+PARAM     &E37
+CALL      CIFEQ     2         2
+ASSGN     &E37      4.50
+PARAM     ' '
+PARAM     &E38
+CALL      CIFEQ     2         2
+ASSGN     &E38      120.0
+PARAM     ' '
+PARAM     &E39
+CALL      CIFEQ     2         2
+ASSGN     &E39      55.0
+PARAM     ' '
+PARAM     &C130
+CALL      CIFEQ     2         2
+ASSGN     &C130     1
+PARAM     ' '
+PARAM     &D31
+CALL      CIFEQ     2         2
+ASSGN     &D31      YES
+PARAM     ' '
+PARAM     &C131
+CALL      CIFEQ     2         2
+ASSGN     &C131     SP
+PARAM     YES
+PARAM     &D31
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D32
+CALL      CIFEQ     2         2
+ASSGN     &D32      0.45
+PARAM     6
+PARAM     5
+PARAM     4
+PARAM     &WILI
+CALL      CIFEQ     4         32
+PARAM     ' '
+PARAM     &E47
+CALL      CIFEQ     2         2
+ASSGN     &E47      4.50
+PARAM     ' '
+PARAM     &E48
+CALL      CIFEQ     2         2
+ASSGN     &E48      120.0
+PARAM     ' '
+PARAM     &E49
+CALL      CIFEQ     2         2
+ASSGN     &E49      55.0
+PARAM     ' '
+PARAM     &C140
+CALL      CIFEQ     2         2
+ASSGN     &C140     1
+PARAM     ' '
+PARAM     &D41
+CALL      CIFEQ     2         2
+ASSGN     &D41      YES
+PARAM     ' '
+PARAM     &C141
+CALL      CIFEQ     2         2
+ASSGN     &C141     SP
+PARAM     YES
+PARAM     &D41
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D42
+CALL      CIFEQ     2         2
+ASSGN     &D42      0.45
+PARAM     6
+PARAM     5
+PARAM     &WILI
+CALL      CIFEQ     3         32
+PARAM     ' '
+PARAM     &E57
+CALL      CIFEQ     2         2
+ASSGN     &E57      4.50
+PARAM     ' '
+PARAM     &E58
+CALL      CIFEQ     2         2
+ASSGN     &E58      120.0
+PARAM     ' '
+PARAM     &E59
+CALL      CIFEQ     2         2
+ASSGN     &E59      55.0
+PARAM     ' '
+PARAM     &C150
+CALL      CIFEQ     2         2
+ASSGN     &C150     1
+PARAM     ' '
+PARAM     &D51
+CALL      CIFEQ     2         2
+ASSGN     &D51      YES
+PARAM     ' '
+PARAM     &C151
+CALL      CIFEQ     2         2
+ASSGN     &C151     SP
+PARAM     YES
+PARAM     &D51
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D52
+CALL      CIFEQ     2         2
+ASSGN     &D52      0.45
+PARAM     6
+PARAM     &WILI
+CALL      CIFEQ     2         32
+PARAM     ' '
+PARAM     &E67
+CALL      CIFEQ     2         2
+ASSGN     &E67      4.50
+PARAM     ' '
+PARAM     &E67
+CALL      CIFEQ     2         2
+ASSGN     &E68      120.0
+PARAM     ' '
+PARAM     &E69
+CALL      CIFEQ     2         2
+ASSGN     &E69      55.0
+PARAM     ' '
+PARAM     &C160
+CALL      CIFEQ     2         2
+ASSGN     &C160     1
+PARAM     ' '
+PARAM     &D61
+CALL      CIFEQ     2         2
+ASSGN     &D61      YES
+PARAM     ' '
+PARAM     &C161
+CALL      CIFEQ     2         2
+ASSGN     &C161     SP
+PARAM     YES
+PARAM     &D61
+CALL      CIFEQ     2         5
+PARAM     ' '
+PARAM     &D62
+CALL      CIFEQ     2         2
+ASSGN     &D62      0.45
+INITEND   

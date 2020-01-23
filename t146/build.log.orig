@@ -1,0 +1,729 @@
+	f77 -K -c adjust.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+adjust.f:
+   adjust:
+	f77 -K -c block.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+block.f:
+   BLOCK DATA block:
+	f77 -K -c blockc.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+blockc.f:
+   BLOCK DATA blockc:
+	f77 -K -c byta79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+byta79.f:
+   byta79:
+Warning on line 155 of byta79.f: local variable cstpsw never used
+Warning on line 155 of byta79.f: local variable help never used
+Warning on line 155 of byta79.f: local variable ksave never used
+	f77 -K -c calcpy.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+calcpy.f:
+   calcpy:
+	f77 -K -c check.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+check.f:
+   check:
+	f77 -K -c chfunk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+chfunk.f:
+   chfunk:
+	f77 -K -c chi.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+chi.f:
+   chi:
+	f77 -K -c chr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+chr.f:
+   chr:
+Warning on line 68 of chr.f: local variable x never used
+	f77 -K -c constr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+constr.f:
+   constr:
+	f77 -K -c contd.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+contd.f:
+   contd:
+	f77 -K -c contyp.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+contyp.f:
+   contyp:
+	f77 -K -c cooldp.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cooldp.f:
+   cooldp:
+	f77 -K -c cooleq.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cooleq.f:
+   cooleq:
+	f77 -K -c cor1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cor1.f:
+   cor1:
+	f77 -K -c cor130.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cor130.f:
+   cor130:
+	f77 -K -c cor2.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cor2.f:
+   cor2:
+	f77 -K -c core1n.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+core1n.f:
+   core1n:
+Warning on line 255 of core1n.f: local variable shwdt never used
+Warning on line 255 of core1n.f: local variable maxwdt never used
+Warning on line 255 of core1n.f: local variable thkpck never used
+Warning on line 255 of core1n.f: local variable nsht never used
+Warning on line 255 of core1n.f: local variable rnflp never used
+Warning on line 255 of core1n.f: local variable minwdt never used
+Warning on line 255 of core1n.f: local variable npack never used
+Warning on line 255 of core1n.f: local variable bblarm never used
+Warning on line 255 of core1n.f: local variable map never used
+Warning on line 255 of core1n.f: local variable alarm never used
+Warning on line 255 of core1n.f: local variable diwbi never used
+Warning on line 255 of core1n.f: local variable dewbi never used
+	f77 -K -c corn.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+corn.f:
+   corn:
+	f77 -K -c cost79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cost79.f:
+   cost79:
+	f77 -K -c cost92.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+cost92.f:
+   cost92:
+	f77 -K -c covma.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+covma.f:
+   covma:
+Warning on line 54 of covma.f: local variable bbprnt never used
+Warning on line 54 of covma.f: local variable bb07 never used
+Warning on line 54 of covma.f: local variable bb51 never used
+	f77 -K -c curdim.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+curdim.f:
+   curdim:
+	f77 -K -c curdns.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+curdns.f:
+   curdns:
+	f77 -K -c dbgnrl.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbgnrl.f:
+   dbgnrl:
+Warning on line 645 of dbgnrl.f: local variable vltst never used
+Warning on line 645 of dbgnrl.f: local variable s never used
+Warning on line 645 of dbgnrl.f: local variable chi never used
+	f77 -K -c dbgwg.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbgwg.f:
+   dbgwg:
+Warning on line 208 of dbgwg.f: local variable i never used
+Warning on line 208 of dbgwg.f: local variable s never used
+Warning on line 208 of dbgwg.f: local variable chi never used
+	f77 -K -c dbpost.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbpost.f:
+   dbpost:
+	f77 -K -c dbprep.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbprep.f:
+   dbprep:
+Warning on line 108 of dbprep.f: local variable j never used
+Warning on line 108 of dbprep.f: local variable s never used
+	f77 -K -c dbpwg.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbpwg.f:
+   dbpwg:
+Warning on line 333 of dbpwg.f: local variable s never used
+	f77 -K -c dbwseg.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dbwseg.f:
+   dbwseg:
+Warning on line 235 of dbwseg.f: local variable s never used
+	f77 -K -c dimcur.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dimcur.f:
+   dimcur:
+	f77 -K -c dimscc.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dimscc.f:
+   dimscc:
+	f77 -K -c dsp146.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+dsp146.f:
+   dsp146:
+Warning on line 195 of dsp146.f: local variable s never used
+	f77 -K -c edmult.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+edmult.f:
+   edmult:
+	f77 -K -c errrut.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+errrut.f:
+   errrut:
+	/lib/cpp -P -D$BAT_OS extin.f > battmp.f ; f77 -K -c battmp.f ; cp battmp.o extin.o
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+battmp.f:
+   extin:
+	f77 -K -c fbb.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+fbb.f:
+   fbb:
+	f77 -K -c fprint.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+fprint.f:
+   fprint:
+Warning on line 74 of fprint.f: local variable irc never used
+Warning on line 74 of fprint.f: local variable answ never used
+	f77 -K -c frfunk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+frfunk.f:
+   frfunk:
+	f77 -K -c funk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+funk.f:
+   funk:
+Warning on line 403 of funk.f: local variable sp never used
+	f77 -K -c funkfr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+funkfr.f:
+   funkfr:
+	f77 -K -c head1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+head1.f:
+   head1:
+Warning on line 164 of head1.f: local variable i never used
+	f77 -K -c head2.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+head2.f:
+   head2:
+	f77 -K -c icheck.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+icheck.f:
+   icheck:
+	f77 -K -c inp1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp1.f:
+   inp1:
+Warning on line 285 of inp1.f: local variable s never used
+	f77 -K -c inp2.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp2.f:
+   inp2:
+Warning on line 198 of inp2.f: local variable s never used
+	f77 -K -c inp3.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp3.f:
+   inp3:
+Warning on line 106 of inp3.f: local variable i never used
+Warning on line 106 of inp3.f: local variable s never used
+	f77 -K -c inp4.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp4.f:
+   inp4:
+Warning on line 255 of inp4.f: local variable s never used
+	f77 -K -c inp5.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp5.f:
+   inp5:
+Warning on line 66 of inp5.f: local variable i never used
+Warning on line 66 of inp5.f: local variable s never used
+	f77 -K -c inp6.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inp6.f:
+   inp6:
+Warning on line 83 of inp6.f: local variable i never used
+Warning on line 83 of inp6.f: local variable s never used
+	f77 -K -c inx146.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+inx146.f:
+   inx146:
+Warning on line 135 of inx146.f: local variable s never used
+	f77 -K -c limchk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+limchk.f:
+   limchk:
+	f77 -K -c lminca.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+lminca.f:
+   lminca:
+	f77 -K -c lmod.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+lmod.f:
+   lmod:
+	f77 -K -c loop1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+loop1.f:
+   loop1:
+	f77 -K -c loss.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+loss.f:
+   loss:
+	f77 -K -c losspr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+losspr.f:
+   losspr:
+	f77 -K -c lwind.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+lwind.f:
+   lwind:
+	f77 -K -c mass79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+mass79.f:
+   mass79:
+	f77 -K -c mass92.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+mass92.f:
+   mass92:
+Warning on line 188 of mass92.f: local variable fonan never used
+	f77 -K -c movedb.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+movedb.f:
+   movedb:
+Warning on line 252 of movedb.f: local variable s never used
+	f77 -K -c ncool.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+ncool.f:
+   ncool:
+	f77 -K -c nloadn.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+nloadn.f:
+   nloadn:
+Warning on line 251 of nloadn.f: local variable lpa03 never used
+	/lib/cpp -P -D$BAT_OS nlossr.f > battmp.f ; f77 -K -c battmp.f ; cp battmp.o nlossr.o
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+battmp.f:
+   nlossr:
+	f77 -K -c nodcon.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+nodcon.f:
+   nodcon:
+	f77 -K -c npage.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+npage.f:
+   npage:
+	f77 -K -c omf013.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+omf013.f:
+   omf013:
+	f77 -K -c opcalc.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+opcalc.f:
+   opcalc:
+	f77 -K -c pag79x.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pag79x.f:
+   pag79x:
+	f77 -K -c pagc92.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pagc92.f:
+   pagc92:
+	f77 -K -c page01.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+page01.f:
+   page01:
+Warning on line 309 of page01.f: local variable prtyp never used
+	f77 -K -c page02.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+page02.f:
+   page02:
+	f77 -K -c page79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+page79.f:
+   page79:
+	f77 -K -c pagecr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pagecr.f:
+   pagecr:
+Warning on line 123 of pagecr.f: local variable cdscnt never used
+Warning on line 123 of pagecr.f: local variable help never used
+Warning on line 123 of pagecr.f: local variable kodpt never used
+Warning on line 123 of pagecr.f: local variable rk never used
+Warning on line 123 of pagecr.f: local variable x1 never used
+Warning on line 123 of pagecr.f: local variable x2 never used
+Warning on line 123 of pagecr.f: local variable npk never used
+Warning on line 123 of pagecr.f: local variable kod never used
+	f77 -K -c pageu.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pageu.f:
+   pageu:
+	f77 -K -c pageut.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pageut.f:
+   pageut:
+Warning on line 112 of pageut.f: local variable pclass never used
+	f77 -K -c pcool.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pcool.f:
+   pcool:
+	f77 -K -c penlty.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+penlty.f:
+   penlty:
+	f77 -K -c pep1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pep1.f:
+   pep1:
+	f77 -K -c pkl79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pkl79.f:
+   pkl79:
+	f77 -K -c plimit.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+plimit.f:
+   plimit:
+	f77 -K -c pnmass.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pnmass.f:
+   pnmass:
+	f77 -K -c prcons.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prcons.f:
+   prcons:
+	f77 -K -c preact.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+preact.f:
+   preact:
+	f77 -K -c precre.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+precre.f:
+   precre:
+	f77 -K -c preff.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+preff.f:
+   preff:
+	f77 -K -c prep1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prep1.f:
+   prep1:
+	f77 -K -c prepar.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prepar.f:
+   prepar:
+	f77 -K -c preset.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+preset.f:
+   preset:
+	f77 -K -c preta1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+preta1.f:
+   preta1:
+	f77 -K -c pretan.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pretan.f:
+   pretan:
+	f77 -K -c pretem.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+pretem.f:
+   pretem:
+	f77 -K -c preval.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+preval.f:
+   preval:
+	f77 -K -c prnld.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prnld.f:
+   prnld:
+	/lib/cpp -P -D$BAT_OS prpan.f > battmp.f ; f77 -K -c battmp.f ; cp battmp.o prpan.o
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+battmp.f:
+   prpan:
+	f77 -K -c prtot.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prtot.f:
+   prtot:
+	f77 -K -c prukpk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prukpk.f:
+   prukpk:
+	f77 -K -c prux.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prux.f:
+   prux:
+	f77 -K -c prwa.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prwa.f:
+   prwa:
+	f77 -K -c prwi.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prwi.f:
+   prwi:
+	f77 -K -c prwida.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prwida.f:
+   prwida:
+	f77 -K -c prwr.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prwr.f:
+   prwr:
+	f77 -K -c prwt.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+prwt.f:
+   prwt:
+	f77 -K -c putdb.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+putdb.f:
+   putdb:
+Warning on line 394 of putdb.f: local variable s never used
+Warning on line 394 of putdb.f: local variable npkl never used
+Warning on line 394 of putdb.f: local variable pclass never used
+	f77 -K -c readch.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+readch.f:
+   readch:
+Warning on line 158 of readch.f: local variable fildef never used
+	f77 -K -c relnta.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+relnta.f:
+   relnta:
+	f77 -K -c rnolo.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+rnolo.f:
+   rnolo:
+	f77 -K -c rprint.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+rprint.f:
+   rprint:
+Warning on line 63 of rprint.f: local variable tico never used
+Warning on line 63 of rprint.f: local variable mnlc never used
+	f77 -K -c scdime.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+scdime.f:
+   scdime:
+	f77 -K -c screw.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+screw.f:
+   screw:
+	f77 -K -c scstre.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+scstre.f:
+   scstre:
+	f77 -K -c siactp.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+siactp.f:
+   siactp:
+	f77 -K -c sitank.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+sitank.f:
+   sitank:
+	f77 -K -c siterm.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+siterm.f:
+   siterm:
+	f77 -K -c siwind.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+siwind.f:
+   siwind:
+	f77 -K -c soundp.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+soundp.f:
+   soundp:
+	f77 -K -c ssearc.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+ssearc.f:
+   ssearc:
+	f77 -K -c sub146.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+sub146.f:
+   sub146:
+	/lib/cpp -P -D$BAT_OS t31146.f > battmp.f ; f77 -K -c battmp.f ; cp battmp.o t31146.o
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+battmp.f:
+   MAIN t31146:
+	f77 -K -c tab79.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+tab79.f:
+   tab79:
+	f77 -K -c table1.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+table1.f:
+   table1:
+	f77 -K -c turnca.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+turnca.f:
+   turnca:
+	f77 -K -c typwdg.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+typwdg.f:
+   typwdg:
+	f77 -K -c ukpk.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+ukpk.f:
+   ukpk:
+	f77 -K -c ukx.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+ukx.f:
+   ukx:
+	f77 -K -c uscod.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+uscod.f:
+   uscod:
+	f77 -K -c voltag.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+voltag.f:
+   voltag:
+	f77 -K -c wdglay.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+wdglay.f:
+   wdglay:
+	f77 -K -c wdgtyp.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+wdgtyp.f:
+   wdgtyp:
+	f77 -K -c winddi.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+winddi.f:
+   winddi:
+	f77 -K -c wmess.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+wmess.f:
+   wmess:
+	f77 -K -c wx146.f 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
+wx146.f:
+   wx146:
+Warning on line 1520 of wx146.f: local variable s never used
+Warning on line 1520 of wx146.f: local variable ihlp never used
+Warning on line 1520 of wx146.f: local variable cpumin never used
+	f77 -K  adjust.o  block.o  blockc.o  byta79.o  calcpy.o  check.o  chfunk.o  chi.o  chr.o  constr.o  contd.o  contyp.o  cooldp.o  cooleq.o  cor1.o  cor130.o  cor2.o  core1n.o  corn.o  cost79.o  cost92.o  covma.o  curdim.o  curdns.o  dbgnrl.o  dbgwg.o  dbpost.o  dbprep.o  dbpwg.o  dbwseg.o  dimcur.o  dimscc.o  dsp146.o  edmult.o  errrut.o  extin.o  fbb.o  fprint.o  frfunk.o  funk.o  funkfr.o  head1.o  head2.o  icheck.o  inp1.o  inp2.o  inp3.o  inp4.o  inp5.o  inp6.o  inx146.o  limchk.o  lminca.o  lmod.o  loop1.o  loss.o  losspr.o  lwind.o  mass79.o  mass92.o  movedb.o  ncool.o  nloadn.o  nlossr.o  nodcon.o  npage.o  omf013.o  opcalc.o  pag79x.o  pagc92.o  page01.o  page02.o  page79.o  pagecr.o  pageu.o  pageut.o  pcool.o  penlty.o  pep1.o  pkl79.o  plimit.o  pnmass.o  prcons.o  preact.o  precre.o  preff.o  prep1.o  prepar.o  preset.o  preta1.o  pretan.o  pretem.o  preval.o  prnld.o  prpan.o  prtot.o  prukpk.o  prux.o  prwa.o  prwi.o  prwida.o  prwr.o  prwt.o  putdb.o  readch.o  relnta.o  rnolo.o  rprint.o  scdime.o  screw.o  scstre.o  siactp.o  sitank.o  siterm.o  siwind.o  soundp.o  ssearc.o  sub146.o  t31146.o  tab79.o  table1.o  turnca.o  typwdg.o  ukpk.o  ukx.o  uscod.o  voltag.o  wdglay.o  wdgtyp.o  winddi.o  wmess.o  wx146.o /users/jajo/magnetek/bates/lib/dialog.a  /users/jajo/magnetek/bates/lib/db_com.a  /users/jajo/magnetek/bates/lib/db_dbm.a  /users/jajo/magnetek/bates/lib/dsysub.a  /users/jajo/magnetek/bates/lib/frnsub.a  /users/jajo/magnetek/bates/lib/optsub.a  /users/jajo/magnetek/bates/lib/corsub.a  /users/jajo/magnetek/bates/lib/dialog.a -lndbm -o t146 
+f77 : Multiple copies of directory in $PATH.  Possible infinite loop.
+
